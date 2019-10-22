@@ -1477,10 +1477,28 @@ end
 function EmotesOnCommand(source, args, raw)
   EmoteChatMessage(display)
   local EmotesCommand = ""
-  for a in pairs(DP.Emotes) do
+  for a in pairsByKeys(DP.Emotes) do
     EmotesCommand = a .. ", ".. EmotesCommand
   end
   EmoteChatMessage(EmotesCommand)
+end
+
+function pairsByKeys (t, f)
+    local a = {}
+    for n in pairs(t) do
+        table.insert(a, n)
+    end
+    table.sort(a, f)
+    local i = 0      -- iterator variable
+    local iter = function ()   -- iterator function
+        i = i + 1
+        if a[i] == nil then
+            return nil
+        else
+            return a[i], t[a[i]]
+        end
+    end
+    return iter
 end
 
 function EmoteCommandStart(source, args, raw)
@@ -1510,16 +1528,16 @@ LoadAnim = function(dict)
 end
 
 LoadPropDict = function(model)
-	RequestModel(GetHashKey(model))
-	while not HasModelLoaded(GetHashKey(model)) do
-		Citizen.Wait(1)
-	end
+  RequestModel(GetHashKey(model))
+  while not HasModelLoaded(GetHashKey(model)) do
+    Citizen.Wait(1)
+  end
 end
 
 DestroyAllProps = function()
-	for _,v in pairs(PlayerProps) do
+  for _,v in pairs(PlayerProps) do
     DeleteEntity(v)
-	end
+  end
   PlayerHasProp = false
   DebugPrint("Destroyed Props")
 end
@@ -1529,13 +1547,13 @@ AddPropToPlayer = function(prop1, bone, off1, off2, off3, rot1, rot2, rot3)
   local x,y,z = table.unpack(GetEntityCoords(Player))
 
   if not HasModelLoaded(prop1) then
-		LoadPropDict(prop1)
-	end
+    LoadPropDict(prop1)
+  end
 
-	prop = CreateObject(GetHashKey(prop1), x, y, z+0.2,  true,  true, true)
-	AttachEntityToEntity(prop, Player, GetPedBoneIndex(Player, bone), off1, off2, off3, rot1, rot2, rot3, true, true, false, true, 1, true)
-	table.insert(PlayerProps, prop)
-	PlayerHasProp = true
+  prop = CreateObject(GetHashKey(prop1), x, y, z+0.2,  true,  true, true)
+  AttachEntityToEntity(prop, Player, GetPedBoneIndex(Player, bone), off1, off2, off3, rot1, rot2, rot3, true, true, false, true, 1, true)
+  table.insert(PlayerProps, prop)
+  PlayerHasProp = true
 end
 
 -----------------------------------------------------------------------------------------------------
@@ -1562,9 +1580,9 @@ end
 -----------------------------------------------------------------------------------------------------
 
 function OnEmotePlay(EmoteName)
-	if not DoesEntityExist(GetPlayerPed(-1)) then
-		return false
-	end
+  if not DoesEntityExist(GetPlayerPed(-1)) then
+    return false
+  end
 
   if DisarmPlayer then
     if IsPedArmed(GetPlayerPed(-1), 7) then
@@ -1572,8 +1590,8 @@ function OnEmotePlay(EmoteName)
     end
   end
 
-	ChosenDict,ChosenAnimation,ename = table.unpack(EmoteName)
-	AnimationDuration = -1
+  ChosenDict,ChosenAnimation,ename = table.unpack(EmoteName)
+  AnimationDuration = -1
 
   if ChosenDict == "MaleScenario" or "Scenario" then
     CheckGender()
@@ -1604,35 +1622,35 @@ function OnEmotePlay(EmoteName)
   end
 
   if PlayerHasProp then
-		DestroyAllProps()
-	end
+    DestroyAllProps()
+  end
 
     LoadAnim(ChosenDict)
 
     if EmoteName.AnimationOptions then
-    	if EmoteName.AnimationOptions.EmoteLoop then
-    		MovementType = 1
-    	if EmoteName.AnimationOptions.EmoteMoving then
-    		MovementType = 51
-    	end
-	elseif EmoteName.AnimationOptions.EmoteMoving then
-		MovementType = 51
-	end
-	else
-		MovementType = 0
-	end
+      if EmoteName.AnimationOptions.EmoteLoop then
+        MovementType = 1
+      if EmoteName.AnimationOptions.EmoteMoving then
+        MovementType = 51
+      end
+  elseif EmoteName.AnimationOptions.EmoteMoving then
+    MovementType = 51
+  end
+  else
+    MovementType = 0
+  end
 
-	if EmoteName.AnimationOptions then
-		if EmoteName.AnimationOptions.EmoteDuration == nil then 
-			EmoteName.AnimationOptions.EmoteDuration = -1
-		else
-			AnimationDuration = EmoteName.AnimationOptions.EmoteDuration
-		end
+  if EmoteName.AnimationOptions then
+    if EmoteName.AnimationOptions.EmoteDuration == nil then 
+      EmoteName.AnimationOptions.EmoteDuration = -1
+    else
+      AnimationDuration = EmoteName.AnimationOptions.EmoteDuration
+    end
 
-		if EmoteName.AnimationOptions.Prop then
-			PropName = EmoteName.AnimationOptions.Prop
-			PropBone = EmoteName.AnimationOptions.PropBone
-			PropPl1, PropPl2, PropPl3, PropPl4, PropPl5, PropPl6 = table.unpack(EmoteName.AnimationOptions.PropPlacement)
+    if EmoteName.AnimationOptions.Prop then
+      PropName = EmoteName.AnimationOptions.Prop
+      PropBone = EmoteName.AnimationOptions.PropBone
+      PropPl1, PropPl2, PropPl3, PropPl4, PropPl5, PropPl6 = table.unpack(EmoteName.AnimationOptions.PropPlacement)
       if EmoteName.AnimationOptions.SecondProp then
         SecondPropName = EmoteName.AnimationOptions.SecondProp
         SecondPropBone = EmoteName.AnimationOptions.SecondPropBone
@@ -1642,14 +1660,14 @@ function OnEmotePlay(EmoteName)
         SecondPropEmote = false
       end
 
-			AddPropToPlayer(PropName, PropBone, PropPl1, PropPl2, PropPl3, PropPl4, PropPl5, PropPl6)
+      AddPropToPlayer(PropName, PropBone, PropPl1, PropPl2, PropPl3, PropPl4, PropPl5, PropPl6)
       if SecondPropEmote then
         AddPropToPlayer(SecondPropName, SecondPropBone, SecondPropPl1, SecondPropPl2, SecondPropPl3, SecondPropPl4, SecondPropPl5, SecondPropPl6)
       end
-		end
-	else
-			DebugPrint("AnimationOptions = False")
-	end
+    end
+  else
+      DebugPrint("AnimationOptions = False")
+  end
   
   DebugPrint ("--- Main Animations")
   DebugPrint ("ChosenDict = " ..ChosenDict.. "")
@@ -1657,16 +1675,16 @@ function OnEmotePlay(EmoteName)
   DebugPrint ("MovementType = " ..MovementType.. "")
   DebugPrint ("AnimationDuration = " ..AnimationDuration.. "")
 
-	if EmoteName.AnimationOptions then
+  if EmoteName.AnimationOptions then
     DebugPrint ("--- AnimationOptions")
     DebugPrint ("AnimationOption.EmoteLoop = " ..tostring(EmoteName.AnimationOptions.EmoteLoop).. "")
     DebugPrint ("AnimationOption.EmoteMoving = " ..tostring(EmoteName.AnimationOptions.EmoteMoving).. "")
     DebugPrint ("AnimationOption.EmoteDuration = " ..tostring(EmoteName.AnimationOptions.EmoteDuration).. "")
-	end
+  end
 
-	TaskPlayAnim(GetPlayerPed(-1), ChosenDict, ChosenAnimation, 2.0, 2.0, AnimationDuration, MovementType, 0, false, false, false)
-	IsInAnimation = true
-	MostRecentDict = ChosenDict
-	MostRecentAnimation = ChosenAnimation
-	return true
+  TaskPlayAnim(GetPlayerPed(-1), ChosenDict, ChosenAnimation, 2.0, 2.0, AnimationDuration, MovementType, 0, false, false, false)
+  IsInAnimation = true
+  MostRecentDict = ChosenDict
+  MostRecentAnimation = ChosenAnimation
+  return true
 end
