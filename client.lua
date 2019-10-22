@@ -58,7 +58,7 @@ DP.Emotes = {
    {
        EmoteLoop = true,
    }},
-   ["idle3"] = {"anim@heists@humane_labs@finale@strip_club", "ped_b_celebrate_intro", "ped_b_celebrate_loop", "Idle 3", AnimationOptions =
+   ["idle3"] = {"anim@heists@humane_labs@finale@strip_club", "ped_b_celebrate_loop", "Idle 3", AnimationOptions =
    {
        EmoteLoop = true,
    }},
@@ -1274,7 +1274,7 @@ DP.Emotes = {
        EmoteMoving = true,
    }},
    ["bark"] = {"random@peyote@dog", "wakeup", "Bark"},
-   ["pee"] = {"misscarsteal2peeing", "peeing_intro", "peeing_loop", "Pee", AnimationOptions =
+   ["pee"] = {"misscarsteal2peeing", "peeing_loop", "Pee", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
