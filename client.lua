@@ -458,9 +458,8 @@ DP.Emotes = {
    {
        EmoteLoop = true,
    }},
-   ["metal"] = {"anim@mp_player_intincarrockstd@ps@", "enter", "idle_a", "Metal", AnimationOptions = -- CHANGE ME
+   ["metal"] = {"anim@mp_player_intincarrockstd@ps@", "idle_a", "Metal", AnimationOptions = -- CHANGE ME
    {
-       StartEnableMovement = true,
        EmoteLoop = true,
        EmoteMoving = true,
    }},
@@ -1045,14 +1044,6 @@ DP.Emotes = {
        EmoteLoop = true,
    }},
    ["dance17"] = {"anim@amb@nightclub@mini@dance@dance_solo@female@var_a@", "med_center_up", "Dance 17", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["k9bark"] = {"creatures@rottweiler@amb@world_dog_barking@idle_a", "idle_a", "zk9bark", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["k9barksit"] = {"misschop_vehicle@back_of_van", "chop_bark", "zk9barksit", AnimationOptions =
    {
        EmoteLoop = true,
    }},
