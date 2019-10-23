@@ -1201,6 +1201,7 @@ DP.Emotes = {
    ["clown4"] = {"rcm_barry2", "clown_idle_3", "Clown 4", AnimationOptions =
    {
        EmoteLoop = true,
+       EmoteMoving = true,
    }},
    ["clown5"] = {"rcm_barry2", "clown_idle_6", "Clown 5", AnimationOptions =
    {
@@ -1445,13 +1446,13 @@ DP.Emotes = {
 local AnimationDuration = -1
 local ChosenAnimation = ""
 local ChosenDict = ""
-local PlayerProps = {}
 local IsInAnimation = false
 local MostRecentChosenAnimation = ""
 local MostRecentChosenDict = ""
 local MovementType = 0
 local PlayerGender = "male"
 local PlayerHasProp = false
+local PlayerProps = {}
 local SecondPropEmote = false
 -- Option locals.
 --------------------------------------------------------------------------------------------------------------------------
