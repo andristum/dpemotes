@@ -691,10 +691,6 @@ DP.Emotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["smokeleanf"] = {"amb@world_human_leaning@female@smoke@idle_a", "idle_a", "Smoke Lean F", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
    ["stickup"] = {"random@countryside_gang_fight", "biker_02_stickup_loop", "Stick Up", AnimationOptions =
    {
        EmoteLoop = true,
@@ -1356,7 +1352,6 @@ DP.Emotes = {
        Prop = 'prop_notepad_01',
        PropBone = 18905,
        PropPlacement = {0.1, 0.02, 0.05, 10.0, 0.0, 0.0},
-       -- These spaces arent needed, just helps seperate everything to keep it a little clean
        SecondProp = 'prop_pencil_01',
        SecondPropBone = 58866,
        SecondPropPlacement = {0.11, -0.02, 0.001, -120.0, 0.0, 0.0},
@@ -1379,6 +1374,68 @@ DP.Emotes = {
        Prop = "prop_single_rose",
        PropBone = 18905,
        PropPlacement = {0.13, 0.15, 0.0, -100.0, 0.0, -20.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["smoke2"] = {"amb@world_human_aa_smoke@male@idle_a", "idle_c", "Smoke 2", AnimationOptions =
+   {
+       Prop = 'prop_cs_ciggy_01',
+       PropBone = 28422,
+       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["smoke3"] = {"amb@world_human_aa_smoke@male@idle_a", "idle_b", "Smoke 3", AnimationOptions =
+   {
+       Prop = 'prop_cs_ciggy_01',
+       PropBone = 28422,
+       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["smoke4"] = {"amb@world_human_smoking@female@idle_a", "idle_b", "Smoke 4", AnimationOptions =
+   {
+       Prop = 'prop_cs_ciggy_01',
+       PropBone = 18905,
+       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["bong"] = {"anim@safehouse@bong", "bong_stage3", "Bong", AnimationOptions =
+   {
+       Prop = 'hei_heist_sh_bong_01',
+       PropBone = 18905,
+       PropPlacement = {0.10,-0.25,0.0,95.0,190.0,180.0},
+   }},
+   ["suitcase"] = {"missheistdocksprep1hold_cellphone", "static", "Suitcase", AnimationOptions =
+   {
+       Prop = "prop_ld_suitcase_01",
+       PropBone = 57005,
+       PropPlacement = {0.39, 0.0, 0.0, 0.0, 266.0, 60.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["suitcase2"] = {"missheistdocksprep1hold_cellphone", "static", "Suitcase 3", AnimationOptions =
+   {
+       Prop = "prop_security_case_01",
+       PropBone = 57005,
+       PropPlacement = {0.10, 0.0, 0.0, 0.0, 280.0, 53.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["mugshot"] = {"mp_character_creation@customise@male_a", "loop", "Mugshot", AnimationOptions =
+   {
+       Prop = 'prop_police_id_board',
+       PropBone = 58868,
+       PropPlacement = {0.12, 0.24, 0.0, 5.0, 0.0, 70.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["coffee"] = {"amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Coffee", AnimationOptions =
+   {
+       Prop = 'p_amb_coffeecup_01',
+       PropBone = 28422,
+       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
        EmoteLoop = true,
        EmoteMoving = true,
    }},
