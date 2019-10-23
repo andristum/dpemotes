@@ -1458,7 +1458,7 @@ local SecondPropEmote = false
 --------------------------------------------------------------------------------------------------------------------------
 -- Set this to true to enable some extra prints, probably not very useful unless you are changing something with the code.
 -- And if you are you probably dont need me telling you what to enable/disable.
-local DebugDisplay = true
+local DebugDisplay = false
 --------------------------------------------------------------------------------------------------------------------------
 -- Set this to false if you have something else on X, and then just use /e c to cancel emotes.
 local EnableXtoCancel = true
