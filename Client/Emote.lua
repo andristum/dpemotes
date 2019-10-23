@@ -1458,7 +1458,7 @@ local SecondPropEmote = false
 --------------------------------------------------------------------------------------------------------------------------
 -- Set this to true to enable some extra prints, probably not very useful unless you are changing something with the code.
 -- And if you are you probably dont need me telling you what to enable/disable.
-local DebugDisplay = false
+local DebugDisplay = true
 --------------------------------------------------------------------------------------------------------------------------
 -- Set this to false if you have something else on X, and then just use /e c to cancel emotes.
 local EnableXtoCancel = true
@@ -1472,9 +1472,7 @@ Citizen.CreateThread(function()
 
     if IsInAnimation and EnableXtoCancel then
       if (IsControlPressed(0, 73)) then
-        ClearPedTasks(GetPlayerPed(-1))
-        DestroyAllProps()
-        IsInAnimation = false
+        EmoteCancel()
       end
     end
 
@@ -1498,6 +1496,10 @@ RegisterCommand('emotes', function(source, args, raw)
   EmotesOnCommand() -- If anyone has a better solution for this please let me know, copied a the pairsByKeys func from stackoverflow and it wokrs a little bit better
 end)
 
+RegisterCommand('emotemenu', function(source, args, raw)
+  OpenEmoteMenu() -- Currently only displays emotes (clicking on them doesnt do shit)
+end)
+
 AddEventHandler('onResourceStop', function(resource)
   if resource == GetCurrentResourceName() then
     DestroyAllProps()
@@ -1509,11 +1511,19 @@ end)
 ------ Functions and stuff --------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------
 
+function EmoteCancel()
+  if IsInAnimation then
+    ClearPedTasks(GetPlayerPed(-1))
+    DestroyAllProps()
+    IsInAnimation = false
+  end
+end
+
 function EmoteChatMessage(args)
   if args == display then
-    TriggerEvent("chatMessage", "^1Emotes^0", {0,0,0}, string.format(""))
+    TriggerEvent("chatMessage", "^3Emotes^0", {0,0,0}, string.format(""))
   else
-    TriggerEvent("chatMessage", "^1Emotes^0", {0,0,0}, string.format(""..args..""))
+    TriggerEvent("chatMessage", "^3Emotes^0", {0,0,0}, string.format(""..args..""))
   end
 end
 
@@ -1524,12 +1534,12 @@ function DebugPrint(args)
 end
 
 function EmotesOnCommand(source, args, raw)
-  EmoteChatMessage(display)
   local EmotesCommand = ""
   for a in pairsByKeys(DP.Emotes) do
     EmotesCommand = a .. ", ".. EmotesCommand
   end
   EmoteChatMessage(EmotesCommand)
+  EmoteChatMessage("Do /emotemenu for a menu (currently only displays emotes)")
 end
 
 function pairsByKeys (t, f)
@@ -1554,13 +1564,11 @@ function EmoteCommandStart(source, args, raw)
     if #args > 0 then
     local name = args[1]
     if name == "c" and IsInAnimation then
-      DestroyAllProps()
-      ClearPedTasks(GetPlayerPed(-1))
-      IsInAnimation = false
+      EmoteCancel()
       return
     elseif name == "help" then
       EmotesOnCommand()
-    end
+    return end
     if DP.Emotes[name] ~= nil then
       if OnEmotePlay(DP.Emotes[name]) then end
     else
