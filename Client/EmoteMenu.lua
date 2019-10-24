@@ -9,6 +9,7 @@ function ShowNotification(text)
 end
 
 local emotetable = {}
+local dancetable = {}
 local walktable = {}
 
 function AddWalkMenu(menu)
@@ -36,6 +37,8 @@ end
 
 function AddEmoteMenu(menu)
     local submenu = _menuPool:AddSubMenu(menu, "Emotes", "", "", "shopui_title_sm_hangar", "shopui_title_sm_hangar")
+    local dancemenu = _menuPool:AddSubMenu(submenu, "(Dances)", "", "", "shopui_title_sm_hangar", "shopui_title_sm_hangar")
+    table.insert(emotetable, "(Dances)")
 
     for a,b in pairsByKeys(DP.Emotes) do
       x,y,z = table.unpack(b)
@@ -44,8 +47,19 @@ function AddEmoteMenu(menu)
       table.insert(emotetable, a)
     end
 
+    for a,b in pairsByKeys(DP.Dances) do
+      x,y,z = table.unpack(b)
+      danceitem = NativeUI.CreateItem(z, "/e ("..a..")")
+      dancemenu:AddItem(danceitem)
+      table.insert(dancetable, a)
+    end
+
+    dancemenu.OnItemSelect = function(sender, item, index)
+      EmoteMenuStart(dancetable[index], "dances")
+    end
+
     submenu.OnItemSelect = function(sender, item, index)
-      EmoteMenuStart(emotetable[index])
+      EmoteMenuStart(emotetable[index], "emotes")
     end
 end
 

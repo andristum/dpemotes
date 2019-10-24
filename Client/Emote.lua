@@ -119,26 +119,47 @@ function pairsByKeys (t, f)
     return iter
 end
 
-function EmoteMenuStart(args)
+function EmoteMenuStart(args, hard)
     local name = args
-    if DP.Emotes[name] ~= nil then
-      if OnEmotePlay(DP.Emotes[name]) then end
-    else
-      EmoteChatMessage("'"..name.."' is not a valid emote")
+    local etype = hard
+
+    if etype == "dances" then
+        if DP.Dances[name] ~= nil then
+          if OnEmotePlay(DP.Dances[name]) then end
+        else
+          EmoteChatMessage("'"..name.."' is not a valid dance")
+        end
+    end
+
+    if etype == "emotes" then
+        if DP.Emotes[name] ~= nil then
+          if OnEmotePlay(DP.Emotes[name]) then end
+        else
+          if name ~= "(Dances)" then
+              EmoteChatMessage("'"..name.."' is not a valid emote")
+          end
+        end
     end
 end
 
 function EmoteCommandStart(source, args, raw)
     if #args > 0 then
     local name = args[1]
-    if name == "c" and IsInAnimation then
-      EmoteCancel()
+    if name == "c" then
+        if IsInAnimation then
+            EmoteCancel()
+        else
+            EmoteChatMessage("No emote to cancel")
+        end
       return
     elseif name == "help" then
       EmotesOnCommand()
     return end
+
     if DP.Emotes[name] ~= nil then
-      if OnEmotePlay(DP.Emotes[name]) then end
+      if OnEmotePlay(DP.Emotes[name]) then end return
+    elseif DP.Dances[name] ~= nil then
+      if OnEmotePlay(DP.Dances[name]) then end return
     else
       EmoteChatMessage("'"..name.."' is not a valid emote")
     end
