@@ -2467,7 +2467,10 @@ function UIMenu.New(Title, Subtitle, X, Y, TxtDictionary, TxtName)
                     {0, 24}, -- Attack
                 },
                 Keyboard = {
-                    {0, 203}, -- X
+                    {0, 249}, -- N
+                    {0, 306}, -- N
+                    {0, 305}, -- B
+                    {0, 203}, 
                     {0, 73}, -- X
                     {0, 0}, -- Camera
                     {0, 2}, -- Look Up and Down
