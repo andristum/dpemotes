@@ -89,7 +89,7 @@ function EmotesOnCommand(source, args, raw)
     EmotesCommand = EmotesCommand .. ""..a..", "
   end
   EmoteChatMessage(EmotesCommand)
-  EmoteChatMessage("Do /emotemenu for a menu (currently only displays emotes)")
+  EmoteChatMessage("Do /emotemenu for a menu")
 end
 
 function pairsByKeys (t, f)
