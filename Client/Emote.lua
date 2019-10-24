@@ -1478,6 +1478,8 @@ local PlayerGender = "male"
 local PlayerHasProp = false
 local PlayerProps = {}
 local SecondPropEmote = false
+local MenuKeybindEnabled = true
+local MenuKeybind = 170 -- Get the button number here https://docs.fivem.net/game-references/controls/
 -- Option locals.
 --------------------------------------------------------------------------------------------------------------------------
 -- Set this to true to enable some extra prints, probably not very useful unless you are changing something with the code.
@@ -1494,8 +1496,14 @@ local DisarmPlayer = false
 Citizen.CreateThread(function()
   while true do
 
+    if MenuKeybindEnabled then
+      if IsControlPressed(0, MenuKeybind) then
+        OpenEmoteMenu()
+      end
+    end
+
     if IsInAnimation and EnableXtoCancel then
-      if (IsControlPressed(0, 73)) then
+      if IsControlPressed(0, 73) then
         EmoteCancel()
       end
     end
