@@ -1440,6 +1440,30 @@ DP.Emotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
+   ["donut"] = {"mp_player_inteat@burger", "mp_player_int_eat_burger", "Donut", AnimationOptions =
+   {
+       Prop = 'prop_amb_donut',
+       PropBone = 18905,
+       PropPlacement = {0.13, 0.05, 0.02, -50.0, 16.0, 60.0},
+       EmoteMoving = true,
+       EmoteDuration = 2500
+   }},
+   ["soda"] = {"amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Coffee", AnimationOptions =
+   {
+       Prop = 'prop_ecola_can',
+       PropBone = 28422,
+       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 130.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["egobar"] = {"mp_player_inteat@burger", "mp_player_int_eat_burger", "Ego Bar", AnimationOptions =
+   {
+       Prop = 'prop_choc_ego',
+       PropBone = 60309,
+       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+       EmoteMoving = true,
+       EmoteDuration = 3500
+   }},
 }
 
 -- You probably shouldnt touch these.
