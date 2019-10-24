@@ -86,7 +86,7 @@ end
 function EmotesOnCommand(source, args, raw)
   local EmotesCommand = ""
   for a in pairsByKeys(DP.Emotes) do
-    EmotesCommand = a .. ", ".. EmotesCommand
+    EmotesCommand = EmotesCommand .. ""..a..", "
   end
   EmoteChatMessage(EmotesCommand)
   EmoteChatMessage("Do /emotemenu for a menu (currently only displays emotes)")
