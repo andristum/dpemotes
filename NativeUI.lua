@@ -2467,6 +2467,8 @@ function UIMenu.New(Title, Subtitle, X, Y, TxtDictionary, TxtName)
                     {0, 24}, -- Attack
                 },
                 Keyboard = {
+                    {0, 203}, -- X
+                    {0, 73}, -- X
                     {0, 0}, -- Camera
                     {0, 2}, -- Look Up and Down
                     {0, 1}, -- Look Left and Right
@@ -3632,13 +3634,13 @@ function MenuPool:Add(Menu)
 end
 
 function MenuPool:Clear()
-	self = {
-		Menus = {}
-	 }
+    self = {
+        Menus = {}
+     }
 end
 
 function MenuPool:Remove()
-	self = nil
+    self = nil
 end
 
 function MenuPool:MouseEdgeEnabled(bool)
