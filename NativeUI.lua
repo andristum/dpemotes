@@ -2880,7 +2880,7 @@ function UIMenu:ProcessControl()
                     self:GoUp()
                 end
                 self:UpdateScaleform()
-                Citizen.Wait(175)
+                Citizen.Wait(120)
                 while self.Controls.Up.Enabled and (IsDisabledControlPressed(0, 172) or IsDisabledControlPressed(1, 172) or IsDisabledControlPressed(2, 172) or IsDisabledControlPressed(0, 241) or IsDisabledControlPressed(1, 241) or IsDisabledControlPressed(2, 241) or IsDisabledControlPressed(2, 241)) do
                     if #self.Items > self.Pagination.Total + 1 then
                         self:GoUpOverflow()
@@ -2888,7 +2888,7 @@ function UIMenu:ProcessControl()
                         self:GoUp()
                     end
                     self:UpdateScaleform()
-                    Citizen.Wait(125)
+                    Citizen.Wait(50)
                 end
                 self.UpPressed = false
             end)
@@ -2905,7 +2905,7 @@ function UIMenu:ProcessControl()
                     self:GoDown()
                 end
                 self:UpdateScaleform()
-                Citizen.Wait(175)
+                Citizen.Wait(120)
                 while self.Controls.Down.Enabled and (IsDisabledControlPressed(0, 173) or IsDisabledControlPressed(1, 173) or IsDisabledControlPressed(2, 173) or IsDisabledControlPressed(0, 242) or IsDisabledControlPressed(1, 242) or IsDisabledControlPressed(2, 242)) do
                     if #self.Items > self.Pagination.Total + 1 then
                         self:GoDownOverflow()
@@ -2913,7 +2913,7 @@ function UIMenu:ProcessControl()
                         self:GoDown()
                     end
                     self:UpdateScaleform()
-                    Citizen.Wait(125)
+                    Citizen.Wait(50)
                 end
                 self.DownPressed = false
             end)
@@ -3631,13 +3631,13 @@ function MenuPool:Add(Menu)
 end
 
 function MenuPool:Clear()
-	self = {
-		Menus = {}
-	 }
+    self = {
+        Menus = {}
+     }
 end
 
 function MenuPool:Remove()
-	self = nil
+    self = nil
 end
 
 function MenuPool:MouseEdgeEnabled(bool)
