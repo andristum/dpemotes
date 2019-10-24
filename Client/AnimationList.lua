@@ -1544,4 +1544,20 @@ DP.Emotes = {
        EmoteMoving = true,
        EmoteLoop = true
    }},
+   ["cigar"] = {"mp_player_inteat@burger", "mp_player_int_eat_burger", "Cigar", AnimationOptions =
+   {
+       Prop = 'prop_cigar_02',
+       PropBone = 47419,
+       PropPlacement = {0.010, 0.0, 0.0, 50.0, 0.0, -80.0},
+       EmoteMoving = true,
+       EmoteDuration = 600
+   }},
+   ["cigar2"] = {"mp_player_inteat@burger", "mp_player_int_eat_burger", "Cigar 2", AnimationOptions =
+   {
+       Prop = 'prop_cigar_01',
+       PropBone = 47419,
+       PropPlacement = {0.010, 0.0, 0.0, 50.0, 0.0, -80.0},
+       EmoteMoving = true,
+       EmoteDuration = 600
+   }},
 }
