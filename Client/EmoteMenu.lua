@@ -22,7 +22,7 @@ function AddEmoteMenu(menu)
 
     submenu.OnItemSelect = function(sender, item, index)
       EmoteMenuStart(emotetable[index])
-  end
+    end
 end
 
 function AddEmoteSettingsMenu(menu)

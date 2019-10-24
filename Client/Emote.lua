@@ -60,8 +60,16 @@ end)
 -----------------------------------------------------------------------------------------------------
 ------ Functions and stuff --------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------
-
 function EmoteCancel()
+
+  if ChosenDict == "MaleScenario" then
+    ClearPedTasksImmediately(PlayerPedId())
+    DebugPrint("Forced scenario exit")
+  elseif ChosenDict == "Scenario" then
+    ClearPedTasksImmediately(PlayerPedId())
+    DebugPrint("Forced scenario exit")
+  end
+
   if IsInAnimation then
     ClearPedTasks(GetPlayerPed(-1))
     DestroyAllProps()
