@@ -161,7 +161,7 @@ DP.Emotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["foldarms2"] = {"anim@amb@nightclub@peds@", "rcmme_amanda1_stand_loop_cop", "Fold Arms 5", AnimationOptions =
+   ["foldarms2"] = {"anim@amb@nightclub@peds@", "rcmme_amanda1_stand_loop_cop", "Fold Arms 2", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
@@ -772,7 +772,7 @@ DP.Emotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["type4"] = {"mp_fbi_heist", "intro", "loop", "outro", "Type 4", AnimationOptions =
+   ["type4"] = {"mp_fbi_heist", "loop", "Type 4", AnimationOptions =
    {
        EmoteLoop = true,
    }},
@@ -1322,7 +1322,7 @@ DP.Emotes = {
    -- Sitchair is a litte special, since you want the player to be seated correctly.
    -- So we set it as "ScenarioObject" and do TaskStartScenarioAtPosition() instead of "AtPlace"
    ["sitchair"] = {"ScenarioObject", "PROP_HUMAN_SEAT_CHAIR_MP_PLAYER", "Sit Chair"},
-   ["smoke"] = {"MaleScenario", "WORLD_HUMAN_DRUG_DEALER", "Smoke 3"},
+   ["smoke"] = {"MaleScenario", "WORLD_HUMAN_DRUG_DEALER", "Smoke"},
    ["statue"] = {"Scenario", "WORLD_HUMAN_HUMAN_STATUE", "Statue"},
    ["sunbathe3"] = {"Scenario", "WORLD_HUMAN_SUNBATHE", "Sunbathe 3"},
    ["sunbatheback"] = {"Scenario", "WORLD_HUMAN_SUNBATHE_BACK", "Sunbathe Back"},
