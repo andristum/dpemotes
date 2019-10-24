@@ -777,7 +777,7 @@ DP.Emotes = {
    {
        EmoteLoop = true,
    }},
-   ["think5"] = {"mp_cp_welcome_tutthink", "b_think", "Think 5", AnimationOptions =
+   ["think4"] = {"mp_cp_welcome_tutthink", "b_think", "Think 4", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 2000,
@@ -1333,15 +1333,6 @@ DP.Emotes = {
        EmoteMoving = true,
    }},
    ["rabbit"] = {"random@peyote@rabbit", "wakeup", "Rabbit"},
-   ["spiderman"] = {"missexile3", "ex03_train_roof_idle", "Spider-Man", AnimationOptions =
-   {
-       EmoteLoop = true,
-   }},
-   ["boi"] = {"special_ped@jane@monologue_5@monologue_5c", "brotheradrianhasshown_2", "BOI", AnimationOptions =
-   {
-      EmoteMoving = true,
-      EmoteDuration = 3000,
-   }},
 
 -----------------------------------------------------------------------------------------------------------
 ------ These are Scenarios, some of these dont work on women and some other issues, but still good to have.
@@ -1568,52 +1559,5 @@ DP.Emotes = {
        PropPlacement = {0.010, 0.0, 0.0, 50.0, 0.0, -80.0},
        EmoteMoving = true,
        EmoteDuration = 600
-   }},
- -- CASINO DLC EMOTES (STREAMED)
-   ["karate"] = {"anim@mp_player_intcelebrationfemale@karate_chops", "karate_chops", "Karate"},
-   ["karate2"] = {"anim@mp_player_intcelebrationmale@karate_chops", "karate_chops", "Karate 2"},
-   ["cutthroat"] = {"anim@mp_player_intcelebrationmale@cut_throat", "cut_throat", "Cut Throat"},
-   ["cutthroat2"] = {"anim@mp_player_intcelebrationfemale@cut_throat", "cut_throat", "Cut Throat 2"},
-   ["mindblown"] = {"anim@mp_player_intcelebrationmale@mind_blown", "mind_blown", "Mind Blown", AnimationOptions =
-   {
-       EmoteMoving = true,
-       EmoteDuration = 4000
-   }},
-   ["mindblown2"] = {"anim@mp_player_intcelebrationfemale@mind_blown", "mind_blown", "Mind Blown 2", AnimationOptions =
-   {
-       EmoteMoving = true,
-       EmoteDuration = 4000
-   }},
-   ["boxing"] = {"anim@mp_player_intcelebrationmale@shadow_boxing", "shadow_boxing", "Boxing", AnimationOptions =
-   {
-       EmoteMoving = true,
-       EmoteDuration = 4000
-   }},
-   ["boxing2"] = {"anim@mp_player_intcelebrationfemale@shadow_boxing", "shadow_boxing", "Boxing 2", AnimationOptions =
-   {
-       EmoteMoving = true,
-       EmoteDuration = 4000
-   }},
-   ["stink"] = {"anim@mp_player_intcelebrationfemale@stinker", "stink", "Stink", AnimationOptions =
-   {
-       EmoteMoving = true,
-       EmoteLoop = true
-   }},
-   ["think4"] = {"anim@amb@casino@hangout@ped_male@stand@02b@idles", "idle_a", "Think 4", AnimationOptions =
-   {
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
-   ["dance18"] = {"anim@mp_player_intcelebrationfemale@the_woogie", "the_woogie", "Dance 18", AnimationOptions =
-   {
-       EmoteLoop = true
-   }},
-   ["dance19"] = {"anim@amb@casino@mini@dance@dance_solo@female@var_b@", "high_center", "Dance 19", AnimationOptions =
-   {
-       EmoteLoop = true
-   }},
-   ["dance20"] = {"anim@amb@casino@mini@dance@dance_solo@female@var_a@", "med_center", "Dance 20", AnimationOptions =
-   {
-       EmoteLoop = true
    }},
 }

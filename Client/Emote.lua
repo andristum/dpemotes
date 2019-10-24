@@ -218,10 +218,6 @@ function OnEmotePlay(EmoteName)
   ChosenDict,ChosenAnimation,ename = table.unpack(EmoteName)
   AnimationDuration = -1
 
-  if PlayerHasProp then
-    DestroyAllProps()
-  end
-
   if ChosenDict == "MaleScenario" or "Scenario" then
     CheckGender()
     if ChosenDict == "MaleScenario" then
@@ -248,6 +244,10 @@ function OnEmotePlay(EmoteName)
       DebugPrint("Playing scenario = ("..ChosenAnimation..")")
       IsInAnimation = true
     return end 
+  end
+
+  if PlayerHasProp then
+    DestroyAllProps()
   end
 
     LoadAnim(ChosenDict)
