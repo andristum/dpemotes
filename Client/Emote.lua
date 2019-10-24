@@ -1448,7 +1448,7 @@ DP.Emotes = {
        EmoteMoving = true,
        EmoteDuration = 2500
    }},
-   ["soda"] = {"amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Coffee", AnimationOptions =
+   ["soda"] = {"amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Soda", AnimationOptions =
    {
        Prop = 'prop_ecola_can',
        PropBone = 28422,
@@ -1521,7 +1521,7 @@ RegisterCommand('emotes', function(source, args, raw)
 end)
 
 RegisterCommand('emotemenu', function(source, args, raw)
-  OpenEmoteMenu() -- Currently only displays emotes (clicking on them doesnt do shit)
+  OpenEmoteMenu()
 end)
 
 AddEventHandler('onResourceStop', function(resource)
@@ -1582,6 +1582,15 @@ function pairsByKeys (t, f)
         end
     end
     return iter
+end
+
+function EmoteMenuStart(args)
+    local name = args
+    if DP.Emotes[name] ~= nil then
+      if OnEmotePlay(DP.Emotes[name]) then end
+    else
+      EmoteChatMessage("'"..name.."' is not a valid emote")
+    end
 end
 
 function EmoteCommandStart(source, args, raw)

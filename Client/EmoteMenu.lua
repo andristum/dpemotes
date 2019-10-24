@@ -8,15 +8,21 @@ function ShowNotification(text)
     DrawNotification(false, false)
 end
 
+local emotetable = {}
 
 function AddEmoteMenu(menu)
-    local submenu = _menuPool:AddSubMenu(menu, "dp Emotes", "", "", "shopui_title_sm_hangar", "shopui_title_sm_hangar")
+    local submenu = _menuPool:AddSubMenu(menu, "Emotes", "", "", "shopui_title_sm_hangar", "shopui_title_sm_hangar")
 
     for a,b in pairsByKeys(DP.Emotes) do
       x,y,z = table.unpack(b)
-      emoteitem = NativeUI.CreateItem(z, "/emote ("..a..") ")
-      submenu:AddItem(emoteitem)  
-    end 
+      emoteitem = NativeUI.CreateItem(z, "/e ("..a..")")
+      submenu:AddItem(emoteitem)
+      table.insert(emotetable, a)
+    end
+
+    submenu.OnItemSelect = function(sender, item, index)
+      EmoteMenuStart(emotetable[index])
+  end
 end
 
 function AddEmoteSettingsMenu(menu)
