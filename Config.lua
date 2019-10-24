@@ -7,5 +7,7 @@ Config = {
 	DisarmPlayer= false,
 -- You can disable the (F3) menu here / change the keybind
 	MenuKeybindEnabled = true,
+-- You can disable the Walking Styles menu here.
+	WalkingStylesEnabled = true,
 	MenuKeybind = 170 -- Get the button number here https://docs.fivem.net/game-references/controls/
 }

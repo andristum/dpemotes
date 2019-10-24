@@ -9,6 +9,30 @@ function ShowNotification(text)
 end
 
 local emotetable = {}
+local walktable = {}
+
+function AddWalkMenu(menu)
+    local submenu = _menuPool:AddSubMenu(menu, "Walking Styles", "", "", "shopui_title_sm_hangar", "shopui_title_sm_hangar")
+
+    walkreset = NativeUI.CreateItem("Reset to default", "Reset to default")
+    submenu:AddItem(walkreset)
+    table.insert(walktable, "Reset to default")
+
+    walkinjured = NativeUI.CreateItem("Injured", "")
+    submenu:AddItem(walkinjured)
+    table.insert(walktable, "move_m@injured")
+
+    for a,b in pairsByKeys(DP.Walks) do
+      x = table.unpack(b)
+      walkitem = NativeUI.CreateItem(a, "")
+      submenu:AddItem(walkitem)
+      table.insert(walktable, x)
+    end
+
+    submenu.OnItemSelect = function(sender, item, index)
+      WalkMenuStart(walktable[index])
+    end
+end
 
 function AddEmoteMenu(menu)
     local submenu = _menuPool:AddSubMenu(menu, "Emotes", "", "", "shopui_title_sm_hangar", "shopui_title_sm_hangar")
@@ -40,8 +64,16 @@ function OpenEmoteMenu()
     mainMenu:Visible(not mainMenu:Visible())
 end
 
+
+function firstToUpper(str)
+    return (str:gsub("^%l", string.upper))
+end
+
 AddEmoteMenu(mainMenu)
 AddEmoteSettingsMenu(mainMenu)
+if Config.WalkingStylesEnabled then
+  AddWalkMenu(mainMenu)
+end
 _menuPool:RefreshIndex()
 
 Citizen.CreateThread(function()
@@ -50,3 +82,4 @@ Citizen.CreateThread(function()
         _menuPool:ProcessMenus()
     end
 end)
+
