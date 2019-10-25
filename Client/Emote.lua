@@ -20,7 +20,7 @@ Citizen.CreateThread(function()
       end
     end
 
-    if IsInAnimation and Config.EnableXtoCancel then
+    if Config.EnableXtoCancel then
       if IsControlPressed(0, 73) then
         EmoteCancel()
       end
@@ -129,13 +129,17 @@ function EmoteMenuStart(args, hard)
         else
           EmoteChatMessage("'"..name.."' is not a valid dance")
         end
-    end
-
-    if etype == "emotes" then
+    elseif etype == "props" then
+        if DP.PropEmotes[name] ~= nil then
+          if OnEmotePlay(DP.PropEmotes[name]) then end
+        else
+          EmoteChatMessage("'"..name.."' is not a valid emote")
+        end
+    elseif etype == "emotes" then
         if DP.Emotes[name] ~= nil then
           if OnEmotePlay(DP.Emotes[name]) then end
         else
-          if name ~= "🕺 Dances" then
+          if name ~= "🕺 Dance Emotes" then
               EmoteChatMessage("'"..name.."' is not a valid emote")
           end
         end
@@ -143,6 +147,7 @@ function EmoteMenuStart(args, hard)
 end
 
 function EmoteCommandStart(source, args, raw)
+    print(args)
     if #args > 0 then
     local name = args[1]
     if name == "c" then
@@ -160,6 +165,8 @@ function EmoteCommandStart(source, args, raw)
       if OnEmotePlay(DP.Emotes[name]) then end return
     elseif DP.Dances[name] ~= nil then
       if OnEmotePlay(DP.Dances[name]) then end return
+    elseif DP.PropEmotes[name] ~= nil then
+      if OnEmotePlay(DP.PropEmotes[name]) then end return
     else
       EmoteChatMessage("'"..name.."' is not a valid emote")
     end

@@ -4,35 +4,47 @@ DP.Walks = {
   ["Arrogant"] = {"move_f@arrogant@a"},
   ["Ballistic Suit"] = {"anim_group_move_ballistic"},
   ["Brave"] = {"move_m@brave"},
-  ["Casual"] = {"move_m@casual@d"},
+  ["Casual"] = {"move_m@casual@a"},
+  ["Casual2"] = {"move_m@casual@b"},
+  ["Casual3"] = {"move_m@casual@c"},
+  ["Casual4"] = {"move_m@casual@d"},
+  ["Casual5"] = {"move_m@casual@e"},
+  ["Casual6"] = {"move_m@casual@f"},
   ["Chichi"] = {"move_f@chichi"},
+  ["Confident"] = {"move_m@confident"},
+  ["Cop"] = {"move_m@business@a"},
+  ["Cop2"] = {"move_m@business@b"},
+  ["Cop3"] = {"move_m@business@c"},
   ["Drunk Buzzed"] = {"move_m@buzzed"},
   ["Drunk Slightly"] = {"move_m@drunk@slightlydrunk"},
   ["Drunk Very"] = {"move_m@drunk@verydrunk"},
   ["Drunk"] = {"move_m@drunk@a"},
+  ["Fake Handcuffs"] = {"move_m@prisoner_cuffed"},
   ["Fast Runner"] = {"female_fast_runner"},
   ["Femme"] = {"move_f@femme@"},
-  ["Fire 2"] = {"move_characters@michael@fire"},
-  ["Fire 3"] = {"move_m@fire"},
   ["Fire"] = {"move_characters@franklin@fire"},
+  ["Fire2"] = {"move_characters@michael@fire"},
+  ["Fire3"] = {"move_m@fire"},
   ["Flee"] = {"move_f@flee@a"},
   ["Franklin"] = {"move_p_m_one"},
-  ["Gangster 2"] = {"move_m@gangster@ng"},
-  ["Gangster 3"] = {"move_m@gangster@var_e"},
-  ["Gangster 4"] = {"move_m@gangster@var_f"},
-  ["Gangster 5"] = {"move_m@gangster@var_i"},
   ["Gangster"] = {"move_m@gangster@generic"},
+  ["Gangster2"] = {"move_m@gangster@ng"},
+  ["Gangster3"] = {"move_m@gangster@var_e"},
+  ["Gangster4"] = {"move_m@gangster@var_f"},
+  ["Gangster5"] = {"move_m@gangster@var_i"},
+  ["Grooving"] = {"anim@move_m@grooving@"},
   ["Guard"] = {"move_m@prison_gaurd"},
-  ["Heels 2"] = {"move_f@heels@d"},
   ["Heels"] = {"move_f@heels@c"},
+  ["Heels2"] = {"move_f@heels@d"},
+  ["Hipster"] = {"move_m@hipster@a"},
   ["Hobo"] = {"move_m@hobo@a"},
   ["Hurry"] = {"move_f@hurry@a"},
-  ["Janitor 2"] = {"move_p_m_zero_slow"},
   ["Janitor"] = {"move_p_m_zero_janitor"},
+  ["Janitor2"] = {"move_p_m_zero_slow"},
   ["Jog"] = {"move_m@jog@"},
   ["Lemar"] = {"anim_group_move_lemar_alley"},
-  ["Lester 2"] = {"move_lester_caneup"},
   ["Lester"] = {"move_heist_lester"},
+  ["Lester2"] = {"move_lester_caneup"},
   ["Maneater"] = {"move_f@maneater"},
   ["Michael"] = {"move_ped_bucket"},
   ["Money"] = {"move_m@money"},
@@ -40,8 +52,8 @@ DP.Walks = {
   ["Posh Guy"] = {"move_m@posh@"},
   ["Quick"] = {"move_m@quick"},
   ["Sad"] = {"move_m@sad@a"},
-  ["Sassy 2"] = {"move_f@sassy"},
   ["Sassy"] = {"move_m@sassy"},
+  ["Sassy2"] = {"move_f@sassy"},
   ["Scared"] = {"move_f@scared"},
   ["Sexy"] = {"move_f@sexy@a"},
   ["Shady"] = {"move_m@shadyped@a"},
@@ -49,10 +61,20 @@ DP.Walks = {
   ["Swagger"] = {"move_m@swagger"},
   ["Tough Girl"] = {"move_f@tough_guy@"},
   ["Tough Guy"] = {"move_m@tough_guy@"},
-  ["Trash 2"] = {"missfbi4prepp1_garbageman"},
   ["Trash"] = {"clipset@move@trash_fast_turn"},
+  ["Trash2"] = {"missfbi4prepp1_garbageman"},
   ["Trevor"] = {"move_p_m_two"},
   ["Wide"] = {"move_m@bag"},
+  -- I cant get these to work for some reason, if anyone knows a fix lmk
+  --["Caution"] = {"move_m@caution"},
+  --["Chubby"] = {"anim@move_m@chubby@a"},
+  --["Crazy"] = {"move_m@crazy"},
+  --["Joy"] = {"move_m@joy@a"},
+  --["Power"] = {"move_m@power"},
+  --["Sad2"] = {"anim@move_m@depression@a"},
+  --["Sad3"] = {"move_m@depression@b"},
+  --["Sad4"] = {"move_m@depression@d"},
+  --["Wading"] = {"move_m@wading"},
 }
 
 DP.Dances = {
@@ -1409,11 +1431,44 @@ DP.Emotes = {
    ["weld"] = {"Scenario", "WORLD_HUMAN_WELDING", "Weld"},
    ["windowshop"] = {"Scenario", "WORLD_HUMAN_WINDOW_SHOP_BROWSE", "Window Shop"},
    ["yoga"] = {"Scenario", "WORLD_HUMAN_YOGA", "Yoga"},
+   -- CASINO DLC EMOTES (STREAMED)
+   ["karate"] = {"anim@mp_player_intcelebrationfemale@karate_chops", "karate_chops", "Karate"},
+   ["karate2"] = {"anim@mp_player_intcelebrationmale@karate_chops", "karate_chops", "Karate 2"},
+   ["cutthroat"] = {"anim@mp_player_intcelebrationmale@cut_throat", "cut_throat", "Cut Throat"},
+   ["cutthroat2"] = {"anim@mp_player_intcelebrationfemale@cut_throat", "cut_throat", "Cut Throat 2"},
+   ["mindblown"] = {"anim@mp_player_intcelebrationmale@mind_blown", "mind_blown", "Mind Blown", AnimationOptions =
+   {
+       EmoteMoving = true,
+       EmoteDuration = 4000
+   }},
+   ["mindblown2"] = {"anim@mp_player_intcelebrationfemale@mind_blown", "mind_blown", "Mind Blown 2", AnimationOptions =
+   {
+       EmoteMoving = true,
+       EmoteDuration = 4000
+   }},
+   ["boxing"] = {"anim@mp_player_intcelebrationmale@shadow_boxing", "shadow_boxing", "Boxing", AnimationOptions =
+   {
+       EmoteMoving = true,
+       EmoteDuration = 4000
+   }},
+   ["boxing2"] = {"anim@mp_player_intcelebrationfemale@shadow_boxing", "shadow_boxing", "Boxing 2", AnimationOptions =
+   {
+       EmoteMoving = true,
+       EmoteDuration = 4000
+   }},
+   ["stink"] = {"anim@mp_player_intcelebrationfemale@stinker", "stink", "Stink", AnimationOptions =
+   {
+       EmoteMoving = true,
+       EmoteLoop = true
+   }},
+   ["think4"] = {"anim@amb@casino@hangout@ped_male@stand@02b@idles", "idle_a", "Think 4", AnimationOptions =
+   {
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+}
 
------------------------------------------------------------------------------------------------------
------- This is where i seperate the emotes with props to keep it a little sorted, trust me it helps.
------------------------------------------------------------------------------------------------------
-
+DP.PropEmotes = {
    ["umbrella"] = {"amb@world_human_drinking@coffee@male@base", "base", "Umbrella", AnimationOptions =
    {
        Prop = "p_amb_brolly_01",
@@ -1496,7 +1551,7 @@ DP.Emotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["suitcase2"] = {"missheistdocksprep1hold_cellphone", "static", "Suitcase 3", AnimationOptions =
+   ["suitcase2"] = {"missheistdocksprep1hold_cellphone", "static", "Suitcase 2", AnimationOptions =
    {
        Prop = "prop_security_case_01",
        PropBone = 57005,
@@ -1583,40 +1638,5 @@ DP.Emotes = {
        PropPlacement = {0.010, 0.0, 0.0, 50.0, 0.0, -80.0},
        EmoteMoving = true,
        EmoteDuration = 600
-   }},
- -- CASINO DLC EMOTES (STREAMED)
-   ["karate"] = {"anim@mp_player_intcelebrationfemale@karate_chops", "karate_chops", "Karate"},
-   ["karate2"] = {"anim@mp_player_intcelebrationmale@karate_chops", "karate_chops", "Karate 2"},
-   ["cutthroat"] = {"anim@mp_player_intcelebrationmale@cut_throat", "cut_throat", "Cut Throat"},
-   ["cutthroat2"] = {"anim@mp_player_intcelebrationfemale@cut_throat", "cut_throat", "Cut Throat 2"},
-   ["mindblown"] = {"anim@mp_player_intcelebrationmale@mind_blown", "mind_blown", "Mind Blown", AnimationOptions =
-   {
-       EmoteMoving = true,
-       EmoteDuration = 4000
-   }},
-   ["mindblown2"] = {"anim@mp_player_intcelebrationfemale@mind_blown", "mind_blown", "Mind Blown 2", AnimationOptions =
-   {
-       EmoteMoving = true,
-       EmoteDuration = 4000
-   }},
-   ["boxing"] = {"anim@mp_player_intcelebrationmale@shadow_boxing", "shadow_boxing", "Boxing", AnimationOptions =
-   {
-       EmoteMoving = true,
-       EmoteDuration = 4000
-   }},
-   ["boxing2"] = {"anim@mp_player_intcelebrationfemale@shadow_boxing", "shadow_boxing", "Boxing 2", AnimationOptions =
-   {
-       EmoteMoving = true,
-       EmoteDuration = 4000
-   }},
-   ["stink"] = {"anim@mp_player_intcelebrationfemale@stinker", "stink", "Stink", AnimationOptions =
-   {
-       EmoteMoving = true,
-       EmoteLoop = true
-   }},
-   ["think4"] = {"anim@amb@casino@hangout@ped_male@stand@02b@idles", "idle_a", "Think 4", AnimationOptions =
-   {
-       EmoteLoop = true,
-       EmoteMoving = true,
    }},
 }

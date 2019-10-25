@@ -8,10 +8,10 @@ function ShowNotification(text)
     DrawNotification(false, false)
 end
 
-
 local EmoteTable = {}
 local FavEmoteTable = {}
 local DanceTable = {}
+local PropETable = {}
 local WalkTable = {}
 local FavoriteEmote = ""
 
@@ -21,7 +21,7 @@ Citizen.CreateThread(function()
       if IsControlPressed(0, Config.FavKeybind) then
         if not IsPedSittingInAnyVehicle(PlayerPedId()) then
           if FavoriteEmote ~= "" then
-            EmoteMenuStart(FavoriteEmote, "emotes")
+            EmoteCommandStart(nil,{FavoriteEmote, 0})
             Wait(3000)
           end
         end
@@ -56,13 +56,18 @@ end
 
 function AddEmoteMenu(menu)
     local submenu = _menuPool:AddSubMenu(menu, "Emotes", "", "", "shopui_title_sm_hangar", "shopui_title_sm_hangar")
-    local dancemenu = _menuPool:AddSubMenu(submenu, "🕺 Dances", "", "", "shopui_title_sm_hangar", "shopui_title_sm_hangar")
+    local dancemenu = _menuPool:AddSubMenu(submenu, "🕺 Dance Emotes", "", "", "shopui_title_sm_hangar", "shopui_title_sm_hangar")
+    local propmenu = _menuPool:AddSubMenu(submenu, "📦 Prop Emotes", "", "", "shopui_title_sm_hangar", "shopui_title_sm_hangar")
     local favmenu = _menuPool:AddSubMenu(submenu, "🌟 Keybind", "Select an emote here to set it as your bound emote.", "", "shopui_title_sm_hangar", "shopui_title_sm_hangar")
-    unbinditem = NativeUI.CreateItem("Reset keybind", "Reset keybind")
+    unbind2item = NativeUI.CreateItem("Reset keybind", "Reset keybind")
+    unbinditem = NativeUI.CreateItem("❓ Prop Emotes can be located at the end", "Reset keybind")
     favmenu:AddItem(unbinditem)
+    favmenu:AddItem(unbind2item)
     table.insert(FavEmoteTable, "Reset keybind")
-    table.insert(EmoteTable, "🕺 Dances")
+    table.insert(FavEmoteTable, "Reset keybind")
+    table.insert(EmoteTable, "🕺 Dance Emotes")
     table.insert(EmoteTable, "🌟 Keybind")
+    table.insert(EmoteTable, "🕺 Dance Emotes")
 
     for a,b in pairsByKeys(DP.Emotes) do
       x,y,z = table.unpack(b)
@@ -81,6 +86,16 @@ function AddEmoteMenu(menu)
       table.insert(DanceTable, a)
     end
 
+    for a,b in pairsByKeys(DP.PropEmotes) do
+      x,y,z = table.unpack(b)
+      propitem = NativeUI.CreateItem(z, "/e ("..a..")")
+      propfavitem = NativeUI.CreateItem(z, "Set ("..z..") to be your bound emote?")
+      propmenu:AddItem(propitem)
+      favmenu:AddItem(propfavitem)
+      table.insert(PropETable, a)
+      table.insert(FavEmoteTable, a)
+    end
+
     favmenu.OnItemSelect = function(sender, item, index)
       if FavEmoteTable[index] == "Reset keybind" then
         FavoriteEmote = ""
@@ -95,6 +110,10 @@ function AddEmoteMenu(menu)
 
     dancemenu.OnItemSelect = function(sender, item, index)
       EmoteMenuStart(DanceTable[index], "dances")
+    end
+
+    propmenu.OnItemSelect = function(sender, item, index)
+      EmoteMenuStart(PropETable[index], "props")
     end
 
     submenu.OnItemSelect = function(sender, item, index)
