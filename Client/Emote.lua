@@ -135,7 +135,7 @@ function EmoteMenuStart(args, hard)
         if DP.Emotes[name] ~= nil then
           if OnEmotePlay(DP.Emotes[name]) then end
         else
-          if name ~= "(Dances)" then
+          if name ~= "🕺 Dances" then
               EmoteChatMessage("'"..name.."' is not a valid emote")
           end
         end
