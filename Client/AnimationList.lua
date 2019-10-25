@@ -407,7 +407,7 @@ DP.Emotes = {
        EmoteMoving = true,
        EmoteDuration = 1000
    }},
-   ["droptoknees"] = {"random@arrests@busted", "idle_a", "Drop to Knees", AnimationOptions =
+   ["surrender"] = {"random@arrests@busted", "idle_a", "Surrender", AnimationOptions =
    {
        EmoteLoop = true,
    }},
@@ -1375,6 +1375,11 @@ DP.Emotes = {
        EmoteLoop = true,
    }},
    ["boi"] = {"special_ped@jane@monologue_5@monologue_5c", "brotheradrianhasshown_2", "BOI", AnimationOptions =
+   {
+      EmoteMoving = true,
+      EmoteDuration = 3000,
+   }},
+   ["adjust"] = {"missmic4", "michael_tux_fidget", "Adjust", AnimationOptions =
    {
       EmoteMoving = true,
       EmoteDuration = 3000,
