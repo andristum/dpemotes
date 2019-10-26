@@ -13,6 +13,8 @@ Config = {
 -- You can disable the Ragdoll keybinding here.
 	RagdollEnabled = true,
 	RagdollKeybind = 303,
+-- You can change the menu position here
+	MenuPosition = "right", -- (left, right)
 -- You can disable the Walking Styles menu here.
 	WalkingStylesEnabled = true,
 	MenuKeybind = 170 -- Get the button number here https://docs.fivem.net/game-references/controls/

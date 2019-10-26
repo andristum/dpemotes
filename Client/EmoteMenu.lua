@@ -1,5 +1,17 @@
+rightPosition = {x = 1450, y = 100}
+leftPosition = {x = 0, y = 100}
+menuPosition = {x = 0, y = 200}
+
+if Config.MenuPosition then
+  if Config.MenuPosition == "left" then
+    menuPosition = leftPosition
+  elseif Config.MenuPosition == "right" then
+    menuPosition = rightPosition
+  end
+end
+
 _menuPool = NativeUI.CreatePool()
-mainMenu = NativeUI.CreateMenu("", "dp Emotes", "", "", "shopui_title_sm_hangar", "shopui_title_sm_hangar")
+mainMenu = NativeUI.CreateMenu("", "dp Emotes", menuPosition["x"], menuPosition["y"], "shopui_title_sm_hangar", "shopui_title_sm_hangar")
 _menuPool:Add(mainMenu)
 
 function ShowNotification(text)
