@@ -92,6 +92,7 @@ function DebugPrint(args)
   end
 end
 
+
 function EmotesOnCommand(source, args, raw)
   local EmotesCommand = ""
   for a in pairsByKeys(DP.Emotes) do
@@ -254,7 +255,6 @@ function OnEmotePlay(EmoteName)
     if ChosenDict == "MaleScenario" then
       if PlayerGender == "male" then
         ClearPedTasks(GetPlayerPed(-1))
-        Wait(100)
         TaskStartScenarioInPlace(GetPlayerPed(-1), ChosenAnimation, 0, true)
         DebugPrint("Playing scenario = ("..ChosenAnimation..")")
         IsInAnimation = true
@@ -264,13 +264,12 @@ function OnEmotePlay(EmoteName)
     elseif ChosenDict == "ScenarioObject" then
       BehindPlayer = GetOffsetFromEntityInWorldCoords(PlayerPedId(), 0.0, 0 - 0.5, -0.5);
       ClearPedTasks(GetPlayerPed(-1))
-      Wait(100)
       TaskStartScenarioAtPosition(GetPlayerPed(-1), ChosenAnimation, BehindPlayer['x'], BehindPlayer['y'], BehindPlayer['z'], GetEntityHeading(PlayerPedId()), 0, 1, false)
       DebugPrint("Playing scenario = ("..ChosenAnimation..")")
       IsInAnimation = true
+      return
     elseif ChosenDict == "Scenario" then
       ClearPedTasks(GetPlayerPed(-1))
-      Wait(100)
       TaskStartScenarioInPlace(GetPlayerPed(-1), ChosenAnimation, 0, true)
       DebugPrint("Playing scenario = ("..ChosenAnimation..")")
       IsInAnimation = true

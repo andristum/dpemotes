@@ -1040,7 +1040,7 @@ DP.Emotes = {
    ["whistle"] = {"taxi_hail", "hail_taxi", "Whistle", AnimationOptions =
    {
        EmoteMoving = true,
-       EmoteDuration = 2000,
+       EmoteDuration = 1300,
    }},
    ["whistle2"] = {"rcmnigel1c", "hailing_whistle_waive_a", "Whistle 2", AnimationOptions =
    {
@@ -1382,7 +1382,7 @@ DP.Emotes = {
    ["adjust"] = {"missmic4", "michael_tux_fidget", "Adjust", AnimationOptions =
    {
       EmoteMoving = true,
-      EmoteDuration = 3000,
+      EmoteDuration = 4000,
    }},
 
 -----------------------------------------------------------------------------------------------------------
@@ -1537,7 +1537,7 @@ DP.PropEmotes = {
    ["smoke4"] = {"amb@world_human_smoking@female@idle_a", "idle_b", "Smoke 4", AnimationOptions =
    {
        Prop = 'prop_cs_ciggy_01',
-       PropBone = 18905,
+       PropBone = 28422,
        PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
        EmoteLoop = true,
        EmoteMoving = true,
