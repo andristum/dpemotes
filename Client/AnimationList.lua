@@ -1644,4 +1644,28 @@ DP.PropEmotes = {
        EmoteMoving = true,
        EmoteDuration = 600
    }},
+   ["guitar"] = {"amb@world_human_musician@guitar@male@idle_a", "idle_b", "Guitar", AnimationOptions =
+   {
+       Prop = 'prop_acc_guitar_01',
+       PropBone = 24818,
+       PropPlacement = {-0.1, 0.31, 0.1, 0.0, 20.0, 150.0},
+       EmoteMoving = true,
+       EmoteLoop = true
+   }},
+   ["guitar2"] = {"amb@world_human_musician@guitar@male@idle_a", "idle_b", "Guitar 2", AnimationOptions =
+   {
+       Prop = 'prop_el_guitar_03',
+       PropBone = 24818,
+       PropPlacement = {-0.1, 0.31, 0.1, 0.0, 20.0, 150.0},
+       EmoteMoving = true,
+       EmoteLoop = true
+   }},
+   ["guitar3"] = {"amb@world_human_musician@guitar@male@idle_a", "idle_b", "Guitar 3", AnimationOptions =
+   {
+       Prop = 'prop_el_guitar_01',
+       PropBone = 24818,
+       PropPlacement = {-0.1, 0.31, 0.1, 0.0, 20.0, 150.0},
+       EmoteMoving = true,
+       EmoteLoop = true
+   }},
 }
