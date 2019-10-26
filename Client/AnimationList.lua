@@ -1384,6 +1384,11 @@ DP.Emotes = {
       EmoteMoving = true,
       EmoteDuration = 4000,
    }},
+   ["handsup"] = {"missminuteman_1ig_2", "handsup_base", "Hands Up", AnimationOptions =
+   {
+      EmoteMoving = true,
+      EmoteLoop = true,
+   }},
 
 -----------------------------------------------------------------------------------------------------------
 ------ These are Scenarios, some of these dont work on women and some other issues, but still good to have.
@@ -1398,7 +1403,7 @@ DP.Emotes = {
    ["camera"] = {"MaleScenario", "WORLD_HUMAN_PAPARAZZI", "Camera"},
    ["cheer"] = {"Scenario", "WORLD_HUMAN_CHEERING", "Cheer"},
    ["chinup"] = {"Scenario", "PROP_HUMAN_MUSCLE_CHIN_UPS", "Chinup"},
-   ["clipboard"] = {"MaleScenario", "WORLD_HUMAN_CLIPBOARD", "Clipboard"},
+   ["clipboard2"] = {"MaleScenario", "WORLD_HUMAN_CLIPBOARD", "Clipboard 2"},
    ["cop"] = {"Scenario", "WORLD_HUMAN_COP_IDLES", "Cop"},
    ["copbeacon"] = {"MaleScenario", "WORLD_HUMAN_CAR_PARK_ATTENDANT", "Cop Beacon"},
    ["filmshocking"] = {"Scenario", "WORLD_HUMAN_MOBILE_FILM_SHOCKING", "Film Shocking"},
@@ -1580,13 +1585,45 @@ DP.PropEmotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
+   ["beer"] = {"amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Beer", AnimationOptions =
+   {
+       Prop = 'prop_amb_beer_bottle',
+       PropBone = 28422,
+       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["cup"] = {"amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Cup", AnimationOptions =
+   {
+       Prop = 'prop_plastic_cup_02',
+       PropBone = 28422,
+       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
    ["donut"] = {"mp_player_inteat@burger", "mp_player_int_eat_burger", "Donut", AnimationOptions =
    {
        Prop = 'prop_amb_donut',
        PropBone = 18905,
        PropPlacement = {0.13, 0.05, 0.02, -50.0, 16.0, 60.0},
        EmoteMoving = true,
-       EmoteDuration = 2500
+       EmoteDuration = 4500
+   }},
+   ["burger"] = {"mp_player_inteat@burger", "mp_player_int_eat_burger", "Burger", AnimationOptions =
+   {
+       Prop = 'prop_cs_burger_01',
+       PropBone = 18905,
+       PropPlacement = {0.13, 0.05, 0.02, -50.0, 16.0, 60.0},
+       EmoteMoving = true,
+       EmoteDuration = 4500
+   }},
+   ["sandwich"] = {"mp_player_inteat@burger", "mp_player_int_eat_burger", "Sandwich", AnimationOptions =
+   {
+       Prop = 'prop_sandwich_01',
+       PropBone = 18905,
+       PropPlacement = {0.13, 0.05, 0.02, -50.0, 16.0, 60.0},
+       EmoteMoving = true,
+       EmoteDuration = 4500
    }},
    ["soda"] = {"amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Soda", AnimationOptions =
    {
@@ -1665,6 +1702,46 @@ DP.PropEmotes = {
        Prop = 'prop_el_guitar_01',
        PropBone = 24818,
        PropPlacement = {-0.1, 0.31, 0.1, 0.0, 20.0, 150.0},
+       EmoteMoving = true,
+       EmoteLoop = true
+   }},
+   ["book"] = {"cellphone@", "cellphone_text_read_base", "Book", AnimationOptions =
+   {
+       Prop = 'prop_novel_01',
+       PropBone = 6286,
+       PropPlacement = {0.15, 0.03, -0.065, 0.0, 180.0, 90.0}, -- This positioning isnt too great, was to much of a hassle
+       EmoteMoving = true,
+       EmoteLoop = true
+   }},
+   ["bouquet"] = {"impexp_int-0", "mp_m_waremech_01_dual-0", "Bouquet", AnimationOptions =
+   {
+       Prop = 'prop_snow_flower_02',
+       PropBone = 24817,
+       PropPlacement = {-0.29, 0.40, -0.02, -90.0, -90.0, 0.0},
+       EmoteMoving = true,
+       EmoteLoop = true
+   }},
+   ["teddy"] = {"impexp_int-0", "mp_m_waremech_01_dual-0", "Teddy", AnimationOptions =
+   {
+       Prop = 'v_ilev_mr_rasberryclean',
+       PropBone = 24817,
+       PropPlacement = {-0.20, 0.46, -0.016, -180.0, -90.0, 0.0},
+       EmoteMoving = true,
+       EmoteLoop = true
+   }},
+   ["backpack"] = {"move_p_m_zero_rucksack", "idle", "Backpack", AnimationOptions =
+   {
+       Prop = 'p_michael_backpack_s',
+       PropBone = 24818,
+       PropPlacement = {0.07, -0.11, -0.05, 0.0, 90.0, 175.0},
+       EmoteMoving = true,
+       EmoteLoop = true
+   }},
+   ["clipboard"] = {"missfam4", "base", "Clipboard", AnimationOptions =
+   {
+       Prop = 'p_amb_clipboard_01',
+       PropBone = 36029,
+       PropPlacement = {0.16, 0.08, 0.1, -130.0, -50.0, 0.0}, 
        EmoteMoving = true,
        EmoteLoop = true
    }},
