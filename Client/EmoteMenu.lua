@@ -146,6 +146,14 @@ function AddEmoteSettingsMenu(menu)
     end
 end
 
+function AddInfoMenu(menu)
+    local infomenu = _menuPool:AddSubMenu(menu, "Info / Update notes", "Check here for update notes (1.4.2c)", "", "shopui_title_sm_hangar", "shopui_title_sm_hangar")
+    contact = NativeUI.CreateItem("Suggestions?", "'dullpear_dev' on FiveM forums for any feature/emote suggestions! ✉️")
+    u142 = NativeUI.CreateItem("1.4.2", "Added many new prop emotes (guitar-guitar3, book, bouquet, teddy, backpack, burger and more)")
+    infomenu:AddItem(contact)
+    infomenu:AddItem(u142)
+end
+
 function OpenEmoteMenu()
     mainMenu:Visible(not mainMenu:Visible())
 end
@@ -160,6 +168,7 @@ AddEmoteSettingsMenu(mainMenu)
 if Config.WalkingStylesEnabled then
   AddWalkMenu(mainMenu)
 end
+AddInfoMenu(mainMenu)
 _menuPool:RefreshIndex()
 
 Citizen.CreateThread(function()
