@@ -50,10 +50,19 @@ RegisterCommand('emotemenu', function(source, args, raw)
   OpenEmoteMenu()
 end)
 
+RegisterCommand('walk', function(source, args, raw)
+  WalkCommandStart(source, args, raw)
+end)
+
+RegisterCommand('walks', function(source, args, raw)
+  WalksOnCommand()
+end)
+
 AddEventHandler('onResourceStop', function(resource)
   if resource == GetCurrentResourceName() then
     DestroyAllProps()
     ClearPedTasksImmediately(GetPlayerPed(-1))
+    ResetPedMovementClipset(PlayerPedId())
   end
 end)
 
@@ -82,9 +91,9 @@ end
 
 function EmoteChatMessage(args)
   if args == display then
-    TriggerEvent("chatMessage", "^3Emotes^0", {0,0,0}, string.format(""))
+    TriggerEvent("chatMessage", "^5Help^0", {0,0,0}, string.format(""))
   else
-    TriggerEvent("chatMessage", "^3Emotes^0", {0,0,0}, string.format(""..args..""))
+    TriggerEvent("chatMessage", "^5Help^0", {0,0,0}, string.format(""..args..""))
   end
 end
 

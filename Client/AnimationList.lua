@@ -28,9 +28,9 @@ DP.Expressions = {
 }
 
 DP.Walks = { 
-  ["Alien Run"] = {"move_m@alien"},
+  ["Alien"] = {"move_m@alien"},
+  ["Armored"] = {"anim_group_move_ballistic"},
   ["Arrogant"] = {"move_f@arrogant@a"},
-  ["Ballistic Suit"] = {"anim_group_move_ballistic"},
   ["Brave"] = {"move_m@brave"},
   ["Casual"] = {"move_m@casual@a"},
   ["Casual2"] = {"move_m@casual@b"},
@@ -43,12 +43,10 @@ DP.Walks = {
   ["Cop"] = {"move_m@business@a"},
   ["Cop2"] = {"move_m@business@b"},
   ["Cop3"] = {"move_m@business@c"},
-  ["Drunk Buzzed"] = {"move_m@buzzed"},
-  ["Drunk Slightly"] = {"move_m@drunk@slightlydrunk"},
-  ["Drunk Very"] = {"move_m@drunk@verydrunk"},
   ["Drunk"] = {"move_m@drunk@a"},
-  ["Fake Handcuffs"] = {"move_m@prisoner_cuffed"},
-  ["Fast Runner"] = {"female_fast_runner"},
+  ["Drunk"] = {"move_m@drunk@slightlydrunk"},
+  ["Drunk2"] = {"move_m@buzzed"},
+  ["Drunk3"] = {"move_m@drunk@verydrunk"},
   ["Femme"] = {"move_f@femme@"},
   ["Fire"] = {"move_characters@franklin@fire"},
   ["Fire2"] = {"move_characters@michael@fire"},
@@ -62,6 +60,7 @@ DP.Walks = {
   ["Gangster5"] = {"move_m@gangster@var_i"},
   ["Grooving"] = {"anim@move_m@grooving@"},
   ["Guard"] = {"move_m@prison_gaurd"},
+  ["Handcuffs"] = {"move_m@prisoner_cuffed"},
   ["Heels"] = {"move_f@heels@c"},
   ["Heels2"] = {"move_f@heels@d"},
   ["Hipster"] = {"move_m@hipster@a"},
@@ -76,9 +75,10 @@ DP.Walks = {
   ["Maneater"] = {"move_f@maneater"},
   ["Michael"] = {"move_ped_bucket"},
   ["Money"] = {"move_m@money"},
-  ["Posh Girl"] = {"move_f@posh@"},
-  ["Posh Guy"] = {"move_m@posh@"},
+  ["Posh"] = {"move_m@posh@"},
+  ["Posh2"] = {"move_f@posh@"},
   ["Quick"] = {"move_m@quick"},
+  ["Runner"] = {"female_fast_runner"},
   ["Sad"] = {"move_m@sad@a"},
   ["Sassy"] = {"move_m@sassy"},
   ["Sassy2"] = {"move_f@sassy"},
@@ -87,8 +87,8 @@ DP.Walks = {
   ["Shady"] = {"move_m@shadyped@a"},
   ["Slow"] = {"move_characters@jimmy@slow@"},
   ["Swagger"] = {"move_m@swagger"},
-  ["Tough Girl"] = {"move_f@tough_guy@"},
-  ["Tough Guy"] = {"move_m@tough_guy@"},
+  ["Tough"] = {"move_m@tough_guy@"},
+  ["Tough2"] = {"move_f@tough_guy@"},
   ["Trash"] = {"clipset@move@trash_fast_turn"},
   ["Trash2"] = {"missfbi4prepp1_garbageman"},
   ["Trevor"] = {"move_p_m_two"},
@@ -1503,6 +1503,11 @@ DP.Emotes = {
    {
        EmoteLoop = true,
        EmoteMoving = true,
+   }},
+   ["adjusttie"] = {"clothingtie", "try_tie_positive_a", "Adjust Tie", AnimationOptions =
+   {
+       EmoteMoving = true,
+       EmoteDuration = 5000
    }},
 }
 
