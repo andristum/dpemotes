@@ -10,8 +10,15 @@ if Config.MenuPosition then
   end
 end
 
+local RuntimeTXD = CreateRuntimeTxd('Custom_Menu_Head')
+local Object = CreateDui(Config.MenuImage, 512, 128)
+_G.Object = Object
+
+local TextureThing = GetDuiHandle(Object)
+local Texture = CreateRuntimeTextureFromDuiHandle(RuntimeTXD, 'Custom_Menu_Head', TextureThing)
+
 _menuPool = NativeUI.CreatePool()
-mainMenu = NativeUI.CreateMenu("", "dp Emotes", menuPosition["x"], menuPosition["y"], "shopui_title_sm_hangar", "shopui_title_sm_hangar")
+mainMenu = NativeUI.CreateMenu("dp Emotes", "", menuPosition["x"], menuPosition["y"], "Custom_Menu_Head", "Custom_Menu_Head")
 _menuPool:Add(mainMenu)
 
 function ShowNotification(text)
