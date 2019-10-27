@@ -1,11 +1,7 @@
 function WalkMenuStart(name)
-  if name == "Reset to default" then
-    ResetPedMovementClipset(PlayerPedId())
-  else
-    RequestWalking(name)
-    SetPedMovementClipset(PlayerPedId(), name, 0.2)
-    RemoveAnimSet(name)
-  end
+  RequestWalking(name)
+  SetPedMovementClipset(PlayerPedId(), name, 0.2)
+  RemoveAnimSet(name)
 end
 
 function RequestWalking(set)

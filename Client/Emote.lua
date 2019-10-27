@@ -146,6 +146,10 @@ function EmoteMenuStart(args, hard)
               EmoteChatMessage("'"..name.."' is not a valid emote")
           end
         end
+    elseif etype == "expression" then
+        if DP.Expressions[name] ~= nil then
+          if OnEmotePlay(DP.Expressions[name]) then end
+        end
     end
 end
 
@@ -250,6 +254,11 @@ function OnEmotePlay(EmoteName)
 
   if PlayerHasProp then
     DestroyAllProps()
+  end
+
+  if ChosenDict == "Expression" then
+    SetFacialIdleAnimOverride(PlayerPedId(), ChosenAnimation, 0)
+    return
   end
 
   if ChosenDict == "MaleScenario" or "Scenario" then

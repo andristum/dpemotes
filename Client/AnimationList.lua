@@ -1,4 +1,32 @@
 DP = {}
+
+DP.Expressions = { 
+   ["Angry"] = {"Expression", "mood_angry_1"},
+   ["Drunk"] = {"Expression", "mood_drunk_1"},
+   ["Dumb"] = {"Expression", "pose_injured_1"},
+   ["Electrocuted"] = {"Expression", "electrocuted_1"},
+   ["Grumpy"] = {"Expression", "effort_1"},
+   ["Grumpy2"] = {"Expression", "mood_drivefast_1"},
+   ["Grumpy3"] = {"Expression", "pose_angry_1"},
+   ["Happy"] = {"Expression", "mood_happy_1"},
+   ["Injured"] = {"Expression", "mood_injured_1"},
+   ["Joyful"] = {"Expression", "mood_dancing_low_1"},
+   ["Mouthbreather"] = {"Expression", "smoking_hold_1"},
+   ["Never Blink"] = {"Expression", "pose_normal_1"},
+   ["One Eye"] = {"Expression", "pose_aiming_1"},
+   ["Shocked"] = {"Expression", "shocked_1"},
+   ["Shocked2"] = {"Expression", "shocked_2"},
+   ["Sleeping"] = {"Expression", "mood_sleeping_1"},
+   ["Sleeping2"] = {"Expression", "dead_1"},
+   ["Sleeping3"] = {"Expression", "dead_2"},
+   ["Smug"] = {"Expression", "mood_smug_1"},
+   ["Speculative"] = {"Expression", "mood_aiming_1"},
+   ["Stressed"] = {"Expression", "mood_stressed_1"},
+   ["Sulking"] = {"Expression", "mood_sulk_1"},
+   ["Weird"] = {"Expression", "effort_2"},
+   ["Weird2"] = {"Expression", "effort_3"},
+}
+
 DP.Walks = { 
   ["Alien Run"] = {"move_m@alien"},
   ["Arrogant"] = {"move_f@arrogant@a"},
