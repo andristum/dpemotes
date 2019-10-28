@@ -484,12 +484,12 @@ DP.Emotes = {
    ["handshake"] = {"mp_ped_interaction", "handshake_guy_a", "Handshake", AnimationOptions =
    {
        EmoteMoving = true,
-       EmoteDuration = 8000
+       EmoteDuration = 3000
    }},
    ["handshake2"] = {"mp_ped_interaction", "handshake_guy_b", "Handshake 2", AnimationOptions =
    {
        EmoteMoving = true,
-       EmoteDuration = 8000
+       EmoteDuration = 3000
    }},
    ["wait4"] = {"amb@world_human_hang_out_street@Female_arm_side@idle_a", "idle_a", "Wait 4", AnimationOptions =
    {

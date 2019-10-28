@@ -10,15 +10,19 @@ if Config.MenuPosition then
   end
 end
 
-local RuntimeTXD = CreateRuntimeTxd('Custom_Menu_Head')
-local Object = CreateDui(Config.MenuImage, 512, 128)
-_G.Object = Object
-
-local TextureThing = GetDuiHandle(Object)
-local Texture = CreateRuntimeTextureFromDuiHandle(RuntimeTXD, 'Custom_Menu_Head', TextureThing)
+if Config.CustomMenuEnabled then
+  local RuntimeTXD = CreateRuntimeTxd('Custom_Menu_Head')
+  local Object = CreateDui(Config.MenuImage, 512, 128)
+  _G.Object = Object
+  local TextureThing = GetDuiHandle(Object)
+  local Texture = CreateRuntimeTextureFromDuiHandle(RuntimeTXD, 'Custom_Menu_Head', TextureThing)
+  Menuthing = "Custom_Menu_Head"
+else
+  Menuthing = "shopui_title_sm_hangar"
+end
 
 _menuPool = NativeUI.CreatePool()
-mainMenu = NativeUI.CreateMenu("dp Emotes", "", menuPosition["x"], menuPosition["y"], "Custom_Menu_Head", "Custom_Menu_Head")
+mainMenu = NativeUI.CreateMenu("dp Emotes", "", menuPosition["x"], menuPosition["y"], Menuthing, Menuthing)
 _menuPool:Add(mainMenu)
 
 function ShowNotification(text)
@@ -52,10 +56,10 @@ Citizen.CreateThread(function()
 end)
 
 function AddEmoteMenu(menu)
-    local submenu = _menuPool:AddSubMenu(menu, "Emotes", "", "", "Custom_Menu_Head", "Custom_Menu_Head")
-    local dancemenu = _menuPool:AddSubMenu(submenu, "🕺 Dance Emotes", "", "", "Custom_Menu_Head", "Custom_Menu_Head")
-    local propmenu = _menuPool:AddSubMenu(submenu, "📦 Prop Emotes", "", "", "Custom_Menu_Head", "Custom_Menu_Head")
-    local favmenu = _menuPool:AddSubMenu(submenu, "🌟 Keybind", "Select an emote here to set it as your bound emote.", "", "Custom_Menu_Head", "Custom_Menu_Head")
+    local submenu = _menuPool:AddSubMenu(menu, "Emotes", "", "", Menuthing, Menuthing)
+    local dancemenu = _menuPool:AddSubMenu(submenu, "🕺 Dance Emotes", "", "", Menuthing, Menuthing)
+    local propmenu = _menuPool:AddSubMenu(submenu, "📦 Prop Emotes", "", "", Menuthing, Menuthing)
+    local favmenu = _menuPool:AddSubMenu(submenu, "🌟 Keybind", "Select an emote here to set it as your bound emote.", "", Menuthing, Menuthing)
     unbind2item = NativeUI.CreateItem("Reset keybind", "Reset keybind")
     unbinditem = NativeUI.CreateItem("❓ Prop Emotes can be located at the end", "Reset keybind")
     favmenu:AddItem(unbinditem)
@@ -132,7 +136,7 @@ function AddEmoteSettingsMenu(menu)
 end
 
 function AddWalkMenu(menu)
-    local submenu = _menuPool:AddSubMenu(menu, "Walking Styles", "", "", "Custom_Menu_Head", "Custom_Menu_Head")
+    local submenu = _menuPool:AddSubMenu(menu, "Walking Styles", "", "", Menuthing, Menuthing)
 
     walkreset = NativeUI.CreateItem("Normal (Reset)", "Reset to default")
     submenu:AddItem(walkreset)
@@ -159,7 +163,7 @@ function AddWalkMenu(menu)
 end
 
 function AddFaceMenu(menu)
-    local submenu = _menuPool:AddSubMenu(menu, "Facial Expressions", "", "", "Custom_Menu_Head", "Custom_Menu_Head")
+    local submenu = _menuPool:AddSubMenu(menu, "Facial Expressions", "", "", Menuthing, Menuthing)
 
     facereset = NativeUI.CreateItem("Normal (Reset)", "Reset to default")
     submenu:AddItem(facereset)
@@ -182,7 +186,7 @@ function AddFaceMenu(menu)
 end
 
 function AddInfoMenu(menu)
-    local infomenu = _menuPool:AddSubMenu(menu, "Info / Update notes", "Check here for update notes (1.5.1)", "", "Custom_Menu_Head", "Custom_Menu_Head")
+    local infomenu = _menuPool:AddSubMenu(menu, "Info / Update notes", "Check here for update notes (1.5.1)", "", Menuthing, Menuthing)
     contact = NativeUI.CreateItem("Suggestions?", "'dullpear_dev' on FiveM forums for any feature/emote suggestions! ✉️")
     u151 = NativeUI.CreateItem("1.5.1", "Added /walk and /walks, for walking styles without menu")
     u150 = NativeUI.CreateItem("1.5.0", "Added Facial Expressions menu (if enabled by server owner)")
