@@ -9,10 +9,10 @@ Config = {
 	MenuKeybindEnabled = true,
 -- You can disable the Favorite emote keybinding here.
 	FavKeybindEnabled = true,
-	FavKeybind = 171,
+	FavKeybind = 171, -- Get the button number here https://docs.fivem.net/game-references/controls/
 -- You can disable the Ragdoll keybinding here.
 	RagdollEnabled = true,
-	RagdollKeybind = 303,
+	RagdollKeybind = 303, -- Get the button number here https://docs.fivem.net/game-references/controls/
 -- You can change the header image for the f3 menu here
 -- Use a 512 x 128 image!
 -- NOte this might cause an issue of the image getting stuck on peoples screens
