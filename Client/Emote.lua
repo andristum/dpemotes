@@ -164,7 +164,7 @@ end
 
 function EmoteCommandStart(source, args, raw)
     if #args > 0 then
-    local name = args[1]
+    local name = string.lower(args[1])
     if name == "c" then
         if IsInAnimation then
             EmoteCancel()

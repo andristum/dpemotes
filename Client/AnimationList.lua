@@ -1328,11 +1328,11 @@ DP.Emotes = {
    {
        EmoteLoop = true,
    }},
-   ["tryclothes"] = {"mp_clothing@female@shoes", "try_trousers_neutral_a", "Try Clothes", AnimationOptions =
+   ["tryclothes"] = {"mp_clothing@female@trousers", "try_trousers_neutral_a", "Try Clothes", AnimationOptions =
    {
        EmoteLoop = true,
    }},
-   ["tryclothes2"] = {"mp_clothing@female@shoes", "try_shirt_positive_a", "Try Clothes 2", AnimationOptions =
+   ["tryclothes2"] = {"mp_clothing@female@shirt", "try_shirt_positive_a", "Try Clothes 2", AnimationOptions =
    {
        EmoteLoop = true,
    }},
@@ -1722,17 +1722,25 @@ DP.PropEmotes = {
        EmoteMoving = true,
        EmoteLoop = true
    }},
-   ["guitar2"] = {"amb@world_human_musician@guitar@male@idle_a", "idle_b", "Guitar 2", AnimationOptions =
+   ["guitar2"] = {"switch@trevor@guitar_beatdown", "001370_02_trvs_8_guitar_beatdown_idle_busker", "Guitar 2", AnimationOptions =
    {
-       Prop = 'prop_el_guitar_03',
+       Prop = 'prop_acc_guitar_01',
+       PropBone = 24818,
+       PropPlacement = {-0.05, 0.31, 0.1, 0.0, 20.0, 150.0},
+       EmoteMoving = true,
+       EmoteLoop = true
+   }},
+   ["guitarelectric"] = {"amb@world_human_musician@guitar@male@idle_a", "idle_b", "Guitar Electric", AnimationOptions =
+   {
+       Prop = 'prop_el_guitar_01',
        PropBone = 24818,
        PropPlacement = {-0.1, 0.31, 0.1, 0.0, 20.0, 150.0},
        EmoteMoving = true,
        EmoteLoop = true
    }},
-   ["guitar3"] = {"amb@world_human_musician@guitar@male@idle_a", "idle_b", "Guitar 3", AnimationOptions =
+   ["guitarelectric2"] = {"amb@world_human_musician@guitar@male@idle_a", "idle_b", "Guitar Electric 2", AnimationOptions =
    {
-       Prop = 'prop_el_guitar_01',
+       Prop = 'prop_el_guitar_03',
        PropBone = 24818,
        PropPlacement = {-0.1, 0.31, 0.1, 0.0, 20.0, 150.0},
        EmoteMoving = true,

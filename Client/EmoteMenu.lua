@@ -124,7 +124,7 @@ function AddEmoteMenu(menu)
   end
 end
 
-function AddEmoteSettingsMenu(menu)
+function AddCancelEmote(menu)
     local newitem = NativeUI.CreateItem("Cancel Emote ", "~r~X~w~ Cancels the currently playing emote")
     menu:AddItem(newitem)
     menu.OnItemSelect = function(sender, item, checked_)
@@ -163,7 +163,7 @@ function AddWalkMenu(menu)
 end
 
 function AddFaceMenu(menu)
-    local submenu = _menuPool:AddSubMenu(menu, "Facial Expressions", "", "", Menuthing, Menuthing)
+    local submenu = _menuPool:AddSubMenu(menu, "Moods", "", "", Menuthing, Menuthing)
 
     facereset = NativeUI.CreateItem("Normal (Reset)", "Reset to default")
     submenu:AddItem(facereset)
@@ -186,12 +186,14 @@ function AddFaceMenu(menu)
 end
 
 function AddInfoMenu(menu)
-    local infomenu = _menuPool:AddSubMenu(menu, "Info / Update notes", "Check here for update notes (1.5.1)", "", Menuthing, Menuthing)
+    local infomenu = _menuPool:AddSubMenu(menu, "Info / Update notes", "Check here for update notes (1.5.1a)", "", Menuthing, Menuthing)
     contact = NativeUI.CreateItem("Suggestions?", "'dullpear_dev' on FiveM forums for any feature/emote suggestions! ✉️")
+    u151a = NativeUI.CreateItem("1.5.1a", "Fixed tryclothes/2, changed the guitar emotes slightly and changed facial expressions to 'moods'")
     u151 = NativeUI.CreateItem("1.5.1", "Added /walk and /walks, for walking styles without menu")
     u150 = NativeUI.CreateItem("1.5.0", "Added Facial Expressions menu (if enabled by server owner)")
     u142 = NativeUI.CreateItem("1.4.2", "Added many new prop emotes (guitar-guitar3, book, bouquet, teddy, backpack, burger and more)")
     infomenu:AddItem(contact)
+    infomenu:AddItem(u151a)
     infomenu:AddItem(u151)
     infomenu:AddItem(u150)
     infomenu:AddItem(u142)
@@ -207,7 +209,7 @@ function firstToUpper(str)
 end
 
 AddEmoteMenu(mainMenu)
-AddEmoteSettingsMenu(mainMenu)
+AddCancelEmote(mainMenu)
 if Config.WalkingStylesEnabled then
   AddWalkMenu(mainMenu)
 end
