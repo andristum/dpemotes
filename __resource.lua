@@ -5,3 +5,7 @@ client_scripts {
 	'Config.lua',
 	'Client/*.lua'
 }
+
+server_scripts {
+	'Server/*.lua'
+}
