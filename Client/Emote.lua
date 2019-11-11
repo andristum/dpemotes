@@ -140,13 +140,13 @@ function EmoteMenuStart(args, hard)
         if DP.Dances[name] ~= nil then
           if OnEmotePlay(DP.Dances[name]) then end
         else
-          EmoteChatMessage("'"..name.."'"..Config.Languages[lang]['notvaliddance'].."")
+          EmoteChatMessage("'"..name.."' "..Config.Languages[lang]['notvaliddance'].."")
         end
     elseif etype == "props" then
         if DP.PropEmotes[name] ~= nil then
           if OnEmotePlay(DP.PropEmotes[name]) then end
         else
-          EmoteChatMessage("'"..name.."'"..Config.Languages[lang]['notvalidemote'].."")
+          EmoteChatMessage("'"..name.."' "..Config.Languages[lang]['notvalidemote'].."")
         end
     elseif etype == "emotes" then
         if DP.Emotes[name] ~= nil then
@@ -185,7 +185,7 @@ function EmoteCommandStart(source, args, raw)
       if OnEmotePlay(DP.PropEmotes[name]) then end return
     else
       print(lang)
-      EmoteChatMessage("'"..name.."'"..Config.Languages[lang]['notvalidemote'].."")
+      EmoteChatMessage("'"..name.."' "..Config.Languages[lang]['notvalidemote'].."")
     end
   end
 end
