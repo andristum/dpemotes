@@ -2,7 +2,7 @@ Config = {
 -- Change the language of the menu here!.
 -- Note fr and de are google translated, if you would like to help out with translation / just fix it for your server check below and change translations yourself
 -- try en, fr, de or sv.
-	MenuLanguage = 'en',	
+	MenuLanguage = 'fr',	
 -- Set this to true to enable some extra prints
 	DebugDisplay = false,
 -- Set this to false if you have something else on X, and then just use /e c to cancel emotes.
@@ -52,7 +52,12 @@ Config.Languages = {
         ['moods'] = "Moods",
         ['infoupdate'] = "Info / Update notes",
         ['suggestions'] = "Suggestions?",
-        ['suggestionsinfo'] = "'dullpear_dev' on FiveM forums for any feature/emote suggestions! ✉️"
+        ['suggestionsinfo'] = "'dullpear_dev' on FiveM forums for any feature/emote suggestions! ✉️",
+        ['notvaliddance'] = "is not a valid dance",
+        ['notvalidemote'] = "is not a valid emote",
+        ['nocancel'] = "No emote to cancel",
+        ['maleonly'] = "This emote is male only, sorry!",
+        ['emotemenucmd'] = "Do /emotemenu for a menu",
   },
   ['fr'] = {
         ['emotes'] = 'Emotes',
@@ -73,7 +78,12 @@ Config.Languages = {
         ['moods'] = "Humeurs",
         ['infoupdate'] = "Info / Notes de mise à jour",
         ['suggestions'] = "Suggestions?",
-        ['suggestionsinfo'] = "'dullpear_dev' sur les forums FiveM pour toutes les suggestions de fonction / emote! ✉️"
+        ['suggestionsinfo'] = "'dullpear_dev' sur les forums FiveM pour toutes les suggestions de fonction / emote! ✉️",
+		['notvaliddance'] = "n'est pas une danse valide",
+        ['notvalidemote'] = "n'est pas un emote valide",
+        ['nocancel'] = "Pas d'emote à annuler",
+        ['maleonly'] = "Cet emote est réservé aux hommes, désolé!",
+        ['emotemenucmd'] = "Do /emotemenu pour un menu",
   },
   ['de'] = {
         ['emotes'] = 'Emotes',
@@ -94,7 +104,12 @@ Config.Languages = {
         ['moods'] = "Stimmungen",
         ['infoupdate'] = "Info / Update Notizen",
         ['suggestions'] = "Vorschläge?",
-        ['suggestionsinfo'] = "'dullpear_dev' in FiveM-Foren für alle Feature- / Emote-Vorschläge! ✉️"
+        ['suggestionsinfo'] = "'dullpear_dev' in FiveM-Foren für alle Feature- / Emote-Vorschläge! ✉️",
+        ['notvaliddance'] = "ist kein gültiger Tanz",
+        ['notvalidemote'] = "ist kein gültiges Emote",
+        ['nocancel'] = "Kein Emote zum Abbrechen",
+        ['maleonly'] = "Dieses Emote ist nur männlich, sorry!",
+        ['emotemenucmd'] = "Do /emotemenu für ein Menü",
   },
   ['sv'] = {
         ['emotes'] = 'Emotes',
@@ -115,6 +130,11 @@ Config.Languages = {
         ['moods'] = "Humör",
         ['infoupdate'] = "Info / Updateringar",
         ['suggestions'] = "Förslag?",
-        ['suggestionsinfo'] = "'dullpear_dev' på FiveM-forum för alla funktioner/emote-förslag! ✉️"
+        ['suggestionsinfo'] = "'dullpear_dev' på FiveM-forum för alla funktioner/emote-förslag! ✉️",
+        ['notvaliddance'] = "är inte en giltig dans",
+        ['notvalidemote'] = "är inte en giltig emote",
+        ['nocancel'] = "Ingen emote att avbryta",
+        ['maleonly'] = "Den här emoten är endast för män, ledsen!",
+        ['emotemenucmd'] = "Gör /emotemenu för en meny",
   },
 }

@@ -10,6 +10,7 @@ local PlayerGender = "male"
 local PlayerHasProp = false
 local PlayerProps = {}
 local SecondPropEmote = false
+local lang = Config.MenuLanguage
 
 Citizen.CreateThread(function()
   while true do
@@ -110,7 +111,7 @@ function EmotesOnCommand(source, args, raw)
     EmotesCommand = EmotesCommand .. ""..a..", "
   end
   EmoteChatMessage(EmotesCommand)
-  EmoteChatMessage("Do /emotemenu for a menu")
+  EmoteChatMessage(Config.Languages[lang]['emotemenucmd'])
 end
 
 function pairsByKeys (t, f)
@@ -139,20 +140,20 @@ function EmoteMenuStart(args, hard)
         if DP.Dances[name] ~= nil then
           if OnEmotePlay(DP.Dances[name]) then end
         else
-          EmoteChatMessage("'"..name.."' is not a valid dance")
+          EmoteChatMessage("'"..name.."'"..Config.Languages[lang]['notvaliddance'].."")
         end
     elseif etype == "props" then
         if DP.PropEmotes[name] ~= nil then
           if OnEmotePlay(DP.PropEmotes[name]) then end
         else
-          EmoteChatMessage("'"..name.."' is not a valid emote")
+          EmoteChatMessage("'"..name.."'"..Config.Languages[lang]['notvalidemote'].."")
         end
     elseif etype == "emotes" then
         if DP.Emotes[name] ~= nil then
           if OnEmotePlay(DP.Emotes[name]) then end
         else
           if name ~= "🕺 Dance Emotes" then
-              EmoteChatMessage("'"..name.."' is not a valid emote")
+              --EmoteChatMessage("'"..name.."'"..Config.Languages[lang]['notvalidemote'].."")
           end
         end
     elseif etype == "expression" then
@@ -169,7 +170,7 @@ function EmoteCommandStart(source, args, raw)
         if IsInAnimation then
             EmoteCancel()
         else
-            EmoteChatMessage("No emote to cancel")
+            EmoteChatMessage(Config.Languages[lang]['nocancel'])
         end
       return
     elseif name == "help" then
@@ -183,7 +184,8 @@ function EmoteCommandStart(source, args, raw)
     elseif DP.PropEmotes[name] ~= nil then
       if OnEmotePlay(DP.PropEmotes[name]) then end return
     else
-      EmoteChatMessage("'"..name.."' is not a valid emote")
+      print(lang)
+      EmoteChatMessage("'"..name.."'"..Config.Languages[lang]['notvalidemote'].."")
     end
   end
 end
@@ -279,7 +281,7 @@ function OnEmotePlay(EmoteName)
         DebugPrint("Playing scenario = ("..ChosenAnimation..")")
         IsInAnimation = true
       else
-        EmoteChatMessage("This emote is male only, sorry!")
+        EmoteChatMessage(Config.Languages[lang]['maleonly'])
       end return
     elseif ChosenDict == "ScenarioObject" then
       BehindPlayer = GetOffsetFromEntityInWorldCoords(PlayerPedId(), 0.0, 0 - 0.5, -0.5);
