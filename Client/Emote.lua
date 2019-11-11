@@ -184,7 +184,6 @@ function EmoteCommandStart(source, args, raw)
     elseif DP.PropEmotes[name] ~= nil then
       if OnEmotePlay(DP.PropEmotes[name]) then end return
     else
-      print(lang)
       EmoteChatMessage("'"..name.."' "..Config.Languages[lang]['notvalidemote'].."")
     end
   end
