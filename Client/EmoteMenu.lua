@@ -143,17 +143,25 @@ function AddEmoteMenu(menu)
       sharemenu.OnItemSelect = function(sender, item, index)
         if ShareTable[index] ~= 'none' then
           target, distance = GetClosestPlayer()
-          _,_,rename = table.unpack(DP.Shared[ShareTable[index]])
-          TriggerServerEvent("ServerEmoteRequest", GetPlayerServerId(target), ShareTable[index])
-          SimpleNotify(Config.Languages[lang]['sentrequestto']..GetPlayerName(target)) 
+          if(distance ~= -1 and distance < 3) then
+            _,_,rename = table.unpack(DP.Shared[ShareTable[index]])
+            TriggerServerEvent("ServerEmoteRequest", GetPlayerServerId(target), ShareTable[index])
+            SimpleNotify(Config.Languages[lang]['sentrequestto']..GetPlayerName(target)) 
+          else
+            SimpleNotify(Config.Languages[lang]['nobodyclose'])
+          end
         end
       end
 
       shareddancemenu.OnItemSelect = function(sender, item, index)
         target, distance = GetClosestPlayer()
-        _,_,rename = table.unpack(DP.Dances[DanceTable[index]])
-        TriggerServerEvent("ServerEmoteRequest", GetPlayerServerId(target), DanceTable[index], 'Dances')
-        SimpleNotify(Config.Languages[lang]['sentrequestto']..GetPlayerName(target)) 
+        if(distance ~= -1 and distance < 3) then
+          _,_,rename = table.unpack(DP.Dances[DanceTable[index]])
+          TriggerServerEvent("ServerEmoteRequest", GetPlayerServerId(target), DanceTable[index], 'Dances')
+          SimpleNotify(Config.Languages[lang]['sentrequestto']..GetPlayerName(target)) 
+        else
+          SimpleNotify(Config.Languages[lang]['nobodyclose'])
+        end
       end
     end
 
