@@ -297,19 +297,21 @@ function OnEmotePlay(EmoteName)
     return end 
   end
 
-    LoadAnim(ChosenDict)
+  LoadAnim(ChosenDict)
 
-    if EmoteName.AnimationOptions then
-      if EmoteName.AnimationOptions.EmoteLoop then
-        MovementType = 1
-      if EmoteName.AnimationOptions.EmoteMoving then
-        MovementType = 51
-      end
+  if EmoteName.AnimationOptions then
+    if EmoteName.AnimationOptions.EmoteLoop then
+      MovementType = 1
+    if EmoteName.AnimationOptions.EmoteMoving then
+      MovementType = 51
+  end
+
   elseif EmoteName.AnimationOptions.EmoteMoving then
     MovementType = 51
   elseif EmoteName.AnimationOptions.EmoteMoving == false then
     MovementType = 0
   end
+
   else
     MovementType = 0
   end
