@@ -16,7 +16,7 @@ if Config.SharedEmotesEnabled then
                 if DP.Shared[emotename] ~= nil then
                     dict, anim, ename = table.unpack(DP.Shared[emotename])
                     TriggerServerEvent("ServerEmoteRequest", GetPlayerServerId(target), emotename)
-                    SimpleNotify(Config.Languages[lang]['sentrequestto']..GetPlayerName(target).." ~w~(~g~"..ename.."~w~)") 
+                    SimpleNotify(Config.Languages[lang]['sentrequestto']..GetPlayerName(target).." ~w~(~g~"..ename.."~w~)")
                 else
                     EmoteChatMessage("'"..emotename.."' "..Config.Languages[lang]['notvalidsharedemote'].."")
                 end
@@ -25,7 +25,7 @@ if Config.SharedEmotesEnabled then
             end
         else
           MearbysOnCommand()
-        end  
+        end
     end, false)
 end
 
@@ -43,10 +43,20 @@ end)
 
 RegisterNetEvent("SyncPlayEmoteSource")
 AddEventHandler("SyncPlayEmoteSource", function(emote, player)
-    local heading = GetEntityHeading(GetPedInFront()) -- clean this
-    SetEntityHeading(ped, heading - 180.1)
+    -- Thx to Poggu for this part!
+    local pedInFront = GetPlayerPed(GetClosestPlayer())
+    local heading = GetEntityHeading(pedInFront)
+    local coords = GetOffsetFromEntityInWorldCoords(pedInFront, 0.0, 1.0, 0.0)
+    if (DP.Shared[emote]) and (DP.Shared[emote].AnimationOptions) then
+      local SyncOffsetFront = DP.Shared[emote].AnimationOptions.SyncOffsetFront
+      if SyncOffsetFront then
+          coords = GetOffsetFromEntityInWorldCoords(pedInFront, 0.0, SyncOffsetFront, 0.0)
+      end
+    end
+    SetEntityHeading(PlayerPedId(), heading - 180.1)
+    SetEntityCoordsNoOffset(PlayerPedId(), coords.x, coords.y, coords.z, 0)
     EmoteCancel()
-    Wait(300)    -- wait a little to make sure animation shows up right on both clients after canceling any previous emote
+    Wait(300)
     if DP.Shared[emote] ~= nil then
       if OnEmotePlay(DP.Shared[emote]) then end return
     elseif DP.Dances[emote] ~= nil then
@@ -72,7 +82,8 @@ end)
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(5)
-        if IsControlJustPressed(1, 246) and isRequestAnim then
+        --if IsControlJustPressed(1, 246) and isRequestAnim then
+        if isRequestAnim then
         target, distance = GetClosestPlayer()
             if(distance ~= -1 and distance < 3) then
                 if DP.Shared[requestedemote] ~= nil then
@@ -96,6 +107,15 @@ end)
 -----------------------------------------------------------------------------------------------------
 ------ Functions and stuff --------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------
+
+function GetPlayerFromPed(ped)
+    for _,player in ipairs(GetActivePlayers()) do
+        if GetPlayerPed(player) == ped then
+            return player
+        end
+    end
+    return -1
+end
 
 function GetPedInFront()
     local player = PlayerId()
@@ -128,7 +148,7 @@ function GetClosestPlayer()
     local closestPlayer = -1
     local ply = GetPlayerPed(-1)
     local plyCoords = GetEntityCoords(ply, 0)
-    
+
     for index,value in ipairs(players) do
         local target = GetPlayerPed(value)
         if(target ~= ply) then
@@ -146,7 +166,7 @@ end
 function GetPlayers()
     local players = {}
 
-    for i = 0, 255 do 
+    for i = 0, 255 do
         if NetworkIsPlayerActive(i) then
             table.insert(players, i)
         end

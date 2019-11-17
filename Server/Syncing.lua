@@ -5,6 +5,8 @@ end)
 
 RegisterServerEvent("ServerValidEmote") 
 AddEventHandler("ServerValidEmote", function(target, requestedemote, otheremote)
+	print(requestedemote)
+	print(otheremote)
 	TriggerClientEvent("SyncPlayEmote", source, otheremote, source)
 	TriggerClientEvent("SyncPlayEmoteSource", target, requestedemote)
 end)

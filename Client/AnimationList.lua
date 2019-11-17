@@ -1,6 +1,6 @@
 DP = {}
 
-DP.Expressions = { 
+DP.Expressions = {
    ["Angry"] = {"Expression", "mood_angry_1"},
    ["Drunk"] = {"Expression", "mood_drunk_1"},
    ["Dumb"] = {"Expression", "pose_injured_1"},
@@ -27,7 +27,7 @@ DP.Expressions = {
    ["Weird2"] = {"Expression", "effort_3"},
 }
 
-DP.Walks = { 
+DP.Walks = {
   ["Alien"] = {"move_m@alien"},
   ["Armored"] = {"anim_group_move_ballistic"},
   ["Arrogant"] = {"move_f@arrogant@a"},
@@ -105,28 +105,40 @@ DP.Walks = {
   --["Wading"] = {"move_m@wading"},
 }
 
-DP.Shared = { 
+DP.Shared = {
    --[emotename] = {dictionary, animation, displayname, targetemotename, additionalanimationoptions}
    -- you dont have to specify targetemoteanem, if you do dont it will just play the same animation on both.
    -- targetemote is used for animations that have a corresponding animation to the other player.
    ["handshake"] = {"mp_ped_interaction", "handshake_guy_a", "Handshake", "handshake2", AnimationOptions =
    {
        EmoteMoving = true,
-       EmoteDuration = 3000
+       EmoteDuration = 3000,
+       SyncOffsetFront = 0.9
    }},
    ["handshake2"] = {"mp_ped_interaction", "handshake_guy_b", "Handshake 2", "handshake", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteDuration = 3000
    }},
-   ["hug"] = {"mp_ped_interaction", "kisses_guy_a", "Hug", "hug2"},
+   ["hug"] = {"mp_ped_interaction", "kisses_guy_a", "Hug", "hug2", AnimationOptions =
+   {
+        SyncOffsetFront = 1.05,
+        EmoteMoving = false,
+   }},
    ["hug2"] = {"mp_ped_interaction", "kisses_guy_b", "Hug 2", "hug", AnimationOptions =
    {
-       EmoteMoving = true,
-       EmoteDuration = 5000
+       EmoteMoving = false,
+       EmoteDuration = 5000,
+       SyncOffsetFront = 1.13
    }},
-   ["bro"] = {"mp_ped_interaction", "hugs_guy_a", "Bro", "bro2"},
-   ["bro2"] = {"mp_ped_interaction", "hugs_guy_b", "Bro 2", "bro"},
+   ["bro"] = {"mp_ped_interaction", "hugs_guy_a", "Bro", "bro2", AnimationOptions =
+   {
+        SyncOffsetFront = 1.14
+   }},
+   ["bro2"] = {"mp_ped_interaction", "hugs_guy_b", "Bro 2", "bro", AnimationOptions =
+   {
+        SyncOffsetFront = 1.14
+   }},
    ["give"] = {"mp_common", "givetake1_a", "Give", "give2", AnimationOptions =
    {
        EmoteMoving = true,
@@ -1851,7 +1863,7 @@ DP.PropEmotes = {
    {
        Prop = 'p_amb_clipboard_01',
        PropBone = 36029,
-       PropPlacement = {0.16, 0.08, 0.1, -130.0, -50.0, 0.0}, 
+       PropPlacement = {0.16, 0.08, 0.1, -130.0, -50.0, 0.0},
        EmoteMoving = true,
        EmoteLoop = true
    }},
@@ -1859,7 +1871,7 @@ DP.PropEmotes = {
    {
        Prop = 'prop_tourist_map_01',
        PropBone = 28422,
-       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0}, 
+       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
        EmoteMoving = true,
        EmoteLoop = true
    }},
