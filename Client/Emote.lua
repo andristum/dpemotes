@@ -44,7 +44,7 @@ RegisterCommand('emote', function(source, args, raw)
 end)
 
 RegisterCommand('emotes', function(source, args, raw)
-  EmotesOnCommand() -- If anyone has a better solution for this please let me know, copied a the pairsByKeys func from stackoverflow and it wokrs a little bit better
+  EmotesOnCommand()
 end)
 
 RegisterCommand('emotemenu', function(source, args, raw)

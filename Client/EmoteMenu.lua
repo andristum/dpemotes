@@ -37,6 +37,7 @@ local DanceTable = {}
 local PropETable = {}
 local WalkTable = {}
 local FaceTable = {}
+local ShareTable = {}
 local FavoriteEmote = ""
 
 Citizen.CreateThread(function()
@@ -61,6 +62,12 @@ function AddEmoteMenu(menu)
     local submenu = _menuPool:AddSubMenu(menu, Config.Languages[lang]['emotes'], "", "", Menuthing, Menuthing)
     local dancemenu = _menuPool:AddSubMenu(submenu, Config.Languages[lang]['danceemotes'], "", "", Menuthing, Menuthing)
     local propmenu = _menuPool:AddSubMenu(submenu, Config.Languages[lang]['propemotes'], "", "", Menuthing, Menuthing)
+    if Config.SharedEmotesEnabled then
+      sharemenu = _menuPool:AddSubMenu(submenu, Config.Languages[lang]['shareemotes'], Config.Languages[lang]['shareemotesinfo'], "", Menuthing, Menuthing)
+      shareddancemenu = _menuPool:AddSubMenu(sharemenu, Config.Languages[lang]['danceemotes'], "", "", Menuthing, Menuthing)
+      table.insert(ShareTable, 'none')
+      table.insert(EmoteTable, Config.Languages[lang]['shareemotes'])
+    end
     local favmenu = _menuPool:AddSubMenu(submenu, Config.Languages[lang]['keybindemotes'], Config.Languages[lang]['keybindinfo'], "", Menuthing, Menuthing)
     unbind2item = NativeUI.CreateItem(Config.Languages[lang]['rkeybind'], Config.Languages[lang]['rkeybind'])
     unbinditem = NativeUI.CreateItem(Config.Languages[lang]['prop2info'], "")
@@ -85,8 +92,25 @@ function AddEmoteMenu(menu)
     for a,b in pairsByKeys(DP.Dances) do
       x,y,z = table.unpack(b)
       danceitem = NativeUI.CreateItem(z, "/e ("..a..")")
+      sharedanceitem = NativeUI.CreateItem(z, "")
       dancemenu:AddItem(danceitem)
+      if Config.SharedEmotesEnabled then
+        shareddancemenu:AddItem(sharedanceitem)
+      end
       table.insert(DanceTable, a)
+    end
+
+    if Config.SharedEmotesEnabled then
+      for a,b in pairsByKeys(DP.Shared) do
+        x,y,z,otheremotename = table.unpack(b)
+        if otheremotename == nil then
+          shareitem = NativeUI.CreateItem(z, "/nearby (~g~"..a.."~w~)")
+        else 
+          shareitem = NativeUI.CreateItem(z, "/nearby (~g~"..a.."~w~) "..Config.Languages[lang]['makenearby'].." (~y~"..otheremotename.."~w~)")
+        end
+        sharemenu:AddItem(shareitem)
+        table.insert(ShareTable, a)
+      end
     end
 
     for a,b in pairsByKeys(DP.PropEmotes) do
@@ -113,6 +137,24 @@ function AddEmoteMenu(menu)
 
     dancemenu.OnItemSelect = function(sender, item, index)
       EmoteMenuStart(DanceTable[index], "dances")
+    end
+
+    if Config.SharedEmotesEnabled then
+      sharemenu.OnItemSelect = function(sender, item, index)
+        if ShareTable[index] ~= 'none' then
+          target, distance = GetClosestPlayer()
+          _,_,rename = table.unpack(DP.Shared[ShareTable[index]])
+          TriggerServerEvent("ServerEmoteRequest", GetPlayerServerId(target), ShareTable[index])
+          SimpleNotify(Config.Languages[lang]['sentrequestto']..GetPlayerName(target)) 
+        end
+      end
+
+      shareddancemenu.OnItemSelect = function(sender, item, index)
+        target, distance = GetClosestPlayer()
+        _,_,rename = table.unpack(DP.Dances[DanceTable[index]])
+        TriggerServerEvent("ServerEmoteRequest", GetPlayerServerId(target), DanceTable[index], 'Dances')
+        SimpleNotify(Config.Languages[lang]['sentrequestto']..GetPlayerName(target)) 
+      end
     end
 
     propmenu.OnItemSelect = function(sender, item, index)
@@ -188,14 +230,16 @@ function AddFaceMenu(menu)
 end
 
 function AddInfoMenu(menu)
-    local infomenu = _menuPool:AddSubMenu(menu, Config.Languages[lang]['infoupdate'], "(1.5.2)", "", Menuthing, Menuthing)
+    local infomenu = _menuPool:AddSubMenu(menu, Config.Languages[lang]['infoupdate'], "(1.6.0)", "", Menuthing, Menuthing)
     contact = NativeUI.CreateItem(Config.Languages[lang]['suggestions'], Config.Languages[lang]['suggestionsinfo'])
+    u160 = NativeUI.CreateItem("1.6.0", "Added shared emotes /nearby, or in menu, also fixed some emotes!")
     u152 = NativeUI.CreateItem("1.5.2", "Added language options for server owners")
     u151a = NativeUI.CreateItem("1.5.1a", "Fixed tryclothes/2, changed the guitar emotes slightly and changed facial expressions to 'moods'")
     u151 = NativeUI.CreateItem("1.5.1", "Added /walk and /walks, for walking styles without menu")
     u150 = NativeUI.CreateItem("1.5.0", "Added Facial Expressions menu (if enabled by server owner)")
     u142 = NativeUI.CreateItem("1.4.2", "Added many new prop emotes (guitar-guitar3, book, bouquet, teddy, backpack, burger and more)")
     infomenu:AddItem(contact)
+    infomenu:AddItem(u160)
     infomenu:AddItem(u152)
     infomenu:AddItem(u151a)
     infomenu:AddItem(u151)

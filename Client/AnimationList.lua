@@ -105,6 +105,70 @@ DP.Walks = {
   --["Wading"] = {"move_m@wading"},
 }
 
+DP.Shared = { 
+   --[emotename] = {dictionary, animation, displayname, targetemotename, additionalanimationoptions}
+   -- you dont have to specify targetemoteanem, if you do dont it will just play the same animation on both.
+   -- targetemote is used for animations that have a corresponding animation to the other player.
+   ["handshake"] = {"mp_ped_interaction", "handshake_guy_a", "Handshake", "handshake2", AnimationOptions =
+   {
+       EmoteMoving = true,
+       EmoteDuration = 3000
+   }},
+   ["handshake2"] = {"mp_ped_interaction", "handshake_guy_b", "Handshake 2", "handshake", AnimationOptions =
+   {
+       EmoteMoving = true,
+       EmoteDuration = 3000
+   }},
+   ["hug"] = {"mp_ped_interaction", "kisses_guy_a", "Hug", "hug2"},
+   ["hug2"] = {"mp_ped_interaction", "kisses_guy_b", "Hug 2", "hug", AnimationOptions =
+   {
+       EmoteMoving = true,
+       EmoteDuration = 5000
+   }},
+   ["bro"] = {"mp_ped_interaction", "hugs_guy_a", "Bro", "bro2"},
+   ["bro2"] = {"mp_ped_interaction", "hugs_guy_b", "Bro 2", "bro"},
+   ["give"] = {"mp_common", "givetake1_a", "Give", "give2", AnimationOptions =
+   {
+       EmoteMoving = true,
+       EmoteDuration = 2000
+   }},
+   ["give2"] = {"mp_common", "givetake1_b", "Give 2", "give", AnimationOptions =
+   {
+       EmoteMoving = true,
+       EmoteDuration = 2000
+   }},
+   ["baseball"] = {"anim@arena@celeb@flat@paired@no_props@", "baseball_a_player_a", "Baseball", "baseballthrow"},
+   ["baseballthrow"] = {"anim@arena@celeb@flat@paired@no_props@", "baseball_a_player_b", "Baseball Throw", "baseball"},
+   ["stickup"] = {"random@countryside_gang_fight", "biker_02_stickup_loop", "Stick Up", "stickupscared", AnimationOptions =
+   {
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["stickupscared"] = {"missminuteman_1ig_2", "handsup_base", "Stickup Scared", "stickup", AnimationOptions =
+   {
+      EmoteMoving = true,
+      EmoteLoop = true,
+   }},
+   ["punch"] = {"melee@unarmed@streamed_variations", "plyr_takedown_rear_lefthook", "Punch", "punched"},
+   ["punched"] = {"melee@unarmed@streamed_variations", "victim_takedown_front_cross_r", "Punched", "punch"},
+   ["headbutt"] = {"melee@unarmed@streamed_variations", "plyr_takedown_front_headbutt", "Headbutt", "headbutted"},
+   ["headbutted"] = {"melee@unarmed@streamed_variations", "victim_takedown_front_headbutt", "Headbutted", "headbutt"},
+   ["slap2"] = {"melee@unarmed@streamed_variations", "plyr_takedown_front_backslap", "Slap 2", "slapped2", AnimationOptions =
+   {
+       EmoteLoop = true,
+       EmoteMoving = true,
+       EmoteDuration = 2000,
+   }},
+   ["slap"] = {"melee@unarmed@streamed_variations", "plyr_takedown_front_slap", "Slap", "slapped", AnimationOptions =
+   {
+       EmoteLoop = true,
+       EmoteMoving = true,
+       EmoteDuration = 2000,
+   }},
+   ["slapped"] = {"melee@unarmed@streamed_variations", "victim_takedown_front_slap", "Slapped", "slap"},
+   ["slapped2"] = {"melee@unarmed@streamed_variations", "victim_takedown_front_backslap", "Slapped 2", "slap2"},
+}
+
 DP.Dances = {
    ["dancef"] = {"anim@amb@nightclub@dancers@solomun_entourage@", "mi_dance_facedj_17_v1_female^1", "Dance F", AnimationOptions =
    {
@@ -239,11 +303,6 @@ DP.Dances = {
 }
 
 DP.Emotes = {
-   ["healthkit"] = {"anim@amb@board_room@supervising@", "dissaproval_01_lo_amy_skater_01", "Health Kit", AnimationOptions =
-   {
-       EmoteMoving = true,
-       EmoteDuration = 2500,
-   }},
    ["drink"] = {"mp_player_inteat@pnq", "loop", "Drink", AnimationOptions =
    {
        EmoteMoving = true,
@@ -1221,6 +1280,7 @@ DP.Emotes = {
    {
        EmoteLoop = true,
        EmoteMoving = true,
+       EmoteDuration = 2000,
    }},
    ["headbutt"] = {"melee@unarmed@streamed_variations", "plyr_takedown_front_headbutt", "Headbutt"},
    ["fishdance"] = {"anim@mp_player_intupperfind_the_fish", "idle_a", "Fish Dance", AnimationOptions =
@@ -1448,13 +1508,13 @@ DP.Emotes = {
    ["leanbar"] = {"Scenario", "PROP_HUMAN_BUM_SHOPPING_CART", "Lean Bar"},
    ["lookout"] = {"Scenario", "CODE_HUMAN_CROSS_ROAD_WAIT", "Lookout"},
    ["maid"] = {"Scenario", "WORLD_HUMAN_MAID_CLEAN", "Maid"},
-   ["map"] = {"Scenario", "WORLD_HUMAN_TOURIST_MAP", "Map"},
+   ["map2"] = {"Scenario", "WORLD_HUMAN_TOURIST_MAP", "Map 2"},
    ["medic"] = {"Scenario", "CODE_HUMAN_MEDIC_TEND_TO_DEAD", "Medic"},
    ["musician"] = {"MaleScenario", "WORLD_HUMAN_MUSICIAN", "Musician"},
    ["notepad2"] = {"Scenario", "CODE_HUMAN_MEDIC_TIME_OF_DEATH", "Notepad 2"},
    ["parkingmeter"] = {"Scenario", "PROP_HUMAN_PARKING_METER", "Parking Meter"},
    ["party"] = {"Scenario", "WORLD_HUMAN_PARTYING", "Party"},
-   ["phone"] = {"Scenario", "WORLD_HUMAN_STAND_MOBILE", "Phone 3"},
+   ["phone"] = {"Scenario", "WORLD_HUMAN_STAND_MOBILE", "Phone"},
    ["prosthigh"] = {"Scenario", "WORLD_HUMAN_PROSTITUTE_HIGH_CLASS", "Prostitue High"},
    ["prostlow"] = {"Scenario", "WORLD_HUMAN_PROSTITUTE_LOW_CLASS", "Prostitue Low"},
    ["puddle"] = {"Scenario", "WORLD_HUMAN_BUM_WASH", "Puddle"},
@@ -1495,7 +1555,7 @@ DP.Emotes = {
        EmoteMoving = true,
        EmoteDuration = 4000
    }},
-   ["stink"] = {"anim@mp_player_intcelebrationfemale@stinker", "stink", "Stink", AnimationOptions =
+   ["stink"] = {"anim@mp_player_intcelebrationfemale@stinker", "stinker", "Stink", AnimationOptions =
    {
        EmoteMoving = true,
        EmoteLoop = true
@@ -1792,6 +1852,14 @@ DP.PropEmotes = {
        Prop = 'p_amb_clipboard_01',
        PropBone = 36029,
        PropPlacement = {0.16, 0.08, 0.1, -130.0, -50.0, 0.0}, 
+       EmoteMoving = true,
+       EmoteLoop = true
+   }},
+   ["map"] = {"amb@world_human_tourist_map@male@base", "base", "Map", AnimationOptions =
+   {
+       Prop = 'prop_tourist_map_01',
+       PropBone = 28422,
+       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0}, 
        EmoteMoving = true,
        EmoteLoop = true
    }},
