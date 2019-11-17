@@ -146,7 +146,7 @@ function AddEmoteMenu(menu)
           if(distance ~= -1 and distance < 3) then
             _,_,rename = table.unpack(DP.Shared[ShareTable[index]])
             TriggerServerEvent("ServerEmoteRequest", GetPlayerServerId(target), ShareTable[index])
-            SimpleNotify(Config.Languages[lang]['sentrequestto']..GetPlayerName(target)) 
+            SimpleNotify(Config.Languages[lang]['sentrequestto']..GetPlayerName(target))
           else
             SimpleNotify(Config.Languages[lang]['nobodyclose'])
           end
