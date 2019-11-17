@@ -307,6 +307,8 @@ function OnEmotePlay(EmoteName)
       end
   elseif EmoteName.AnimationOptions.EmoteMoving then
     MovementType = 51
+  elseif EmoteName.AnimationOptions.EmoteMoving == false then
+    MovementType = 0
   end
   else
     MovementType = 0
