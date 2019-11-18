@@ -240,7 +240,6 @@ function AddFaceMenu(menu)
 end
 
 function AddInfoMenu(menu)
-    print (UpdateAvailable)
     if not UpdateAvailable then
       infomenu = _menuPool:AddSubMenu(menu, Config.Languages[lang]['infoupdate'], "(1.6.4)", "", Menuthing, Menuthing)
     else
