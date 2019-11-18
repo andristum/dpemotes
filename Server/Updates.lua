@@ -6,10 +6,20 @@ if Config.CheckForUpdates then
     end)
 end
 
+RegisterServerEvent("dp:CheckVersion") 
+AddEventHandler("dp:CheckVersion", function()
+    if updateavail then
+        TriggerClientEvent("dp:Update", source, true)
+    else
+        TriggerClientEvent("dp:Update", source, false)
+    end
+end)
+
 function checkVersion(err,responseText, headers)
     curVersion = LoadResourceFile(GetCurrentResourceName(), "version")
 
     if curVersion ~= responseText and tonumber(curVersion) < tonumber(responseText) then
+        updateavail = true
         print("\n^1----------------------------------------------------------------------------------^7")
         print(resourceName.." is outdated, latest version is: ^2"..responseText.."^7, installed version: ^1"..curVersion.."^7!\nupdate from https://github.com"..updatePath.."")
         print("^1----------------------------------------------------------------------------------^7")

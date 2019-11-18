@@ -1,3 +1,5 @@
+TriggerServerEvent("dp:CheckVersion")
+
 rightPosition = {x = 1450, y = 100}
 leftPosition = {x = 0, y = 100}
 menuPosition = {x = 0, y = 200}
@@ -238,7 +240,12 @@ function AddFaceMenu(menu)
 end
 
 function AddInfoMenu(menu)
-    local infomenu = _menuPool:AddSubMenu(menu, Config.Languages[lang]['infoupdate'], "(1.6.3)", "", Menuthing, Menuthing)
+    print (UpdateAvailable)
+    if not UpdateAvailable then
+      infomenu = _menuPool:AddSubMenu(menu, Config.Languages[lang]['infoupdate'], "(1.6.4)", "", Menuthing, Menuthing)
+    else
+      infomenu = _menuPool:AddSubMenu(menu, Config.Languages[lang]['infoupdateav'], Config.Languages[lang]['infoupdateavtext'], "", Menuthing, Menuthing)
+    end
     contact = NativeUI.CreateItem(Config.Languages[lang]['suggestions'], Config.Languages[lang]['suggestionsinfo'])
     u160 = NativeUI.CreateItem("1.6.0", "Added shared emotes /nearby, or in menu, also fixed some emotes!")
     u152 = NativeUI.CreateItem("1.5.2", "Added language options for server owners")
@@ -259,7 +266,6 @@ function OpenEmoteMenu()
     mainMenu:Visible(not mainMenu:Visible())
 end
 
-
 function firstToUpper(str)
     return (str:gsub("^%l", string.upper))
 end
@@ -272,7 +278,7 @@ end
 if Config.ExpressionsEnabled then
   AddFaceMenu(mainMenu)
 end
-AddInfoMenu(mainMenu)
+
 _menuPool:RefreshIndex()
 
 Citizen.CreateThread(function()
@@ -282,3 +288,8 @@ Citizen.CreateThread(function()
     end
 end)
 
+RegisterNetEvent("dp:Update")
+AddEventHandler("dp:Update", function(state)
+    UpdateAvailable = state
+    AddInfoMenu(mainMenu)
+end)
