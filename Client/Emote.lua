@@ -9,11 +9,28 @@ local MovementType = 0
 local PlayerGender = "male"
 local PlayerHasProp = false
 local PlayerProps = {}
+local PlayerParticles = {}
 local SecondPropEmote = false
 local lang = Config.MenuLanguage
+local PtfxNotif = false
+local PtfxPrompt = false
+local PtfxWait = 500
+local PtfxNoProp = false
 
 Citizen.CreateThread(function()
   while true do
+
+    if PtfxPrompt then
+      if not PtfxNotif then
+          SimpleNotify(PtfxInfo)
+          PtfxNotif = true
+      end
+      if IsControlPressed(0, 47) then
+        PtfxStart()
+        Wait(PtfxWait)
+        PtfxStop()
+      end
+    end
 
     if Config.MenuKeybindEnabled then
       if IsControlPressed(0, Config.MenuKeybind) then
@@ -83,7 +100,11 @@ function EmoteCancel()
     DebugPrint("Forced scenario exit")
   end
 
+  PtfxNotif = false
+  PtfxPrompt = false
+
   if IsInAnimation then
+    PtfxStop()
     ClearPedTasks(GetPlayerPed(-1))
     DestroyAllProps()
     IsInAnimation = false
@@ -104,6 +125,24 @@ function DebugPrint(args)
   end
 end
 
+function PtfxStart()
+    if PtfxNoProp then
+      PtfxAt = PlayerPedId()
+    else
+      PtfxAt = prop
+    end
+    UseParticleFxAssetNextCall(PtfxAsset)
+    Ptfx = StartParticleFxLoopedOnEntity(PtfxName, PtfxAt, Ptfx1, Ptfx2, Ptfx3, Ptfx4, Ptfx5, Ptfx6, PtfxScale, false, false, false)
+    table.insert(PlayerParticles, Ptfx)
+end
+
+function PtfxStop()
+  for a,b in pairs(PlayerParticles) do
+    DebugPrint("Stopped PTFX: "..b)
+    StopParticleFxLooped(b, false)
+    table.remove(PlayerParticles, a)
+  end
+end
 
 function EmotesOnCommand(source, args, raw)
   local EmotesCommand = ""
@@ -139,22 +178,16 @@ function EmoteMenuStart(args, hard)
     if etype == "dances" then
         if DP.Dances[name] ~= nil then
           if OnEmotePlay(DP.Dances[name]) then end
-        else
-          EmoteChatMessage("'"..name.."' "..Config.Languages[lang]['notvaliddance'].."")
         end
     elseif etype == "props" then
         if DP.PropEmotes[name] ~= nil then
           if OnEmotePlay(DP.PropEmotes[name]) then end
-        else
-          EmoteChatMessage("'"..name.."' "..Config.Languages[lang]['notvalidemote'].."")
         end
     elseif etype == "emotes" then
         if DP.Emotes[name] ~= nil then
           if OnEmotePlay(DP.Emotes[name]) then end
         else
-          if name ~= "🕺 Dance Emotes" then
-              --EmoteChatMessage("'"..name.."'"..Config.Languages[lang]['notvalidemote'].."")
-          end
+          if name ~= "🕺 Dance Emotes" then end
         end
     elseif etype == "expression" then
         if DP.Expressions[name] ~= nil then
@@ -189,18 +222,26 @@ function EmoteCommandStart(source, args, raw)
   end
 end
 
-LoadAnim = function(dict)
+function LoadAnim(dict)
   while not HasAnimDictLoaded(dict) do
     RequestAnimDict(dict)
-    Citizen.Wait(1)
+    Wait(10)
   end
 end
 
-LoadPropDict = function(model)
-  RequestModel(GetHashKey(model))
+function LoadPropDict(model)
   while not HasModelLoaded(GetHashKey(model)) do
-    Citizen.Wait(1)
+    RequestModel(GetHashKey(model))
+    Wait(10)
   end
+end
+
+function PtfxThis(asset)
+  while not HasNamedPtfxAssetLoaded(asset) do
+    RequestNamedPtfxAsset(asset)
+    Wait(10)
+  end
+  UseParticleFxAssetNextCall(asset)
 end
 
 DestroyAllProps = function()
@@ -310,6 +351,8 @@ function OnEmotePlay(EmoteName)
     MovementType = 51
   elseif EmoteName.AnimationOptions.EmoteMoving == false then
     MovementType = 0
+  elseif EmoteName.AnimationOptions.EmoteStuck then
+    MovementType = 50
   end
 
   else
@@ -341,6 +384,26 @@ function OnEmotePlay(EmoteName)
         AddPropToPlayer(SecondPropName, SecondPropBone, SecondPropPl1, SecondPropPl2, SecondPropPl3, SecondPropPl4, SecondPropPl5, SecondPropPl6)
       end
     end
+
+    if EmoteName.AnimationOptions.PtfxAsset then
+      PtfxAsset = EmoteName.AnimationOptions.PtfxAsset
+      PtfxName = EmoteName.AnimationOptions.PtfxName
+      if EmoteName.AnimationOptions.PtfxNoProp then
+        PtfxNoProp = EmoteName.AnimationOptions.PtfxNoProp
+      else
+        PtfxNoProp = false
+      end
+      Ptfx1, Ptfx2, Ptfx3, Ptfx4, Ptfx5, Ptfx6, PtfxScale = table.unpack(EmoteName.AnimationOptions.PtfxPlacement)
+      PtfxInfo = EmoteName.AnimationOptions.PtfxInfo
+      PtfxWait = EmoteName.AnimationOptions.PtfxWait
+      PtfxNotif = false
+      PtfxPrompt = true
+      PtfxThis(PtfxAsset)
+    else
+      DebugPrint("Ptfx = none")
+      PtfxPrompt = false
+    end
+
   else
       DebugPrint("AnimationOptions = False")
   end

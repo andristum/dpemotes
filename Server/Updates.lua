@@ -26,8 +26,6 @@ function checkVersion(err,responseText, headers)
     elseif tonumber(curVersion) > tonumber(responseText) then
         print("You somehow skipped a few versions of "..resourceName.." or the git went offline, if it's still online i advise you to update ( or downgrade? )")
     else
-        print("\n^2-------------------------------------------^7")
         print("\n"..resourceName.." is up to date. (^2"..curVersion.."^7)")
-        print("\n^2-------------------------------------------^7")
     end
 end

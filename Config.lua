@@ -71,6 +71,9 @@ Config.Languages = {
         ['doyouwanna'] = "~y~Y~w~ to accept, ~r~L~w~ to refuse (~g~",
         ['refuseemote'] = "Emote refused.",
         ['makenearby'] = "makes the nearby player play",
+        ['camera'] = "Press ~y~G~w~ to use camera flash.",
+        ['makeitrain'] = "Press ~y~G~w~ to make it rain.",
+        ['pee'] = "Hold ~y~G~w~ to pee.",
   },
   ['fr'] = {
         ['emotes'] = 'Emotes',
@@ -108,6 +111,9 @@ Config.Languages = {
         ['doyouwanna'] = "~y~Y~w~ accepter, ~r~L~w~ refuser (~g~",
         ['refuseemote'] = "Emote refusée.",
         ['makenearby'] = "fait jouer le joueur à proximité",
+        ['camera'] = "Presse ~y~G~w~ utiliser le flash de l'appareil.",
+        ['makeitrain'] = "Presse ~y~G~w~ jeter de l'argent.",
+        ['pee'] = "Tenir ~y~G~w~ faire pipi.",
   },
   ['de'] = {
         ['emotes'] = 'Emotes',
@@ -145,6 +151,9 @@ Config.Languages = {
         ['doyouwanna'] = "~y~Y~w~ zu akzeptieren, ~r~L~w~ zu verweigern (~g~",
         ['refuseemote'] = "Emote abgelehnt.",
         ['makenearby'] = "Lässt den Spieler in der Nähe spielen",
+        ['camera'] = "Drücken ~y~G~w~ Kamerablitz verwenden.",
+        ['makeitrain'] = "Drücken ~y~G~w~ Geld werfen.",
+        ['pee'] = "Halt ~y~G~w~ urinieren.",
   },
   ['sv'] = {
         ['emotes'] = 'Emotes',
@@ -182,5 +191,8 @@ Config.Languages = {
         ['doyouwanna'] = "~y~Y~w~ för att acceptera, ~r~L~w~ för att vägra (~g~",
         ['refuseemote'] = "Emote vägrades.",
         ['makenearby'] = "andra personen spelar",
+        ['camera'] = "Tryck ~y~G~w~ för att använda blixt.",
+        ['makeitrain'] = "Tryck ~y~G~w~ för att kasta pengar.",
+        ['pee'] = "Håll ~y~G~w~ att kissa.",
   },
 }

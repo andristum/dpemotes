@@ -313,6 +313,59 @@ DP.Dances = {
    {
        EmoteLoop = true
    }},
+   ["danceglowstick"] = {"anim@amb@nightclub@lazlow@hi_railing@", "ambclub_13_mi_hi_sexualgriding_laz", "Dance Glowsticks", AnimationOptions =
+   {
+       Prop = 'ba_prop_battle_glowstick_01',
+       PropBone = 28422,
+       PropPlacement = {0.0700,0.1400,0.0,-80.0,20.0},
+       SecondProp = 'ba_prop_battle_glowstick_01',
+       SecondPropBone = 60309,
+       SecondPropPlacement = {0.0700,0.0900,0.0,-120.0,-20.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["danceglowstick2"] = {"anim@amb@nightclub@lazlow@hi_railing@", "ambclub_12_mi_hi_bootyshake_laz", "Dance Glowsticks 2", AnimationOptions =
+   {
+       Prop = 'ba_prop_battle_glowstick_01',
+       PropBone = 28422,
+       PropPlacement = {0.0700,0.1400,0.0,-80.0,20.0},
+       SecondProp = 'ba_prop_battle_glowstick_01',
+       SecondPropBone = 60309,
+       SecondPropPlacement = {0.0700,0.0900,0.0,-120.0,-20.0},
+       EmoteLoop = true,
+   }},
+   ["danceglowstick3"] = {"anim@amb@nightclub@lazlow@hi_railing@", "ambclub_09_mi_hi_bellydancer_laz", "Dance Glowsticks 3", AnimationOptions =
+   {
+       Prop = 'ba_prop_battle_glowstick_01',
+       PropBone = 28422,
+       PropPlacement = {0.0700,0.1400,0.0,-80.0,20.0},
+       SecondProp = 'ba_prop_battle_glowstick_01',
+       SecondPropBone = 60309,
+       SecondPropPlacement = {0.0700,0.0900,0.0,-120.0,-20.0},
+       EmoteLoop = true,
+   }},
+   ["dancehorse"] = {"anim@amb@nightclub@lazlow@hi_dancefloor@", "dancecrowd_li_15_handup_laz", "Dance Horse", AnimationOptions =
+   {
+       Prop = "ba_prop_battle_hobby_horse",
+       PropBone = 28422,
+       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["dancehorse2"] = {"anim@amb@nightclub@lazlow@hi_dancefloor@", "crowddance_hi_11_handup_laz", "Dance Horse 2", AnimationOptions =
+   {
+       Prop = "ba_prop_battle_hobby_horse",
+       PropBone = 28422,
+       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+       EmoteLoop = true,
+   }},
+   ["dancehorse3"] = {"anim@amb@nightclub@lazlow@hi_dancefloor@", "dancecrowd_li_11_hu_shimmy_laz", "Dance Horse 3", AnimationOptions =
+   {
+       Prop = "ba_prop_battle_hobby_horse",
+       PropBone = 28422,
+       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+       EmoteLoop = true,
+   }},
 }
 
 DP.Emotes = {
@@ -1465,11 +1518,6 @@ DP.Emotes = {
        EmoteMoving = true,
    }},
    ["bark"] = {"random@peyote@dog", "wakeup", "Bark"},
-   ["pee"] = {"misscarsteal2peeing", "peeing_loop", "Pee", AnimationOptions =
-   {
-       EmoteLoop = true,
-       EmoteMoving = true,
-   }},
    ["rabbit"] = {"random@peyote@rabbit", "wakeup", "Rabbit"},
    ["spiderman"] = {"missexile3", "ex03_train_roof_idle", "Spider-Man", AnimationOptions =
    {
@@ -1490,6 +1538,16 @@ DP.Emotes = {
       EmoteMoving = true,
       EmoteLoop = true,
    }},
+   ["pee"] = {"misscarsteal2peeing", "peeing_loop", "Pee", AnimationOptions =
+   {
+       EmoteStuck = true,
+       PtfxAsset = "scr_amb_chop",
+       PtfxName = "ent_anim_dog_peeing",
+       PtfxNoProp = true,
+       PtfxPlacement = {-0.05, 0.3, 0.0, 0.0, 90.0, 90.0, 1.0},
+       PtfxInfo = Config.Languages[Config.MenuLanguage]['pee'],
+       PtfxWait = 3000,
+   }},
 
 -----------------------------------------------------------------------------------------------------------
 ------ These are Scenarios, some of these dont work on women and some other issues, but still good to have.
@@ -1497,11 +1555,8 @@ DP.Emotes = {
 
    ["atm"] = {"Scenario", "PROP_HUMAN_ATM", "ATM"},
    ["bbq"] = {"MaleScenario", "PROP_HUMAN_BBQ", "BBQ"},
-   ["beg"] = {"MaleScenario", "WORLD_HUMAN_BUM_FREEWAY", "Beg"},
    ["bumbin"] = {"Scenario", "PROP_HUMAN_BUM_BIN", "Bum Bin"},
    ["bumsleep"] = {"Scenario", "WORLD_HUMAN_BUM_SLUMPED", "Bum Sleep"},
-   ["bumsleep"] = {"Scenario", "WORLD_HUMAN_BUM_SLUMPED", "Bum Sleep"},
-   ["camera"] = {"MaleScenario", "WORLD_HUMAN_PAPARAZZI", "Camera"},
    ["cheer"] = {"Scenario", "WORLD_HUMAN_CHEERING", "Cheer"},
    ["chinup"] = {"Scenario", "PROP_HUMAN_MUSCLE_CHIN_UPS", "Chinup"},
    ["clipboard2"] = {"MaleScenario", "WORLD_HUMAN_CLIPBOARD", "Clipboard 2"},
@@ -1521,7 +1576,6 @@ DP.Emotes = {
    ["leanbar"] = {"Scenario", "PROP_HUMAN_BUM_SHOPPING_CART", "Lean Bar"},
    ["lookout"] = {"Scenario", "CODE_HUMAN_CROSS_ROAD_WAIT", "Lookout"},
    ["maid"] = {"Scenario", "WORLD_HUMAN_MAID_CLEAN", "Maid"},
-   ["map2"] = {"Scenario", "WORLD_HUMAN_TOURIST_MAP", "Map 2"},
    ["medic"] = {"Scenario", "CODE_HUMAN_MEDIC_TEND_TO_DEAD", "Medic"},
    ["musician"] = {"MaleScenario", "WORLD_HUMAN_MUSICIAN", "Musician"},
    ["notepad2"] = {"Scenario", "CODE_HUMAN_MEDIC_TIME_OF_DEATH", "Notepad 2"},
@@ -1875,5 +1929,39 @@ DP.PropEmotes = {
        PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
        EmoteMoving = true,
        EmoteLoop = true
+   }},
+   ["beg"] = {"amb@world_human_bum_freeway@male@base", "base", "Beg", AnimationOptions =
+   {
+       Prop = 'prop_beggers_sign_03',
+       PropBone = 58868,
+       PropPlacement = {0.19, 0.18, 0.0, 5.0, 0.0, 40.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["makeitrain"] = {"anim@mp_player_intupperraining_cash", "idle_a", "Make It Rain", AnimationOptions =
+   {
+       Prop = 'prop_anim_cash_pile_01',
+       PropBone = 60309,
+       PropPlacement = {0.0, 0.0, 0.0, 180.0, 0.0, 70.0},
+       EmoteMoving = true,
+       EmoteLoop = true,
+       PtfxAsset = "scr_xs_celebration",
+       PtfxName = "scr_xs_money_rain",
+       PtfxPlacement = {0.0, 0.0, -0.09, -80.0, 0.0, 0.0, 1.0},
+       PtfxInfo = Config.Languages[Config.MenuLanguage]['makeitrain'],
+       PtfxWait = 500,
+   }},
+   ["camera"] = {"amb@world_human_paparazzi@male@base", "base", "Camera", AnimationOptions =
+   {
+       Prop = 'prop_pap_camera_01',
+       PropBone = 28422,
+       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+       PtfxAsset = "scr_bike_business",
+       PtfxName = "scr_bike_cfid_camera_flash",
+       PtfxPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0},
+       PtfxInfo = Config.Languages[Config.MenuLanguage]['camera'],
+       PtfxWait = 200,
    }},
 }

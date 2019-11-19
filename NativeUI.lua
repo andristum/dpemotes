@@ -2467,6 +2467,7 @@ function UIMenu.New(Title, Subtitle, X, Y, TxtDictionary, TxtName)
                     {0, 24}, -- Attack
                 },
                 Keyboard = {
+                    {0, 47}, -- G
                     {0, 171}, -- CAPSLOCK
                     {0, 249}, -- N
                     {0, 306}, -- N

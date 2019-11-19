@@ -1,3 +1,7 @@
+-----------------------------------------------------------------------------------------------------
+-- Shared Emotes Syncing  ---------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------
+
 RegisterServerEvent("ServerEmoteRequest")
 AddEventHandler("ServerEmoteRequest", function(target, emotename, etype)
 	TriggerClientEvent("ClientEmoteRequestReceive", target, emotename, etype)
