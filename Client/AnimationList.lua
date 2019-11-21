@@ -1964,4 +1964,17 @@ DP.PropEmotes = {
        PtfxInfo = Config.Languages[Config.MenuLanguage]['camera'],
        PtfxWait = 200,
    }},
+   ["champagnespray"] = {"anim@mp_player_intupperspray_champagne", "idle_a", "Champagne Spray", AnimationOptions =
+   {
+       Prop = 'ba_prop_battle_champ_open',
+       PropBone = 28422,
+       PropPlacement = {0.0,0.0,0.0,0.0,0.0,0.0},
+       EmoteMoving = true,
+       EmoteLoop = true,
+       PtfxAsset = "scr_ba_club",
+       PtfxName = "scr_ba_club_champagne_spray",
+       PtfxPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+       PtfxInfo = Config.Languages[Config.MenuLanguage]['spraychamp'],
+       PtfxWait = 500,
+   }},
 }

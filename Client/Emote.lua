@@ -32,18 +32,8 @@ Citizen.CreateThread(function()
       end
     end
 
-    if Config.MenuKeybindEnabled then
-      if IsControlPressed(0, Config.MenuKeybind) then
-        OpenEmoteMenu()
-      end
-    end
-
-    if Config.EnableXtoCancel then
-      if IsControlPressed(0, 73) then
-        EmoteCancel()
-      end
-    end
-
+    if Config.MenuKeybindEnabled then if IsControlPressed(0, Config.MenuKeybind) then OpenEmoteMenu() end end
+    if Config.EnableXtoCancel then if IsControlPressed(0, 73) then EmoteCancel() end end
     Citizen.Wait(1)
   end
 end)
@@ -52,29 +42,30 @@ end)
 -- Commands / Events --------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------
 
-RegisterCommand('e', function(source, args, raw)
-  EmoteCommandStart(source, args, raw)
+Citizen.CreateThread(function()
+    TriggerEvent('chat:addSuggestion', '/e', 'Play an emote', {{ name="emotename", help="dance, camera, sit or any valid emote."}})
+    TriggerEvent('chat:addSuggestion', '/e', 'Play an emote', {{ name="emotename", help="dance, camera, sit or any valid emote."}})
+    TriggerEvent('chat:addSuggestion', '/emote', 'Play an emote', {{ name="emotename", help="dance, camera, sit or any valid emote."}})
+    if Config.SqlKeybinding then
+      TriggerEvent('chat:addSuggestion', '/emotebind', 'Bind an emote', {{ name="key", help="num4, num5, num6, num7. num8, num9. Numpad 4-9!"}, { name="emotename", help="dance, camera, sit or any valid emote."}})
+      TriggerEvent('chat:addSuggestion', '/emotebinds', 'Check your currently bound emotes.')
+    end
+    TriggerEvent('chat:addSuggestion', '/emotemenu', 'Open dpemotes menu (F3) by default.')
+    TriggerEvent('chat:addSuggestion', '/emotes', 'List available emotes.')
+    TriggerEvent('chat:addSuggestion', '/walk', 'Set your walkingstyle.', {{ name="style", help="/walks for a list of valid styles"}})
+    TriggerEvent('chat:addSuggestion', '/walks', 'List available walking styles.')
 end)
 
-RegisterCommand('emote', function(source, args, raw)
-  EmoteCommandStart(source, args, raw)
-end)
-
-RegisterCommand('emotes', function(source, args, raw)
-  EmotesOnCommand()
-end)
-
-RegisterCommand('emotemenu', function(source, args, raw)
-  OpenEmoteMenu()
-end)
-
-RegisterCommand('walk', function(source, args, raw)
-  WalkCommandStart(source, args, raw)
-end)
-
-RegisterCommand('walks', function(source, args, raw)
-  WalksOnCommand()
-end)
+RegisterCommand('e', function(source, args, raw) EmoteCommandStart(source, args, raw) end)
+RegisterCommand('emote', function(source, args, raw) EmoteCommandStart(source, args, raw) end)
+if Config.SqlKeybinding then
+  RegisterCommand('emotebind', function(source, args, raw) EmoteBindStart(source, args, raw) end)
+  RegisterCommand('emotebinds', function(source, args, raw) EmoteBindsStart(source, args, raw) end)
+end
+RegisterCommand('emotemenu', function(source, args, raw) OpenEmoteMenu() end)
+RegisterCommand('emotes', function(source, args, raw) EmotesOnCommand() end)
+RegisterCommand('walk', function(source, args, raw) WalkCommandStart(source, args, raw) end)
+RegisterCommand('walks', function(source, args, raw) WalksOnCommand() end)
 
 AddEventHandler('onResourceStop', function(resource)
   if resource == GetCurrentResourceName() then
@@ -132,7 +123,8 @@ function PtfxStart()
       PtfxAt = prop
     end
     UseParticleFxAssetNextCall(PtfxAsset)
-    Ptfx = StartParticleFxLoopedOnEntity(PtfxName, PtfxAt, Ptfx1, Ptfx2, Ptfx3, Ptfx4, Ptfx5, Ptfx6, PtfxScale, false, false, false)
+    Ptfx = StartNetworkedParticleFxLoopedOnEntityBone(PtfxName, PtfxAt, Ptfx1, Ptfx2, Ptfx3, Ptfx4, Ptfx5, Ptfx6, GetEntityBoneIndexByName(PtfxName, "VFX"), 1065353216, 0, 0, 0, 1065353216, 1065353216, 1065353216, 0)
+    SetParticleFxLoopedColour(Ptfx, 1.0, 1.0, 1.0)
     table.insert(PlayerParticles, Ptfx)
 end
 
@@ -244,7 +236,7 @@ function PtfxThis(asset)
   UseParticleFxAssetNextCall(asset)
 end
 
-DestroyAllProps = function()
+function DestroyAllProps()
   for _,v in pairs(PlayerProps) do
     DeleteEntity(v)
   end
@@ -252,7 +244,7 @@ DestroyAllProps = function()
   DebugPrint("Destroyed Props")
 end
 
-AddPropToPlayer = function(prop1, bone, off1, off2, off3, rot1, rot2, rot3)
+function AddPropToPlayer(prop1, bone, off1, off2, off3, rot1, rot2, rot3)
   local Player = PlayerPedId()
   local x,y,z = table.unpack(GetEntityCoords(Player))
 
@@ -273,7 +265,7 @@ end
 -- V -- in most cases its better to replace the scenario with an animation bundled with prop instead.
 -----------------------------------------------------------------------------------------------------
 
-CheckGender = function()
+function CheckGender()
   local hashSkinMale = GetHashKey("mp_m_freemode_01")
   local hashSkinFemale = GetHashKey("mp_f_freemode_01")
 

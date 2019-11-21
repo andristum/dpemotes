@@ -35,6 +35,7 @@ end
 
 local EmoteTable = {}
 local FavEmoteTable = {}
+local KeyEmoteTable = {}
 local DanceTable = {}
 local PropETable = {}
 local WalkTable = {}
@@ -64,31 +65,41 @@ function AddEmoteMenu(menu)
     local submenu = _menuPool:AddSubMenu(menu, Config.Languages[lang]['emotes'], "", "", Menuthing, Menuthing)
     local dancemenu = _menuPool:AddSubMenu(submenu, Config.Languages[lang]['danceemotes'], "", "", Menuthing, Menuthing)
     local propmenu = _menuPool:AddSubMenu(submenu, Config.Languages[lang]['propemotes'], "", "", Menuthing, Menuthing)
+    table.insert(EmoteTable, Config.Languages[lang]['danceemotes'])
+    table.insert(EmoteTable, Config.Languages[lang]['danceemotes'])
+
     if Config.SharedEmotesEnabled then
       sharemenu = _menuPool:AddSubMenu(submenu, Config.Languages[lang]['shareemotes'], Config.Languages[lang]['shareemotesinfo'], "", Menuthing, Menuthing)
       shareddancemenu = _menuPool:AddSubMenu(sharemenu, Config.Languages[lang]['sharedanceemotes'], "", "", Menuthing, Menuthing)
       table.insert(ShareTable, 'none')
       table.insert(EmoteTable, Config.Languages[lang]['shareemotes'])
     end
-    local favmenu = _menuPool:AddSubMenu(submenu, Config.Languages[lang]['keybindemotes'], Config.Languages[lang]['keybindinfo'], "", Menuthing, Menuthing)
-    unbind2item = NativeUI.CreateItem(Config.Languages[lang]['rkeybind'], Config.Languages[lang]['rkeybind'])
-    unbinditem = NativeUI.CreateItem(Config.Languages[lang]['prop2info'], "")
-    favmenu:AddItem(unbinditem)
-    favmenu:AddItem(unbind2item)
-    table.insert(FavEmoteTable, Config.Languages[lang]['rkeybind'])
-    table.insert(FavEmoteTable, Config.Languages[lang]['rkeybind'])
-    table.insert(EmoteTable, Config.Languages[lang]['danceemotes'])
-    table.insert(EmoteTable, Config.Languages[lang]['keybindemotes'])
-    table.insert(EmoteTable, Config.Languages[lang]['danceemotes'])
+
+    if not Config.SqlKeybinding then
+      unbind2item = NativeUI.CreateItem(Config.Languages[lang]['rfavorite'], Config.Languages[lang]['rfavorite'])
+      unbinditem = NativeUI.CreateItem(Config.Languages[lang]['prop2info'], "")
+      favmenu = _menuPool:AddSubMenu(submenu, Config.Languages[lang]['favoriteemotes'], Config.Languages[lang]['favoriteinfo'], "", Menuthing, Menuthing)
+      favmenu:AddItem(unbinditem)
+      favmenu:AddItem(unbind2item)
+      table.insert(FavEmoteTable, Config.Languages[lang]['rfavorite'])
+      table.insert(FavEmoteTable, Config.Languages[lang]['rfavorite'])
+      table.insert(EmoteTable, Config.Languages[lang]['favoriteemotes'])
+    else
+      table.insert(EmoteTable, "keybinds")
+      keyinfo =  NativeUI.CreateItem(Config.Languages[lang]['keybinds'], Config.Languages[lang]['keybindsinfo'].." /emotebind [~y~num4-9~w~] [~g~emotename~w~]")
+      submenu:AddItem(keyinfo)
+    end
 
     for a,b in pairsByKeys(DP.Emotes) do
       x,y,z = table.unpack(b)
       emoteitem = NativeUI.CreateItem(z, "/e ("..a..")")
-      favemoteitem = NativeUI.CreateItem(z, Config.Languages[lang]['set']..z..Config.Languages[lang]['setboundemote'])
       submenu:AddItem(emoteitem)
-      favmenu:AddItem(favemoteitem)
       table.insert(EmoteTable, a)
-      table.insert(FavEmoteTable, a)
+      if not Config.SqlKeybinding then
+        favemoteitem = NativeUI.CreateItem(z, Config.Languages[lang]['set']..z..Config.Languages[lang]['setboundemote'])
+        favmenu:AddItem(favemoteitem)
+        table.insert(FavEmoteTable, a)
+      end
     end
 
     for a,b in pairsByKeys(DP.Dances) do
@@ -118,22 +129,25 @@ function AddEmoteMenu(menu)
     for a,b in pairsByKeys(DP.PropEmotes) do
       x,y,z = table.unpack(b)
       propitem = NativeUI.CreateItem(z, "/e ("..a..")")
-      propfavitem = NativeUI.CreateItem(z, Config.Languages[lang]['set']..z..Config.Languages[lang]['setboundemote'])
       propmenu:AddItem(propitem)
-      favmenu:AddItem(propfavitem)
       table.insert(PropETable, a)
-      table.insert(FavEmoteTable, a)
+      if not Config.SqlKeybinding then
+        propfavitem = NativeUI.CreateItem(z, Config.Languages[lang]['set']..z..Config.Languages[lang]['setboundemote'])
+        favmenu:AddItem(propfavitem)
+        table.insert(FavEmoteTable, a)
+      end
     end
 
-    favmenu.OnItemSelect = function(sender, item, index)
-      if FavEmoteTable[index] == Config.Languages[lang]['rkeybind'] then
-        FavoriteEmote = ""
-        ShowNotification(Config.Languages[lang]['rkeybind'], 2000)
-      return end 
-
-      if Config.FavKeybindEnabled then
-        FavoriteEmote = FavEmoteTable[index]
-        ShowNotification("~o~"..firstToUpper(FavoriteEmote)..Config.Languages[lang]['newsetemote']) 
+    if not Config.SqlKeybinding then
+      favmenu.OnItemSelect = function(sender, item, index)
+        if FavEmoteTable[index] == Config.Languages[lang]['rfavorite'] then
+          FavoriteEmote = ""
+          ShowNotification(Config.Languages[lang]['rfavorite'], 2000)
+        return end 
+        if Config.FavKeybindEnabled then
+          FavoriteEmote = FavEmoteTable[index]
+          ShowNotification("~o~"..firstToUpper(FavoriteEmote)..Config.Languages[lang]['newsetemote']) 
+        end
       end
     end
 
@@ -172,7 +186,7 @@ function AddEmoteMenu(menu)
     end
 
     submenu.OnItemSelect = function(sender, item, index)
-     if EmoteTable[index] ~= Config.Languages[lang]['keybindemotes'] then
+     if EmoteTable[index] ~= Config.Languages[lang]['favoriteemotes'] then
       EmoteMenuStart(EmoteTable[index], "emotes")
     end
   end
@@ -241,26 +255,22 @@ end
 
 function AddInfoMenu(menu)
     if not UpdateAvailable then
-      infomenu = _menuPool:AddSubMenu(menu, Config.Languages[lang]['infoupdate'], "(1.6.5)", "", Menuthing, Menuthing)
+      infomenu = _menuPool:AddSubMenu(menu, Config.Languages[lang]['infoupdate'], "(1.7.0)", "", Menuthing, Menuthing)
     else
       infomenu = _menuPool:AddSubMenu(menu, Config.Languages[lang]['infoupdateav'], Config.Languages[lang]['infoupdateavtext'], "", Menuthing, Menuthing)
     end
     contact = NativeUI.CreateItem(Config.Languages[lang]['suggestions'], Config.Languages[lang]['suggestionsinfo'])
-    u165 = NativeUI.CreateItem("1.6.5", "Updated camera/phone/pee/beg, added makeitrain/dance(glowstick/horse). ")
+    u170 = NativeUI.CreateItem("1.7.0", "Added /emotebind [key] [emote]!")
+    u165 = NativeUI.CreateItem("1.6.5", "Updated camera/phone/pee/beg, added makeitrain/dance(glowstick/horse).")
     u160 = NativeUI.CreateItem("1.6.0", "Added shared emotes /nearby, or in menu, also fixed some emotes!")
-    u152 = NativeUI.CreateItem("1.5.2", "Added language options for server owners")
-    u151a = NativeUI.CreateItem("1.5.1a", "Fixed tryclothes/2, changed the guitar emotes slightly and changed facial expressions to 'moods'")
     u151 = NativeUI.CreateItem("1.5.1", "Added /walk and /walks, for walking styles without menu")
     u150 = NativeUI.CreateItem("1.5.0", "Added Facial Expressions menu (if enabled by server owner)")
-    u142 = NativeUI.CreateItem("1.4.2", "Added many new prop emotes (guitar-guitar3, book, bouquet, teddy, backpack, burger and more)")
     infomenu:AddItem(contact)
+    infomenu:AddItem(u170)
     infomenu:AddItem(u165)
     infomenu:AddItem(u160)
-    infomenu:AddItem(u152)
-    infomenu:AddItem(u151a)
     infomenu:AddItem(u151)
     infomenu:AddItem(u150)
-    infomenu:AddItem(u142)
 end
 
 function OpenEmoteMenu()
@@ -293,4 +303,5 @@ RegisterNetEvent("dp:Update")
 AddEventHandler("dp:Update", function(state)
     UpdateAvailable = state
     AddInfoMenu(mainMenu)
+    _menuPool:RefreshIndex()
 end)
