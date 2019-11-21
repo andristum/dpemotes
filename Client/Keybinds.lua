@@ -94,7 +94,7 @@ function EmoteBindStart(source, args, raw)
           		EmoteChatMessage("'"..emote.."' "..Config.Languages[lang]['notvalidemote'].."")
         	end
         else
-        	EmoteChatMessage("'"..key.."' "..Config.Languages[lang]['notvalidkey']) -- to do locale
+        	EmoteChatMessage("'"..key.."' "..Config.Languages[lang]['notvalidkey'])
         end
     else
         print("invalid")
