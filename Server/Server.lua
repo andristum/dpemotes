@@ -33,6 +33,9 @@ if Config.SqlKeybinding then
 		end)
 	end)
 
+	--  This is my first time doing SQL stuff, and after i finished everything i realized i didnt have to store the keybinds in the database at all.
+	--  But remaking it now is a little pointless since it does it job just fine!
+
 	RegisterServerEvent("dp:ServerKeybindCreate")
 	AddEventHandler("dp:ServerKeybindCreate", function()
 		local src = source local srcid = GetPlayerIdentifier(source)
