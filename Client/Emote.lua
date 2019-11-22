@@ -260,6 +260,7 @@ function AddPropToPlayer(prop1, bone, off1, off2, off3, rot1, rot2, rot3)
   AttachEntityToEntity(prop, Player, GetPedBoneIndex(Player, bone), off1, off2, off3, rot1, rot2, rot3, true, true, false, true, 1, true)
   table.insert(PlayerProps, prop)
   PlayerHasProp = true
+  SetModelAsNoLongerNeeded(prop1)
 end
 
 -----------------------------------------------------------------------------------------------------
@@ -395,6 +396,7 @@ function OnEmotePlay(EmoteName)
   end
 
   TaskPlayAnim(GetPlayerPed(-1), ChosenDict, ChosenAnimation, 2.0, 2.0, AnimationDuration, MovementType, 0, false, false, false)
+  RemoveAnimDict(ChosenDict)
   IsInAnimation = true
   MostRecentDict = ChosenDict
   MostRecentAnimation = ChosenAnimation
