@@ -255,7 +255,7 @@ end
 
 function AddInfoMenu(menu)
     if not UpdateAvailable then
-      infomenu = _menuPool:AddSubMenu(menu, Config.Languages[lang]['infoupdate'], "(1.7.0)", "", Menuthing, Menuthing)
+      infomenu = _menuPool:AddSubMenu(menu, Config.Languages[lang]['infoupdate'], "(1.7.1)", "", Menuthing, Menuthing)
     else
       infomenu = _menuPool:AddSubMenu(menu, Config.Languages[lang]['infoupdateav'], Config.Languages[lang]['infoupdateavtext'], "", Menuthing, Menuthing)
     end
@@ -304,4 +304,9 @@ AddEventHandler("dp:Update", function(state)
     UpdateAvailable = state
     AddInfoMenu(mainMenu)
     _menuPool:RefreshIndex()
+end)
+
+RegisterNetEvent("dp:RecieveMenu") -- For opening the emote menu from another resource.
+AddEventHandler("dp:RecieveMenu", function()
+    OpenEmoteMenu() 
 end)

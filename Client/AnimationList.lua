@@ -1776,7 +1776,6 @@ DP.PropEmotes = {
        PropBone = 18905,
        PropPlacement = {0.13, 0.05, 0.02, -50.0, 16.0, 60.0},
        EmoteMoving = true,
-       EmoteDuration = 4500
    }},
    ["burger"] = {"mp_player_inteat@burger", "mp_player_int_eat_burger", "Burger", AnimationOptions =
    {
@@ -1784,7 +1783,6 @@ DP.PropEmotes = {
        PropBone = 18905,
        PropPlacement = {0.13, 0.05, 0.02, -50.0, 16.0, 60.0},
        EmoteMoving = true,
-       EmoteDuration = 4500
    }},
    ["sandwich"] = {"mp_player_inteat@burger", "mp_player_int_eat_burger", "Sandwich", AnimationOptions =
    {
@@ -1792,7 +1790,6 @@ DP.PropEmotes = {
        PropBone = 18905,
        PropPlacement = {0.13, 0.05, 0.02, -50.0, 16.0, 60.0},
        EmoteMoving = true,
-       EmoteDuration = 4500
    }},
    ["soda"] = {"amb@world_human_drinking@coffee@male@idle_a", "idle_c", "Soda", AnimationOptions =
    {
@@ -1808,7 +1805,6 @@ DP.PropEmotes = {
        PropBone = 60309,
        PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
        EmoteMoving = true,
-       EmoteDuration = 3500
    }},
    ["wine"] = {"anim@heists@humane_labs@finale@keycards", "ped_a_enter_loop", "Wine", AnimationOptions =
    {
@@ -1834,21 +1830,21 @@ DP.PropEmotes = {
        EmoteMoving = true,
        EmoteLoop = true
    }},
-   ["cigar"] = {"mp_player_inteat@burger", "mp_player_int_eat_burger", "Cigar", AnimationOptions =
+   ["cigar"] = {"amb@world_human_smoking@male@male_a@enter", "enter", "Cigar", AnimationOptions =
    {
        Prop = 'prop_cigar_02',
        PropBone = 47419,
        PropPlacement = {0.010, 0.0, 0.0, 50.0, 0.0, -80.0},
        EmoteMoving = true,
-       EmoteDuration = 600
+       EmoteDuration = 2600
    }},
-   ["cigar2"] = {"mp_player_inteat@burger", "mp_player_int_eat_burger", "Cigar 2", AnimationOptions =
+   ["cigar2"] = {"amb@world_human_smoking@male@male_a@enter", "enter", "Cigar 2", AnimationOptions =
    {
        Prop = 'prop_cigar_01',
        PropBone = 47419,
        PropPlacement = {0.010, 0.0, 0.0, 50.0, 0.0, -80.0},
        EmoteMoving = true,
-       EmoteDuration = 600
+       EmoteDuration = 2600
    }},
    ["guitar"] = {"amb@world_human_musician@guitar@male@idle_a", "idle_b", "Guitar", AnimationOptions =
    {
@@ -1976,5 +1972,29 @@ DP.PropEmotes = {
        PtfxPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
        PtfxInfo = Config.Languages[Config.MenuLanguage]['spraychamp'],
        PtfxWait = 500,
+   }},
+   ["joint"] = {"amb@world_human_smoking@male@male_a@enter", "enter", "Joint", AnimationOptions =
+   {
+       Prop = 'p_cs_joint_02',
+       PropBone = 47419,
+       PropPlacement = {0.015, -0.009, 0.003, 55.0, 0.0, 110.0},
+       EmoteMoving = true,
+       EmoteDuration = 2600
+   }},
+   ["cig"] = {"amb@world_human_smoking@male@male_a@enter", "enter", "Cig", AnimationOptions =
+   {
+       Prop = 'prop_amb_ciggy_01',
+       PropBone = 47419,
+       PropPlacement = {0.015, -0.009, 0.003, 55.0, 0.0, 110.0},
+       EmoteMoving = true,
+       EmoteDuration = 2600
+   }},
+   ["brief3"] = {"missheistdocksprep1hold_cellphone", "static", "Brief 3", AnimationOptions =
+   {
+       Prop = "prop_ld_case_01",
+       PropBone = 57005,
+       PropPlacement = {0.10, 0.0, 0.0, 0.0, 280.0, 53.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
    }},
 }

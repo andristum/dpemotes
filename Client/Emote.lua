@@ -20,6 +20,10 @@ local PtfxNoProp = false
 Citizen.CreateThread(function()
   while true do
 
+    if IsPedShooting(PlayerPedId()) and IsInAnimation then
+      EmoteCancel()
+    end
+
     if PtfxPrompt then
       if not PtfxNotif then
           SimpleNotify(PtfxInfo)
@@ -354,27 +358,10 @@ function OnEmotePlay(EmoteName)
   if EmoteName.AnimationOptions then
     if EmoteName.AnimationOptions.EmoteDuration == nil then 
       EmoteName.AnimationOptions.EmoteDuration = -1
+      AttachWait = 0
     else
       AnimationDuration = EmoteName.AnimationOptions.EmoteDuration
-    end
-
-    if EmoteName.AnimationOptions.Prop then
-      PropName = EmoteName.AnimationOptions.Prop
-      PropBone = EmoteName.AnimationOptions.PropBone
-      PropPl1, PropPl2, PropPl3, PropPl4, PropPl5, PropPl6 = table.unpack(EmoteName.AnimationOptions.PropPlacement)
-      if EmoteName.AnimationOptions.SecondProp then
-        SecondPropName = EmoteName.AnimationOptions.SecondProp
-        SecondPropBone = EmoteName.AnimationOptions.SecondPropBone
-        SecondPropPl1, SecondPropPl2, SecondPropPl3, SecondPropPl4, SecondPropPl5, SecondPropPl6 = table.unpack(EmoteName.AnimationOptions.SecondPropPlacement)
-        SecondPropEmote = true
-      else
-        SecondPropEmote = false
-      end
-
-      AddPropToPlayer(PropName, PropBone, PropPl1, PropPl2, PropPl3, PropPl4, PropPl5, PropPl6)
-      if SecondPropEmote then
-        AddPropToPlayer(SecondPropName, SecondPropBone, SecondPropPl1, SecondPropPl2, SecondPropPl3, SecondPropPl4, SecondPropPl5, SecondPropPl6)
-      end
+      AttachWait = EmoteName.AnimationOptions.EmoteDuration
     end
 
     if EmoteName.AnimationOptions.PtfxAsset then
@@ -395,27 +382,33 @@ function OnEmotePlay(EmoteName)
       DebugPrint("Ptfx = none")
       PtfxPrompt = false
     end
-
-  else
-      DebugPrint("AnimationOptions = False")
-  end
-  
-  DebugPrint ("--- Main Animations")
-  DebugPrint ("ChosenDict = " ..ChosenDict.. "")
-  DebugPrint ("ChosenAnimation = " ..ChosenAnimation.. "")
-  DebugPrint ("MovementType = " ..MovementType.. "")
-  DebugPrint ("AnimationDuration = " ..AnimationDuration.. "")
-
-  if EmoteName.AnimationOptions then
-    DebugPrint ("--- AnimationOptions")
-    DebugPrint ("AnimationOption.EmoteLoop = " ..tostring(EmoteName.AnimationOptions.EmoteLoop).. "")
-    DebugPrint ("AnimationOption.EmoteMoving = " ..tostring(EmoteName.AnimationOptions.EmoteMoving).. "")
-    DebugPrint ("AnimationOption.EmoteDuration = " ..tostring(EmoteName.AnimationOptions.EmoteDuration).. "")
-  end
-
   TaskPlayAnim(GetPlayerPed(-1), ChosenDict, ChosenAnimation, 2.0, 2.0, AnimationDuration, MovementType, 0, false, false, false)
   IsInAnimation = true
   MostRecentDict = ChosenDict
   MostRecentAnimation = ChosenAnimation
+
+  if EmoteName.AnimationOptions.Prop then
+      PropName = EmoteName.AnimationOptions.Prop
+      PropBone = EmoteName.AnimationOptions.PropBone
+      PropPl1, PropPl2, PropPl3, PropPl4, PropPl5, PropPl6 = table.unpack(EmoteName.AnimationOptions.PropPlacement)
+      if EmoteName.AnimationOptions.SecondProp then
+        SecondPropName = EmoteName.AnimationOptions.SecondProp
+        SecondPropBone = EmoteName.AnimationOptions.SecondPropBone
+        SecondPropPl1, SecondPropPl2, SecondPropPl3, SecondPropPl4, SecondPropPl5, SecondPropPl6 = table.unpack(EmoteName.AnimationOptions.SecondPropPlacement)
+        SecondPropEmote = true
+      else
+        SecondPropEmote = false
+      end
+
+      Wait(AttachWait)
+      AddPropToPlayer(PropName, PropBone, PropPl1, PropPl2, PropPl3, PropPl4, PropPl5, PropPl6)
+      if SecondPropEmote then
+        AddPropToPlayer(SecondPropName, SecondPropBone, SecondPropPl1, SecondPropPl2, SecondPropPl3, SecondPropPl4, SecondPropPl5, SecondPropPl6)
+      end
+    end
+  end
+
+
+
   return true
 end
