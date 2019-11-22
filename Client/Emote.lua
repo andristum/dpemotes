@@ -382,6 +382,8 @@ function OnEmotePlay(EmoteName)
       DebugPrint("Ptfx = none")
       PtfxPrompt = false
     end
+  end
+
   TaskPlayAnim(GetPlayerPed(-1), ChosenDict, ChosenAnimation, 2.0, 2.0, AnimationDuration, MovementType, 0, false, false, false)
   IsInAnimation = true
   MostRecentDict = ChosenDict
@@ -391,6 +393,7 @@ function OnEmotePlay(EmoteName)
       PropName = EmoteName.AnimationOptions.Prop
       PropBone = EmoteName.AnimationOptions.PropBone
       PropPl1, PropPl2, PropPl3, PropPl4, PropPl5, PropPl6 = table.unpack(EmoteName.AnimationOptions.PropPlacement)
+
       if EmoteName.AnimationOptions.SecondProp then
         SecondPropName = EmoteName.AnimationOptions.SecondProp
         SecondPropBone = EmoteName.AnimationOptions.SecondPropBone
@@ -405,10 +408,7 @@ function OnEmotePlay(EmoteName)
       if SecondPropEmote then
         AddPropToPlayer(SecondPropName, SecondPropBone, SecondPropPl1, SecondPropPl2, SecondPropPl3, SecondPropPl4, SecondPropPl5, SecondPropPl6)
       end
-    end
   end
-
-
 
   return true
 end

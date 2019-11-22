@@ -255,7 +255,7 @@ end
 
 function AddInfoMenu(menu)
     if not UpdateAvailable then
-      infomenu = _menuPool:AddSubMenu(menu, Config.Languages[lang]['infoupdate'], "(1.7.1)", "", Menuthing, Menuthing)
+      infomenu = _menuPool:AddSubMenu(menu, Config.Languages[lang]['infoupdate'], "(1.7.2)", "", Menuthing, Menuthing)
     else
       infomenu = _menuPool:AddSubMenu(menu, Config.Languages[lang]['infoupdateav'], Config.Languages[lang]['infoupdateavtext'], "", Menuthing, Menuthing)
     end
