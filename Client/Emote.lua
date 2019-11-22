@@ -286,6 +286,12 @@ end
 -----------------------------------------------------------------------------------------------------
 
 function OnEmotePlay(EmoteName)
+
+  InVehicle = IsPedInAnyVehicle(PlayerPedId(), true)
+  if not Config.AllowedInCars and InVehicle == 1 then
+    return
+  end
+
   if not DoesEntityExist(GetPlayerPed(-1)) then
     return false
   end
@@ -308,9 +314,9 @@ function OnEmotePlay(EmoteName)
     return
   end
 
-  if ChosenDict == "MaleScenario" or "Scenario" then
+  if ChosenDict == "MaleScenario" or "Scenario" then 
     CheckGender()
-    if ChosenDict == "MaleScenario" then
+    if ChosenDict == "MaleScenario" then if InVehicle then return end
       if PlayerGender == "male" then
         ClearPedTasks(GetPlayerPed(-1))
         TaskStartScenarioInPlace(GetPlayerPed(-1), ChosenAnimation, 0, true)
@@ -319,14 +325,14 @@ function OnEmotePlay(EmoteName)
       else
         EmoteChatMessage(Config.Languages[lang]['maleonly'])
       end return
-    elseif ChosenDict == "ScenarioObject" then
+    elseif ChosenDict == "ScenarioObject" then if InVehicle then return end
       BehindPlayer = GetOffsetFromEntityInWorldCoords(PlayerPedId(), 0.0, 0 - 0.5, -0.5);
       ClearPedTasks(GetPlayerPed(-1))
       TaskStartScenarioAtPosition(GetPlayerPed(-1), ChosenAnimation, BehindPlayer['x'], BehindPlayer['y'], BehindPlayer['z'], GetEntityHeading(PlayerPedId()), 0, 1, false)
       DebugPrint("Playing scenario = ("..ChosenAnimation..")")
       IsInAnimation = true
       return
-    elseif ChosenDict == "Scenario" then
+    elseif ChosenDict == "Scenario" then if InVehicle then return end
       ClearPedTasks(GetPlayerPed(-1))
       TaskStartScenarioInPlace(GetPlayerPed(-1), ChosenAnimation, 0, true)
       DebugPrint("Playing scenario = ("..ChosenAnimation..")")
@@ -353,6 +359,10 @@ function OnEmotePlay(EmoteName)
 
   else
     MovementType = 0
+  end
+
+  if InVehicle == 1 then
+    MovementType = 51
   end
 
   if EmoteName.AnimationOptions then
@@ -389,26 +399,25 @@ function OnEmotePlay(EmoteName)
   MostRecentDict = ChosenDict
   MostRecentAnimation = ChosenAnimation
 
-  if EmoteName.AnimationOptions.Prop then
-      PropName = EmoteName.AnimationOptions.Prop
-      PropBone = EmoteName.AnimationOptions.PropBone
-      PropPl1, PropPl2, PropPl3, PropPl4, PropPl5, PropPl6 = table.unpack(EmoteName.AnimationOptions.PropPlacement)
-
-      if EmoteName.AnimationOptions.SecondProp then
-        SecondPropName = EmoteName.AnimationOptions.SecondProp
-        SecondPropBone = EmoteName.AnimationOptions.SecondPropBone
-        SecondPropPl1, SecondPropPl2, SecondPropPl3, SecondPropPl4, SecondPropPl5, SecondPropPl6 = table.unpack(EmoteName.AnimationOptions.SecondPropPlacement)
-        SecondPropEmote = true
-      else
-        SecondPropEmote = false
-      end
-
-      Wait(AttachWait)
-      AddPropToPlayer(PropName, PropBone, PropPl1, PropPl2, PropPl3, PropPl4, PropPl5, PropPl6)
-      if SecondPropEmote then
-        AddPropToPlayer(SecondPropName, SecondPropBone, SecondPropPl1, SecondPropPl2, SecondPropPl3, SecondPropPl4, SecondPropPl5, SecondPropPl6)
-      end
+  if EmoteName.AnimationOptions then
+    if EmoteName.AnimationOptions.Prop then
+        PropName = EmoteName.AnimationOptions.Prop
+        PropBone = EmoteName.AnimationOptions.PropBone
+        PropPl1, PropPl2, PropPl3, PropPl4, PropPl5, PropPl6 = table.unpack(EmoteName.AnimationOptions.PropPlacement)
+        if EmoteName.AnimationOptions.SecondProp then
+          SecondPropName = EmoteName.AnimationOptions.SecondProp
+          SecondPropBone = EmoteName.AnimationOptions.SecondPropBone
+          SecondPropPl1, SecondPropPl2, SecondPropPl3, SecondPropPl4, SecondPropPl5, SecondPropPl6 = table.unpack(EmoteName.AnimationOptions.SecondPropPlacement)
+          SecondPropEmote = true
+        else
+          SecondPropEmote = false
+        end
+        Wait(AttachWait)
+        AddPropToPlayer(PropName, PropBone, PropPl1, PropPl2, PropPl3, PropPl4, PropPl5, PropPl6)
+        if SecondPropEmote then
+          AddPropToPlayer(SecondPropName, SecondPropBone, SecondPropPl1, SecondPropPl2, SecondPropPl3, SecondPropPl4, SecondPropPl5, SecondPropPl6)
+        end
+    end
   end
-
   return true
 end
