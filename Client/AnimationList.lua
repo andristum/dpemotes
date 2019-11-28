@@ -43,6 +43,8 @@ DP.Walks = {
   ["Cop"] = {"move_m@business@a"},
   ["Cop2"] = {"move_m@business@b"},
   ["Cop3"] = {"move_m@business@c"},
+  ["Default Female"] = {"move_f@multiplayer"},
+  ["Default Male"] = {"move_m@multiplayer"},
   ["Drunk"] = {"move_m@drunk@a"},
   ["Drunk"] = {"move_m@drunk@slightlydrunk"},
   ["Drunk2"] = {"move_m@buzzed"},
@@ -63,6 +65,7 @@ DP.Walks = {
   ["Handcuffs"] = {"move_m@prisoner_cuffed"},
   ["Heels"] = {"move_f@heels@c"},
   ["Heels2"] = {"move_f@heels@d"},
+  ["Hiking"] = {"move_m@hiking"},
   ["Hipster"] = {"move_m@hipster@a"},
   ["Hobo"] = {"move_m@hobo@a"},
   ["Hurry"] = {"move_f@hurry@a"},
@@ -75,6 +78,7 @@ DP.Walks = {
   ["Maneater"] = {"move_f@maneater"},
   ["Michael"] = {"move_ped_bucket"},
   ["Money"] = {"move_m@money"},
+  ["Muscle"] = {"move_m@muscle@a"},
   ["Posh"] = {"move_m@posh@"},
   ["Posh2"] = {"move_f@posh@"},
   ["Quick"] = {"move_m@quick"},
@@ -1581,7 +1585,7 @@ DP.Emotes = {
    ["notepad2"] = {"Scenario", "CODE_HUMAN_MEDIC_TIME_OF_DEATH", "Notepad 2"},
    ["parkingmeter"] = {"Scenario", "PROP_HUMAN_PARKING_METER", "Parking Meter"},
    ["party"] = {"Scenario", "WORLD_HUMAN_PARTYING", "Party"},
-   ["phone"] = {"Scenario", "WORLD_HUMAN_STAND_MOBILE", "Phone"},
+   ["texting"] = {"Scenario", "WORLD_HUMAN_STAND_MOBILE", "Texting"},
    ["prosthigh"] = {"Scenario", "WORLD_HUMAN_PROSTITUTE_HIGH_CLASS", "Prostitue High"},
    ["prostlow"] = {"Scenario", "WORLD_HUMAN_PROSTITUTE_LOW_CLASS", "Prostitue Low"},
    ["puddle"] = {"Scenario", "WORLD_HUMAN_BUM_WASH", "Puddle"},
@@ -1994,6 +1998,54 @@ DP.PropEmotes = {
        Prop = "prop_ld_case_01",
        PropBone = 57005,
        PropPlacement = {0.10, 0.0, 0.0, 0.0, 280.0, 53.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["tablet"] = {"amb@world_human_tourist_map@male@base", "base", "Tablet", AnimationOptions =
+   {
+       Prop = "prop_cs_tablet",
+       PropBone = 28422,
+       PropPlacement = {0.0, -0.03, 0.0, 20.0, -90.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["tablet2"] = {"amb@code_human_in_bus_passenger_idles@female@tablet@idle_a", "idle_a", "Tablet 2", AnimationOptions =
+   {
+       Prop = "prop_cs_tablet",
+       PropBone = 28422,
+       PropPlacement = {-0.05, 0.0, 0.0, 0.0, 0.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["phonecall"] = {"cellphone@", "cellphone_call_listen_base", "Phone Call", AnimationOptions =
+   {
+       Prop = "prop_npc_phone_02",
+       PropBone = 28422,
+       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["phone"] = {"cellphone@", "cellphone_text_read_base", "Phone", AnimationOptions =
+   {
+       Prop = "prop_npc_phone_02",
+       PropBone = 28422,
+       PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["clean"] = {"timetable@floyd@clean_kitchen@base", "base", "Clean", AnimationOptions =
+   {
+       Prop = "prop_sponge_01",
+       PropBone = 28422,
+       PropPlacement = {0.0, 0.0, -0.01, 90.0, 0.0, 0.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["clean2"] = {"amb@world_human_maid_clean@", "base", "Clean 2", AnimationOptions =
+   {
+       Prop = "prop_sponge_01",
+       PropBone = 28422,
+       PropPlacement = {0.0, 0.0, -0.01, 90.0, 0.0, 0.0},
        EmoteLoop = true,
        EmoteMoving = true,
    }},
