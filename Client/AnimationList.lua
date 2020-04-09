@@ -166,6 +166,16 @@ DP.Shared = {
       EmoteMoving = true,
       EmoteLoop = true,
    }},
+   ["sexodepef"] = {"misscarsteal2pimpsex", "shagloop_hooker", "Sexo de Pé F", "sexodepem", AnimationOptions =
+   {
+      EmoteMoving = true,
+      EmoteLoop = true,
+   }},
+   ["sexodepem"] = {"misscarsteal2pimpsex", "shagloop_pimp", "Sexo de Pé M", "sexodepef", AnimationOptions =
+   {
+      EmoteMoving = true,
+      EmoteLoop = true,
+   }},
    ["punch"] = {"melee@unarmed@streamed_variations", "plyr_takedown_rear_lefthook", "Punch", "punched"},
    ["punched"] = {"melee@unarmed@streamed_variations", "victim_takedown_front_cross_r", "Punched", "punch"},
    ["headbutt"] = {"melee@unarmed@streamed_variations", "plyr_takedown_front_headbutt", "Headbutt", "headbutted"},
@@ -659,6 +669,11 @@ DP.Emotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
+   ["grabcrotch"] = {"mp_player_int_uppergrab_crotch", "mp_player_int_grab_crotch", "Grab Crotch", AnimationOptions =
+   {
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
    ["hiking"] = {"move_m@hiking", "idle", "Hiking", AnimationOptions =
    {
        EmoteLoop = true,
@@ -810,6 +825,21 @@ DP.Emotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
+   ["fix1"] = {"amb@prop_human_bum_bin@base", "base", "Mechanic 5", AnimationOptions =
+   {
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["fix2"] = {"amb@prop_human_movie_bulb@base", "base", "Mechanic 6", AnimationOptions =
+   {
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["fix3"] = {"amb@prop_human_bum_bin@idle_a", "idle_a", "Mechanic 7", AnimationOptions =
+   {
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
    ["medic2"] = {"amb@medic@standing@tendtodead@base", "base", "Medic 2", AnimationOptions =
    {
        EmoteLoop = true,
@@ -862,6 +892,11 @@ DP.Emotes = {
        EmoteMoving = true,
    }},
    ["pickup"] = {"random@domestic", "pickup_low", "Pickup"},
+   ["pickbutt"] = {"mp_player_int_upperarse_pick", "mp_player_int_arse_pick", "Pick Butt", AnimationOptions =
+   {
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
    ["push"] = {"missfinale_c2ig_11", "pushcar_offcliff_f", "Push", AnimationOptions =
    {
        EmoteLoop = true,
@@ -915,6 +950,16 @@ DP.Emotes = {
        EmoteMoving = true,
    }},
    ["screwyou"] = {"misscommon@response", "screw_you", "Screw You", AnimationOptions =
+   {
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["sexodepef"] = {"misscarsteal2pimpsex", "shagloop_hooker", "Sexo de Pé F", AnimationOptions =
+   {
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["sexodepem"] = {"misscarsteal2pimpsex", "shagloop_pimp", "Sexo de Pé M", AnimationOptions =
    {
        EmoteLoop = true,
        EmoteMoving = true,
@@ -1730,7 +1775,15 @@ DP.PropEmotes = {
    {
        Prop = "prop_security_case_01",
        PropBone = 57005,
-       PropPlacement = {0.10, 0.0, 0.0, 0.0, 280.0, 53.0},
+       PropPlacement = {0.15, 0.005, -0.02, 0.0, -100.0, 50.0},
+       EmoteLoop = true,
+       EmoteMoving = true,
+   }},
+   ["suitcase3"] = {"anim@heists@box_carry@", "idle", "Suitcase 3", AnimationOptions =
+   {
+       Prop = "prop_cash_case_02",
+       PropBone = 60309,
+       PropPlacement = {0.025, -0.03, 0.255, 445.0, 290.0, 170.0},
        EmoteLoop = true,
        EmoteMoving = true,
    }},

@@ -2,9 +2,9 @@ Config = {
 -- Change the language of the menu here!.
 -- Note fr and de are google translated, if you would like to help out with translation / just fix it for your server check below and change translations yourself
 -- try en, fr, de or sv.
-	MenuLanguage = 'en',	
+	MenuLanguage = 'pt',	
 -- Set this to true to enable some extra prints
-	DebugDisplay = false,
+	DebugDisplay = true,
 -- Set this to false if you have something else on X, and then just use /e c to cancel emotes.
 	EnableXtoCancel = true,
 -- Set this to true if you want to disarm the player when they play an emote.
@@ -25,8 +25,11 @@ Config = {
 -- You can change the menu position here
 	MenuPosition = "right", -- (left, right)
 -- You can disable the Ragdoll keybinding here.
-	RagdollEnabled = true,
-	RagdollKeybind = 303, -- Get the button number here https://docs.fivem.net/game-references/controls/
+	RagdollEnabled = false,
+    RagdollKeybind = 303, -- Get the button number here https://docs.fivem.net/game-references/controls/
+-- You can disable the Cross Arms keybinding here.
+    CrossArmsEnabled = true,
+    CrossArmsKeyBind = 244,
 -- You can disable the Facial Expressions menu here.
 	ExpressionsEnabled = true,
 -- You can disable the Walking Styles menu here.
@@ -48,7 +51,7 @@ Config.KeybindKeys = {
 }
 
 Config.Languages = {
-  ['en'] = {
+    ['en'] = {
         ['emotes'] = 'Emotes',
         ['danceemotes'] = "🕺 Dance Emotes",
         ['propemotes'] = "📦 Prop Emotes",
@@ -282,5 +285,52 @@ Config.Languages = {
         ['notvalidkey'] = "no es una clave válida.",
         ['keybinds'] = "🔢 Keybinds",
         ['keybindsinfo'] = "Utilizar"
-  }
+  },
+  ['pt'] = {
+    ['emotes'] = 'Animações',
+    ['danceemotes'] = "🕺 Animações de Dança",
+    ['propemotes'] = "📦 Animações com Objectos",
+    ['favoriteemotes'] = "🌟 Favoritos",
+    ['favoriteinfo'] = "Selecciona uma animação aqui para a definires como Favorita.",
+    ['rfavorite'] = "Reset Favoritos",
+    ['prop2info'] = "❓ Animações com objectos estão localizadas no final",
+    ['set'] = "Definir (",
+    ['setboundemote'] = ") para ser a animação atribuida ao teu atalho?",
+    ['newsetemote'] = "~w~ é o teu emote atribuido, pressiona ~g~CapsLock~w~ para o utilizar.",
+    ['cancelemote'] = "Cancelar Animação",
+    ['cancelemoteinfo'] = "~r~X~w~ Cancela a animação",
+    ['walkingstyles'] = "Estilos de Caminhar",
+    ['resetdef'] = "Reset para predefinido",
+    ['normalreset'] = "Normal (Reset)",
+    ['moods'] = "Humores",
+    ['infoupdate'] = "Informação",
+    ['infoupdateav'] = "Informação (Actualização Disponível)",
+    ['infoupdateavtext'] = "Uma actualização está disponível, obtém em ~y~https://github.com/andristum/dpemotes~w~",
+    ['suggestions'] = "Sugestões?",
+    ['suggestionsinfo'] = "'dullpear_dev' no forum FiveM para sugerir alguma funcionalidade/animação nova! ✉️",
+    ['notvaliddance'] = "não é uma dança válida.",
+    ['notvalidemote'] = "não é uma animação válida.",
+    ['nocancel'] = "Não há nenhuma animação para cancelar.",
+    ['maleonly'] = "Esta animação é apenas para homens, desculpa!",
+    ['emotemenucmd'] = "Faz /emotemenu para um menu.",
+    ['shareemotes'] = "👫 Animações Partilhadas",
+    ['shareemotesinfo'] = "Convida uma pessoa por perto para uma animação",
+    ['sharedanceemotes'] = "🕺 Danças Partilhadas",
+    ['notvalidsharedemote'] = "não é uma animação partilhada válida.",
+    ['sentrequestto'] = "Pedido enviado a ~y~",
+    ['nobodyclose'] = "Ninguém está suficientemente ~r~perto~w~.",
+    ['doyouwanna'] = "~y~Y~w~ para aceitar, ~r~L~w~ para recusar (~g~",
+    ['refuseemote'] = "Animação Recusada.",
+    ['makenearby'] = "faz o jogador que está perto fazer animação",
+    ['camera'] = "Pressiona ~y~E~w~ para usar o flash da câmara.",
+    ['makeitrain'] = "Pressiona ~y~E~w~ para fazer chover.",
+    ['pee'] = "Pressiona ~y~E~w~ para mijar.",
+    ['spraychamp'] = "Mantém premido ~y~E~w~ para mandar champanhe",
+    ['bound'] = "Limite ",
+    ['to'] = "para",
+    ['currentlyboundemotes'] = " Emotes atribuidos a atalhos:",
+    ['notvalidkey'] = "não é uma tecla válida.",
+    ['keybinds'] = "🔢 Keybinds",
+    ['keybindsinfo'] = "Utilizar"
+},
 }

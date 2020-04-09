@@ -23,3 +23,30 @@ Citizen.CreateThread(function()
   end
 end)
 
+Citizen.CreateThread( function()
+
+	while true do
+		Citizen.Wait(5)
+		if (IsControlJustPressed(0,Config.CrossArmsKeyBind) and Config.CrossArmsEnabled) then
+			local player = PlayerPedId()
+	
+			if ( DoesEntityExist( player ) and not IsEntityDead( player ) ) then
+	
+				if IsEntityPlayingAnim(player, "missfbi_s4mop", "guard_idle_a", 3) then
+					ClearPedSecondaryTask(player)
+				else
+					loadAnimDict( "missfbi_s4mop" )
+					TaskPlayAnim(player, "missfbi_s4mop", "guard_idle_a", 2.0, 2.5, -1, 49, 0, 0, 0, 0 )
+					RemoveAnimDict("missfbi_s4mop")
+				end
+			end
+	  end	
+	end
+end)
+
+function loadAnimDict(dict)
+	RequestAnimDict(dict)
+	while not HasAnimDictLoaded(dict) do
+		Citizen.Wait(500)
+	end
+end
