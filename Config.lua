@@ -2,7 +2,7 @@ Config = {
 -- Change the language of the menu here!.
 -- Note fr and de are google translated, if you would like to help out with translation / just fix it for your server check below and change translations yourself
 -- try en, fr, de or sv.
-	MenuLanguage = 'en',	
+	MenuLanguage = 'en',
 -- Set this to true to enable some extra prints
 	DebugDisplay = false,
 -- Set this to false if you have something else on X, and then just use /e c to cancel emotes.
@@ -30,7 +30,7 @@ Config = {
 -- You can disable the Facial Expressions menu here.
 	ExpressionsEnabled = true,
 -- You can disable the Walking Styles menu here.
-	WalkingStylesEnabled = true,	
+	WalkingStylesEnabled = true,
 -- You can disable the Shared Emotes here.
     SharedEmotesEnabled = true,
     CheckForUpdates = true,
@@ -48,6 +48,53 @@ Config.KeybindKeys = {
 }
 
 Config.Languages = {
+	['it'] = {
+        ['emotes'] = 'Animazioni',
+        ['danceemotes'] = "🕺 Ballo",
+        ['propemotes'] = "📦 Animazioni Prop",
+        ['favoriteemotes'] = "🌟 Preferiti",
+        ['favoriteinfo'] = "Seleziona un'animazione per metterla nei preferiti.",
+        ['rfavorite'] = "Rimuovi preferito",
+        ['prop2info'] = "❓ Le animazioni Prop possono essere trovate in fondo.",
+        ['set'] = "Imposta (",
+        ['setboundemote'] = ") come tua animazione corrente?",
+        ['newsetemote'] = "~w~ è ora la tua animazione corrente, premi ~g~CapsLock~w~ per usarla.",
+        ['cancelemote'] = "Annulla animazione",
+        ['cancelemoteinfo'] = "~r~X~w~ Cancella l'animazione in corso.",
+        ['walkingstyles'] = "Stili di camminata",
+        ['resetdef'] = "Ripristina predefiniti",
+        ['normalreset'] = "Normale (Reset)",
+        ['moods'] = "Umori",
+        ['infoupdate'] = "Informazioni",
+        ['infoupdateav'] = "Informazioni (Aggiornamento disponibile)",
+        ['infoupdateavtext'] = "Un aggiornamento è disponibile, ottieni l'ulima versione qui ~y~https://github.com/andristum/dpemotes~w~",
+        ['suggestions'] = "Suggerimenti?",
+        ['suggestionsinfo'] = "'dullpear_dev' nei forum di FiveM per suggerimenti su funzionalitá/animazioni! ✉️",
+        ['notvaliddance'] = "non è un ballo valido.",
+        ['notvalidemote'] = "non è un'animazione valida.",
+        ['nocancel'] = "Nessun'animazione da cancellare.",
+        ['maleonly'] = "Quest'animazione è solo maschile!",
+        ['emotemenucmd'] = "Esegui /emotemenu per aprire il menù.",
+        ['shareemotes'] = "👫 Animazioni di coppia",
+        ['shareemotesinfo'] = "Invita un giocatore vicino ad un'animazione",
+        ['sharedanceemotes'] = "🕺 Balli di coppia",
+        ['notvalidsharedemote'] = "non è un'animazione di coppia valida.",
+        ['sentrequestto'] = "Richiesta mandata a ~y~",
+        ['nobodyclose'] = "Nessun giocatore abbastanza ~r~vicino~w~.",
+        ['doyouwanna'] = "~y~Y~w~ per accettare, ~r~L~w~ per rifiutare (~g~",
+        ['refuseemote'] = "Animazione rifiutata.",
+        ['makenearby'] = "fa eseguire l'animazione al giocatore vicino",
+        ['camera'] = "Premi ~y~G~w~ per usare il flash della fotocamera.",
+        ['makeitrain'] = "Premi ~y~G~w~ per far piovere.",
+        ['pee'] = "Tieni premuto ~y~G~w~ per urinare.",
+        ['spraychamp'] = "Tieni premuto ~y~G~w~ per spruzzare champagne",
+        ['bound'] = "É stato impostato ",
+        ['to'] = "per",
+        ['currentlyboundemotes'] = " Animazioni correnti:",
+        ['notvalidkey'] = "non è una chiave valida.",
+        ['keybinds'] = "🔢 Tasti",
+        ['keybindsinfo'] = "Utilizza"
+  },
   ['en'] = {
         ['emotes'] = 'Emotes',
         ['danceemotes'] = "🕺 Dance Emotes",
