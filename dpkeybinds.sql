@@ -1,4 +1,3 @@
-
 CREATE TABLE IF NOT EXISTS `dpkeybinds` (
   `id` varchar(50) NULL DEFAULT NULL,
   `keybind1` varchar(50) NULL DEFAULT "num4",
