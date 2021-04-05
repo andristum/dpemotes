@@ -1803,6 +1803,27 @@ DP.PropEmotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
+   ["spray"] = {"switch@franklin@lamar_tagging_wall", "lamar_tagging_exit_loop_lamar", "Spray ", AnimationOptions =
+   {
+     Prop = 'prop_cs_spray_can',
+     PropBone = 28422,
+     PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+     EmoteLoop = true,
+     EmoteMoving = false,
+     PtfxAsset = "scr_playerlamgraff",
+     PtfxName = "scr_lamgraff_paint_spray",
+     PtfxPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+     PtfxInfo = Config.Languages[Config.MenuLanguage]['spray'],
+     PtfxWait = 5000,
+   }},
+   ["spray2"] = {"switch@franklin@lamar_tagging_wall", "lamar_tagging_wall_loop_lamar", "Spray 3", AnimationOptions =
+   {
+     Prop = 'prop_cs_spray_can',
+     PropBone = 28422,
+     PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 130.0},
+     EmoteLoop = true,
+     EmoteMoving = true,
+   }},
    ["egobar"] = {"mp_player_inteat@burger", "mp_player_int_eat_burger", "Ego Bar", AnimationOptions =
    {
        Prop = 'prop_choc_ego',

@@ -88,6 +88,7 @@ Config.Languages = {
         ['makeitrain'] = "Press ~y~G~w~ to make it rain.",
         ['pee'] = "Hold ~y~G~w~ to pee.",
         ['spraychamp'] = "Hold ~y~G~w~ to spray champagne",
+        ['spray'] = "Hold ~y~CAPSLOCK~w~ to spray",
         ['bound'] = "Bound ",
         ['to'] = "to",
         ['currentlyboundemotes'] = " Currently bound emotes:",
