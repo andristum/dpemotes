@@ -1803,7 +1803,7 @@ DP.PropEmotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
-   ["spray"] = {"switch@franklin@lamar_tagging_wall", "lamar_tagging_exit_loop_lamar", "Spray ", AnimationOptions =
+   ["spray"] = {"switch@franklin@lamar_tagging_wall", "lamar_tagging_exit_loop_lamar", "Spray", AnimationOptions =
    {
      Prop = 'prop_cs_spray_can',
      PropBone = 28422,
@@ -1816,7 +1816,7 @@ DP.PropEmotes = {
      PtfxInfo = Config.Languages[Config.MenuLanguage]['spray'],
      PtfxWait = 5000,
    }},
-   ["spray2"] = {"switch@franklin@lamar_tagging_wall", "lamar_tagging_wall_loop_lamar", "Spray 3", AnimationOptions =
+   ["spray2"] = {"switch@franklin@lamar_tagging_wall", "lamar_tagging_wall_loop_lamar", "Spray 2", AnimationOptions =
    {
      Prop = 'prop_cs_spray_can',
      PropBone = 28422,
