@@ -12,7 +12,7 @@ Config = {
 -- Set this if you really wanna disable emotes in cars, as of 1.7.2 they only play the upper body part if in vehicle
     AllowedInCars = true,
 -- You can disable the (F3) menu here / change the keybind.
-	MenuKeybindEnabled = true,
+	MenuKeybindEnabled = false,
 	MenuKeybind = 170, -- Get the button number here https://docs.fivem.net/game-references/controls/
 -- You can disable the Favorite emote keybinding here.
 	FavKeybindEnabled = false,
