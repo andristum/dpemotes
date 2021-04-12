@@ -15,7 +15,7 @@ Config = {
 	MenuKeybindEnabled = true,
 	MenuKeybind = 170, -- Get the button number here https://docs.fivem.net/game-references/controls/
 -- You can disable the Favorite emote keybinding here.
-	FavKeybindEnabled = true,
+	FavKeybindEnabled = false,
 	FavKeybind = 171, -- Get the button number here https://docs.fivem.net/game-references/controls/
 -- You can change the header image for the f3 menu here
 -- Use a 512 x 128 image!
@@ -35,7 +35,7 @@ Config = {
     SharedEmotesEnabled = true,
     CheckForUpdates = true,
 -- If you have the SQL imported enable this to turn on keybinding.
-    SqlKeybinding = true,
+    SqlKeybinding = false,
 }
 
 Config.KeybindKeys = {
