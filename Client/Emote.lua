@@ -79,6 +79,13 @@ AddEventHandler('onResourceStop', function(resource)
   end
 end)
 
+-- Trigger an emote start with this event
+-- Parameter args: {"emotename"}
+RegisterNetEvent('EmoteCommandStart')
+AddEventHandler('EmoteCommandStart', function(args)
+  EmoteCommandStart(nil, args, nil)
+end)
+
 -----------------------------------------------------------------------------------------------------
 ------ Functions and stuff --------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------
