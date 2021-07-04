@@ -1,12 +1,3 @@
-QBCore = nil
-
-Citizen.CreateThread(function() 
-  while QBCore == nil do
-    	TriggerEvent('QBCore:GetObject', function(obj) QBCore = obj end)
-    	Citizen.Wait(200)
-  end
-end)
-
 TriggerServerEvent("dp:CheckVersion")
 
 rightPosition = {x = 1450, y = 100}
