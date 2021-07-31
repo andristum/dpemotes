@@ -20,7 +20,7 @@ local PtfxNoProp = false
 Citizen.CreateThread(function()
   while true do
 
-    if IsPedShooting(PlayerPedId()) and IsInAnimation then
+    if (IsPedShooting(PlayerPedId()) and IsInAnimation) or (PlayerData.metadata['isdead'] and IsInAnimation) then
       EmoteCancel()
     end
 
@@ -60,16 +60,55 @@ Citizen.CreateThread(function()
     TriggerEvent('chat:addSuggestion', '/walks', 'List available walking styles.')
 end)
 
-RegisterCommand('e', function(source, args, raw) EmoteCommandStart(source, args, raw) end)
-RegisterCommand('emote', function(source, args, raw) EmoteCommandStart(source, args, raw) end)
+RegisterCommand('e', function(source, args, raw)
+    if not PlayerData.metadata['isdead'] then
+        EmoteCommandStart(source, args, raw)
+    end
+end)
+
+RegisterCommand('emote', function(source, args, raw)
+    if not PlayerData.metadata['isdead'] then
+        EmoteCommandStart(source, args, raw)
+    end
+end)
+
 if Config.SqlKeybinding then
-  RegisterCommand('emotebind', function(source, args, raw) EmoteBindStart(source, args, raw) end)
-  RegisterCommand('emotebinds', function(source, args, raw) EmoteBindsStart(source, args, raw) end)
+    RegisterCommand('emotebind', function(source, args, raw)
+        if not PlayerData.metadata['isdead'] then
+            EmoteBindStart(source, args, raw)
+        end
+    end)
+
+    RegisterCommand('emotebinds', function(source, args, raw)
+        if not PlayerData.metadata['isdead'] then
+            EmoteBindsStart(source, args, raw)
+        end
+    end)
 end
-RegisterCommand('emotemenu', function(source, args, raw) OpenEmoteMenu() end)
-RegisterCommand('emotes', function(source, args, raw) EmotesOnCommand() end)
-RegisterCommand('walk', function(source, args, raw) WalkCommandStart(source, args, raw) end)
-RegisterCommand('walks', function(source, args, raw) WalksOnCommand() end)
+
+RegisterCommand('emotemenu', function(source, args, raw)
+    if not PlayerData.metadata['isdead'] then
+        OpenEmoteMenu()
+    end
+end)
+
+RegisterCommand('emotes', function(source, args, raw)
+    if not PlayerData.metadata['isdead'] then
+        EmotesOnCommand()
+    end
+end)
+
+RegisterCommand('walk', function(source, args, raw)
+    if not PlayerData.metadata['isdead'] then
+        WalkCommandStart(source, args, raw)
+    end
+end)
+
+RegisterCommand('walks', function(source, args, raw)
+    if not PlayerData.metadata['isdead'] then
+        WalksOnCommand()
+    end
+end)
 
 -- Added 
 
