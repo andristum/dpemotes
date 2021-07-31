@@ -3,6 +3,21 @@ TriggerServerEvent("dp:CheckVersion")
 rightPosition = {x = 1450, y = 100}
 leftPosition = {x = 0, y = 100}
 menuPosition = {x = 0, y = 200}
+PlayerData = {}
+
+Citizen.CreateThread(function() -- This is here to get the player data when the resource is restarted instead of having to log out and back in each time
+    PlayerData = QBCore.Functions.GetPlayerData()
+end)
+
+RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
+AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
+    PlayerData = QBCore.Functions.GetPlayerData()
+end)
+
+RegisterNetEvent('QBCore:Client:OnPlayerUnload')
+AddEventHandler('QBCore:Client:OnPlayerUnload', function()
+    PlayerData = {}
+end)
 
 if Config.MenuPosition then
   if Config.MenuPosition == "left" then
@@ -45,7 +60,7 @@ local FavoriteEmote = ""
 
 Citizen.CreateThread(function()
   while true do
-    if Config.FavKeybindEnabled then
+    if Config.FavKeybindEnabled and not PlayerData.metadata['isdead'] then
       if IsControlPressed(0, Config.FavKeybind) then
         if not IsPedSittingInAnyVehicle(PlayerPedId()) then
           if FavoriteEmote ~= "" then
