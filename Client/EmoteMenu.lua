@@ -4,24 +4,18 @@ rightPosition = {x = 1450, y = 100}
 leftPosition = {x = 0, y = 100}
 menuPosition = {x = 0, y = 200}
 PlayerData = {}
-
--- This is here to get the player data when the resource is restarted instead of having to log out and back in each time
--- This won't set the player data too early as this only triggers when the server side is started and not the client side
-AddEventHandler('onResourceStart', function(resource)
-    if resource == GetCurrentResourceName() then
-        Wait(200)
-        PlayerData = QBCore.Functions.GetPlayerData()
-    end
-end)
+isLoggedIn = false
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
 AddEventHandler('QBCore:Client:OnPlayerLoaded', function()
     PlayerData = QBCore.Functions.GetPlayerData()
+    isLoggedIn = true
 end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerUnload')
 AddEventHandler('QBCore:Client:OnPlayerUnload', function()
     PlayerData = {}
+    isLoggedIn = false
 end)
 
 if Config.MenuPosition then
@@ -329,4 +323,14 @@ end)
 RegisterNetEvent("dp:RecieveMenu") -- For opening the emote menu from another resource.
 AddEventHandler("dp:RecieveMenu", function()
     OpenEmoteMenu() 
+end)
+
+-- This is here to get the player data when the resource is restarted instead of having to log out and back in each time
+-- This won't set the player data too early as this only triggers when the server side is started and not the client side
+AddEventHandler('onResourceStart', function(resource)
+  if resource == GetCurrentResourceName() then
+      Wait(200)
+      PlayerData = QBCore.Functions.GetPlayerData()
+      isLoggedIn = true
+  end
 end)
