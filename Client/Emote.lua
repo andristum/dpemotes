@@ -20,7 +20,7 @@ local PtfxNoProp = false
 Citizen.CreateThread(function()
   while true do
 
-    if (IsPedShooting(PlayerPedId()) and IsInAnimation) or (PlayerData.metadata['isdead'] and IsInAnimation) then
+    if (IsPedShooting(PlayerPedId()) and IsInAnimation) or (isLoggedIn and PlayerData.metadata['isdead'] and IsInAnimation) then
       EmoteCancel()
     end
 
