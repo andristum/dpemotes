@@ -5,8 +5,13 @@ leftPosition = {x = 0, y = 100}
 menuPosition = {x = 0, y = 200}
 PlayerData = {}
 
-Citizen.CreateThread(function() -- This is here to get the player data when the resource is restarted instead of having to log out and back in each time
-    PlayerData = QBCore.Functions.GetPlayerData()
+-- This is here to get the player data when the resource is restarted instead of having to log out and back in each time
+-- This won't set the player data too early as this only triggers when the server side is started and not the client side
+AddEventHandler('onResourceStart', function(resource)
+    if resource == GetCurrentResourceName() then
+        Wait(200)
+        PlayerData = QBCore.Functions.GetPlayerData()
+    end
 end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
