@@ -175,6 +175,10 @@ function EmoteMenuStart(args, hard)
         if DP.Dances[name] ~= nil then
           if OnEmotePlay(DP.Dances[name]) then end
         end
+		elseif etype == "animals" then
+			if DP.AnimalEmotes[name] ~= nil then
+				if OnEmotePlay(DP.AnimalEmotes[name]) then end
+			end
     elseif etype == "props" then
         if DP.PropEmotes[name] ~= nil then
           if OnEmotePlay(DP.PropEmotes[name]) then end
