@@ -18,6 +18,11 @@ AddEventHandler('QBCore:Client:OnPlayerUnload', function()
     isLoggedIn = false
 end)
 
+RegisterNetEvent('QBCore:Player:SetPlayerData')
+AddEventHandler('QBCore:Player:SetPlayerData', function(val)
+    PlayerData = val
+end)
+
 if Config.MenuPosition then
   if Config.MenuPosition == "left" then
     menuPosition = leftPosition
