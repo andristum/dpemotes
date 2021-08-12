@@ -61,51 +61,59 @@ Citizen.CreateThread(function()
 end)
 
 RegisterCommand('e', function(source, args, raw)
-    if not PlayerData.metadata['isdead'] then
+    PlayerData = QBCore.Functions.GetPlayerData()
+    if not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] then
         EmoteCommandStart(source, args, raw)
     end
 end)
 
 RegisterCommand('emote', function(source, args, raw)
-    if not PlayerData.metadata['isdead'] then
+    PlayerData = QBCore.Functions.GetPlayerData()
+    if not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] then
         EmoteCommandStart(source, args, raw)
     end
 end)
 
 if Config.SqlKeybinding then
     RegisterCommand('emotebind', function(source, args, raw)
-        if not PlayerData.metadata['isdead'] then
+        PlayerData = QBCore.Functions.GetPlayerData()
+        if not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] then
             EmoteBindStart(source, args, raw)
         end
     end)
 
     RegisterCommand('emotebinds', function(source, args, raw)
-        if not PlayerData.metadata['isdead'] then
+        PlayerData = QBCore.Functions.GetPlayerData()
+        if not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] then
             EmoteBindsStart(source, args, raw)
         end
     end)
 end
 
 RegisterCommand('emotemenu', function(source, args, raw)
-    if not PlayerData.metadata['isdead'] then
+    PlayerData = QBCore.Functions.GetPlayerData()
+    if not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] then
         OpenEmoteMenu()
     end
 end)
 
 RegisterCommand('emotes', function(source, args, raw)
-    if not PlayerData.metadata['isdead'] then
+    PlayerData = QBCore.Functions.GetPlayerData()
+    if not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] then
         EmotesOnCommand()
     end
 end)
 
 RegisterCommand('walk', function(source, args, raw)
-    if not PlayerData.metadata['isdead'] then
+    PlayerData = QBCore.Functions.GetPlayerData()
+    if not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] then
         WalkCommandStart(source, args, raw)
     end
 end)
 
 RegisterCommand('walks', function(source, args, raw)
-    if not PlayerData.metadata['isdead'] then
+    PlayerData = QBCore.Functions.GetPlayerData()
+    if not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] then
         WalksOnCommand()
     end
 end)
