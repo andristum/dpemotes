@@ -69,6 +69,7 @@ function AddEmoteMenu(menu)
     local propmenu = _menuPool:AddSubMenu(submenu, Config.Languages[lang]['propemotes'], "", "", Menuthing, Menuthing)
     table.insert(EmoteTable, Config.Languages[lang]['danceemotes'])
     table.insert(EmoteTable, Config.Languages[lang]['danceemotes'])
+    table.insert(EmoteTable, Config.Languages[lang]['animalemotes'])
 
     if Config.SharedEmotesEnabled then
       sharemenu = _menuPool:AddSubMenu(submenu, Config.Languages[lang]['shareemotes'], Config.Languages[lang]['shareemotesinfo'], "", Menuthing, Menuthing)
