@@ -372,6 +372,41 @@ DP.Dances = {
    }},
 }
 
+DP.AnimalEmotes = {
+	["barkbigdog"] = {"creatures@rottweiler@amb@world_dog_barking@idle_a", "idle_a", "Bark (big dog)", AnimationOptions =
+	{
+		EmoteLoop = true
+	}},
+	["begbigdog"] = {"creatures@rottweiler@tricks@", "beg_loop", "Beg (big dog)", AnimationOptions =
+	{
+		EmoteLoop = true
+	}},
+	["itchbigdog"] = {"creatures@rottweiler@amb@world_dog_sitting@idle_a", "idle_a", "Itch (big dog)", AnimationOptions =
+	{
+		EmoteDuration = 2000
+	}},
+	["sleepbigdog"] = {"creatures@rottweiler@amb@sleep_in_kennel@", "sleep_in_kennel", "Sleep (big dog)", AnimationOptions =
+	{
+		EmoteLoop = true
+	}},
+	["sitbigdog"] = {"creatures@rottweiler@amb@world_dog_sitting@base", "base", "Sit (big dog)", AnimationOptions =
+	{
+		EmoteLoop = true
+	}},
+	["barksmalldog"] = {"creatures@pug@amb@world_dog_barking@idle_a", "idle_a", "Bark (small dog)", AnimationOptions =
+	{
+		EmoteLoop = true
+	}},
+	["itchsmalldog"] = {"creatures@pug@amb@world_dog_sitting@idle_a", "idle_a", "Itch (small dog)", AnimationOptions =
+	{
+		EmoteDuration = 2000
+	}},
+	["sitsmalldog"] = {"creatures@pug@amb@world_dog_sitting@idle_a", "idle_b", "Sit (small dog)", AnimationOptions =
+	{
+		EmoteLoop = true
+	}}
+}
+
 DP.Emotes = {
    ["drink"] = {"mp_player_inteat@pnq", "loop", "Drink", AnimationOptions =
    {
