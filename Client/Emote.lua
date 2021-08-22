@@ -86,7 +86,7 @@ if Config.SqlKeybinding then
     end)
 end
 
-RegisterCommand('emotemenu', function(source, args, raw)
+RegisterCommand('em', function(source, args, raw)
     if not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] then
         OpenEmoteMenu()
     end
