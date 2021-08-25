@@ -92,6 +92,12 @@ RegisterCommand('emotemenu', function(source, args, raw)
     end
 end)
 
+RegisterCommand('em', function(source, args, raw)
+    if not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] then
+        OpenEmoteMenu()
+    end
+end)
+
 RegisterCommand('emotes', function(source, args, raw)
     if not PlayerData.metadata['inlaststand'] and not PlayerData.metadata['isdead'] then
         EmotesOnCommand()
