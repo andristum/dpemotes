@@ -214,6 +214,8 @@ function EmoteCommandStart(source, args, raw)
       if OnEmotePlay(DP.Emotes[name]) then end return
     elseif DP.Dances[name] ~= nil then
       if OnEmotePlay(DP.Dances[name]) then end return
+    elseif DP.AnimalEmotes[name] ~= nil then
+       if OnEmotePlay(DP.AnimalEmotes[name]) then end return
     elseif DP.PropEmotes[name] ~= nil then
       if OnEmotePlay(DP.PropEmotes[name]) then end return
     else
