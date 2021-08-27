@@ -478,7 +478,7 @@ DP.AnimalEmotes = {
    {
       EmoteLoop = true
    }},
-   ["sdogdance"] = {"creatures@pug@amb@world_dog_barking@idle_a", "idle_c", "Shake (small dog)", AnimationOptions =
+   ["sdogshake"] = {"creatures@pug@amb@world_dog_barking@idle_a", "idle_c", "Shake (small dog)", AnimationOptions =
    {
       EmoteLoop = true
    }},
