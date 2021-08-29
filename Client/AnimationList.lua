@@ -1819,7 +1819,7 @@ DP.Emotes = {
    ["weld"] = {"Scenario", "WORLD_HUMAN_WELDING", "Weld"},
    ["windowshop"] = {"Scenario", "WORLD_HUMAN_WINDOW_SHOP_BROWSE", "Window Shop"},
    ["yoga"] = {"Scenario", "WORLD_HUMAN_YOGA", "Yoga"},
-   -- CASINO DLC EMOTES (STREAMED)
+   -- CASINO DLC EMOTES (Requires gamebuild 2060 or higher)
    ["karate"] = {"anim@mp_player_intcelebrationfemale@karate_chops", "karate_chops", "Karate"},
    ["karate2"] = {"anim@mp_player_intcelebrationmale@karate_chops", "karate_chops", "Karate 2"},
    ["cutthroat"] = {"anim@mp_player_intcelebrationmale@cut_throat", "cut_throat", "Cut Throat"},
@@ -2365,4 +2365,79 @@ DP.PropEmotes = {
       EmoteLoop = true,
       EmoteMoving = true,
    }},
+   ["binoculars"] = {"amb@world_human_binoculars@male@idle_b", "idle_f", "Binoculars", AnimationOptions =
+   {
+      Prop = "prop_binoc_01",
+      PropBone = 28422,
+      PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+      --
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+    ["binoculars2"] = {"amb@world_human_binoculars@male@idle_a", "idle_c", "Binoculars 2", AnimationOptions =
+   {
+      Prop = "prop_binoc_01",
+      PropBone = 28422,
+      PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+      --
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["tennisplay"] = {"move_weapon@jerrycan@generic", "idle", "Tennis Play", AnimationOptions =
+   {
+      Prop = "prop_tennis_bag_01",
+      PropBone = 57005,
+      PropPlacement = {0.27, 0.0, 0.0, 91.0, 0.0, -82.9999951},
+	  SecondProp = 'prop_tennis_rack_01',
+      SecondPropBone = 60309,
+      SecondPropPlacement = {0.0800, 0.0300, 0.0, -130.2907295, 3.8782324, 6.588224},
+      EmoteLoop = true,
+      EmoteMoving = true,
+	  
+
+   }},
+   ["weights"] = {"amb@world_human_muscle_free_weights@male@barbell@base", "base", "Weights", AnimationOptions =
+   {
+      Prop = "prop_curl_bar_01",
+      PropBone = 28422,
+      PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+  }},
+   ["weights2"] = {"amb@world_human_muscle_free_weights@male@barbell@idle_a", "idle_d", "Weights 2", AnimationOptions =
+   {
+      Prop = "prop_curl_bar_01",
+      PropBone = 28422,
+      PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+  }},
+   ["fuel"] = {"weapons@misc@jerrycan@", "fire", "fuel", AnimationOptions =
+   {
+      Prop = "w_am_jerrycan",
+      PropBone = 57005,
+      PropPlacement = {0.1800, 0.1300, -0.2400, -165.8693883, -11.2122753, -32.9453021},
+      EmoteLoop = true,
+      EmoteMoving = true,
+  }},
+   ["fuelcarry"] = {"weapons@misc@jerrycan@franklin", "idle", "Fuel Carry", AnimationOptions =
+   {
+      Prop = "w_am_jerrycan",
+      PropBone = 28422,
+      PropPlacement = {0.26, 0.050, 0.0300, 80.00, 180.000, 79.99},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["hitchhike"] = {"random@hitch_lift", "idle_f", "Hitchhike", AnimationOptions =
+   {
+      Prop = "w_am_jerrycan",
+      PropBone = 18905,
+      PropPlacement = {0.32, -0.0100, 0.0, -162.423, 74.83, 58.79},
+	   SecondProp = 'prop_michael_backpack',
+      SecondPropBone = 40269,
+      SecondPropPlacement = {-0.07, -0.21, -0.11, -144.93, 117.358, -6.16},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+
 }
