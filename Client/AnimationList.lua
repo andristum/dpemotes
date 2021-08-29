@@ -2438,6 +2438,97 @@ DP.PropEmotes = {
       SecondPropPlacement = {-0.07, -0.21, -0.11, -144.93, 117.358, -6.16},
       EmoteLoop = true,
       EmoteMoving = true,
+  }},
+   ["ssign"] = {"rcmnigel1d", "base_club_shoulder", "Steal Stop Sign ", AnimationOptions =
+   {
+      Prop = "prop_sign_road_01a",
+      PropBone = 60309,
+      PropPlacement = {-0.1390, -0.9870, 0.4300, -67.3315314, 145.0627869, -4.4318885},
+      --
+      EmoteLoop = true,
+      EmoteMoving = true,
+  }},
+   ["ssign2"] = {"rcmnigel1d", "base_club_shoulder", "Steal Yield Sign ", AnimationOptions =
+   {
+      Prop = "prop_sign_road_02a",
+      PropBone = 60309,
+      PropPlacement = {-0.1390, -0.9870, 0.4300, -67.3315314, 145.0627869, -4.4318885},
+      --
+      EmoteLoop = true,
+      EmoteMoving = true,
+    }},
+   ["ssign3"] = {"rcmnigel1d", "base_club_shoulder", "Steal Hospital Sign ", AnimationOptions =
+   {
+      Prop = "prop_sign_road_03d",
+      PropBone = 60309,
+      PropPlacement = {-0.1390, -0.9870, 0.4300, -67.3315314, 145.0627869, -4.4318885},
+      --
+      EmoteLoop = true,
+      EmoteMoving = true,
    }},
+   ["ssign4"] = {"rcmnigel1d", "base_club_shoulder", "Steal Parking Sign ", AnimationOptions =
+   {
+      Prop = "prop_sign_road_04a",
+      PropBone = 60309,
+      PropPlacement = {-0.1390, -0.9870, 0.4300, -67.3315314, 145.0627869, -4.4318885},
+      --
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["ssign5"] = {"rcmnigel1d", "base_club_shoulder", "Steal Parking Sign 2 ", AnimationOptions =
+   {
+      Prop = "prop_sign_road_04w",
+      PropBone = 60309,
+      PropPlacement = {-0.1390, -0.9870, 0.4300, -67.3315314, 145.0627869, -4.4318885},
+      --
+      EmoteLoop = true,
+      EmoteMoving = true,
+    }},
+   ["ssign6"] = {"rcmnigel1d", "base_club_shoulder", "Steal Pedestrian Sign ", AnimationOptions =
+   {
+      Prop = "prop_sign_road_05a",
+      PropBone = 60309,
+      PropPlacement = {-0.1390, -0.9870, 0.4300, -67.3315314, 145.0627869, -4.4318885},
+      --
+      EmoteLoop = true,
+      EmoteMoving = true,
+    }},
+   ["ssign7"] = {"rcmnigel1d", "base_club_shoulder", "Steal Street Sign ", AnimationOptions =
+   {
+      Prop = "prop_sign_road_05t",
+      PropBone = 60309,
+      PropPlacement = {-0.1390, -0.9870, 0.4300, -67.3315314, 145.0627869, -4.4318885},
+      --
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["ssign8"] = {"rcmnigel1d", "base_club_shoulder", "Steal Freeway Sign ", AnimationOptions =
+   {
+      Prop = "prop_sign_freewayentrance",
+      PropBone = 60309,
+      PropPlacement = {-0.1390, -0.9870, 0.4300, -67.3315314, 145.0627869, -4.4318885},
+      --
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["ssign9"] = {"rcmnigel1d", "base_club_shoulder", "Steal Stop Sign Snow ", AnimationOptions =
+   {
+      Prop = "prop_snow_sign_road_01a",
+      PropBone = 60309,
+      PropPlacement = {-0.1390, -0.9870, 0.4300, -67.3315314, 145.0627869, -4.4318885},
+      --
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["conehead"] = {"move_m@drunk@verydrunk_idles@", "fidget_07", "Cone Head ", AnimationOptions =
+   {
+      Prop = "prop_roadcone02a",
+      PropBone = 31086,
+      PropPlacement = {-0.0300, 0.0200, 0.000, 0.000, 83.9000, 0.000},
+      --
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+
 
 }
