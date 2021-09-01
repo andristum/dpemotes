@@ -586,6 +586,51 @@ DP.AnimalEmotes = {
       EmoteLoop = true,
       EmoteMoving = false,
    }},
+   ["sdogrose"] = {"creatures@pug@move", "nill", "Rose (small dog)", AnimationOptions =
+   {
+      Prop = 'prop_single_rose',
+      PropBone = 12844,
+      PropPlacement = {0.1090,-0.0140,0.0500,0.0,0.0,0.0},
+      EmoteLoop = true,
+      EmoteMoving = false,
+    }},
+   ["sdogrose2"] = {"creatures@pug@amb@world_dog_sitting@idle_a", "idle_b", "Rose Sit (small dog)", AnimationOptions =
+   {
+      Prop = 'prop_single_rose',
+      PropBone = 12844,
+      PropPlacement = {0.1090,-0.0140,0.0500,0.0,0.0,0.0},
+      EmoteLoop = true,
+      EmoteMoving = false,
+   }},
+   ["sdogggun"] = {"creatures@pug@move", "nill", "Gun Gold (small dog)", AnimationOptions =
+   {
+      Prop = 'w_pi_pistol_luxe',
+      PropBone = 12844,
+      PropPlacement = {0.2010,-0.0080,0.0,0.0,0.0,0.0},
+      EmoteLoop = true,
+      EmoteMoving = false,
+    }},
+   ["sdoggun2"] = {"creatures@pug@amb@world_dog_sitting@idle_a", "idle_b", "Gun Gold Sit (small dog)", AnimationOptions =
+   {
+      Prop = 'w_pi_pistol_luxe',
+      PropBone = 12844,
+      PropPlacement = {0.2010,-0.0080,0.0,0.0,0.0,0.0},
+      EmoteLoop = true,
+      EmoteMoving = false,
+    }},
+   ["sdogstun"] = {"creatures@pug@move", "nill", "Stun Gun (small dog)", AnimationOptions =
+   {
+      Prop = 'w_pi_stungun',
+      PropBone = 12844,
+      PropPlacement = {0.1400,-0.0100,0.0,0.0,0.0,0.0},
+      EmoteLoop = true,
+      EmoteMoving = false,
+	  PtfxAsset = "core",
+      PtfxName = "blood_stungun",
+      PtfxPlacement = {0.208, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0},
+      PtfxInfo = Config.Languages[Config.MenuLanguage]['stun'],
+      PtfxWait = 200,
+    }},
 
 
 }
