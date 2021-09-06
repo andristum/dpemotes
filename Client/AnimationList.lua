@@ -2569,7 +2569,7 @@ DP.PropEmotes = {
    {
       Prop = "prop_roadcone02a",
       PropBone = 31086,
-      PropPlacement = {-0.0300, 0.0200, 0.000, 0.000, 83.9000, 0.000},
+      PropPlacement = {0.0100, -0.1300, -0.200, 0.0, 0.0, 0.0},
       --
       EmoteLoop = true,
       EmoteMoving = true,
