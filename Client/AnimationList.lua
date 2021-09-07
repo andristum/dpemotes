@@ -1118,6 +1118,11 @@ DP.Emotes = {
    {
       EmoteLoop = true,
       EmoteMoving = true,
+    }},
+   ["dock"] = {"anim@mp_player_intincardockstd@rds@", "idle_a", "Dock", AnimationOptions =
+   {
+      EmoteLoop = true,
+      EmoteMoving = true,
    }},
    ["outofbreath"] = {"re@construction", "out_of_breath", "Out of Breath", AnimationOptions =
    {
@@ -1269,7 +1274,7 @@ DP.Emotes = {
    {
       EmoteLoop = true,
    }},
-   ["sitchair3"] = {"timetable@reunited@ig_10", "base_amanda", "Sit Chair 3", AnimationOptions =
+   ["sitchair3"] = {"timetable@reunited@ig_10", "base_amanda", "Sit Chair 3 (Female)", AnimationOptions =
    {
       EmoteLoop = true,
    }},
@@ -1277,11 +1282,11 @@ DP.Emotes = {
    {
       EmoteLoop = true,
    }},
-   ["sitchair5"] = {"timetable@jimmy@mics3_ig_15@", "mics3_15_base_tracy", "Sit Chair 5", AnimationOptions =
+   ["sitchair5"] = {"timetable@jimmy@mics3_ig_15@", "mics3_15_base_tracy", "Sit Chair Legs Crossed", AnimationOptions =
    {
       EmoteLoop = true,
    }},
-   ["sitchair6"] = {"timetable@maid@couch@", "base", "Sit Chair 6", AnimationOptions =
+   ["sitchair6"] = {"timetable@maid@couch@", "base", "Sit Chair Lean Back", AnimationOptions =
    {
       EmoteLoop = true,
    }},
@@ -2283,6 +2288,14 @@ DP.PropEmotes = {
       EmoteMoving = true,
       EmoteLoop = true
    }},
+   ["map2"] = {"amb@code_human_in_bus_passenger_idles@female@tablet@idle_a", "idle_a", "Map 2", AnimationOptions =
+   {
+      Prop = "prop_tourist_map_01",
+      PropBone = 28422,
+      PropPlacement = {-0.05, 0.0, 0.0, 0.0, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
    ["beg"] = {"amb@world_human_bum_freeway@male@base", "base", "Beg", AnimationOptions =
    {
       Prop = 'prop_beggers_sign_03',
@@ -2479,7 +2492,7 @@ DP.PropEmotes = {
       Prop = "w_am_jerrycan",
       PropBone = 18905,
       PropPlacement = {0.32, -0.0100, 0.0, -162.423, 74.83, 58.79},
-	   SecondProp = 'prop_michael_backpack',
+	  SecondProp = 'prop_michael_backpack',
       SecondPropBone = 40269,
       SecondPropPlacement = {-0.07, -0.21, -0.11, -144.93, 117.358, -6.16},
       EmoteLoop = true,
@@ -2575,6 +2588,99 @@ DP.PropEmotes = {
       EmoteLoop = true,
       EmoteMoving = true,
    }},
+    ["carryfood"] = {"anim@heists@box_carry@", "idle", "Carry Food", AnimationOptions =
+   {
+      Prop = "prop_food_bs_tray_03",
+      PropBone = 28422,
+      PropPlacement = {0.0100, -0.0400, -0.1390,20.0000007, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+    }},
+    ["carryfood2"] = {"anim@heists@box_carry@", "idle", "Carry Food 2", AnimationOptions =
+   {
+      Prop = "prop_food_bs_tray_02",
+      PropBone = 28422,
+      PropPlacement = {0.0100, -0.0400, -0.1390,20.0000007, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+    ["carryfood3"] = {"anim@heists@box_carry@", "idle", "Carry Food 3", AnimationOptions =
+   {
+      Prop = "prop_food_cb_tray_02",
+      PropBone = 28422,
+      PropPlacement = {0.0100, -0.0400, -0.1390,20.0000007, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+     }},
+    ["carryfood4"] = {"anim@heists@box_carry@", "idle", "Carry Food 4", AnimationOptions =
+   {
+      Prop = "prop_food_tray_02",
+      PropBone = 28422,
+      PropPlacement = {0.0100, -0.0400, -0.1390,20.0000007, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+     }},
+    ["carryfood5"] = {"anim@heists@box_carry@", "idle", "Carry Food 5", AnimationOptions =
+   {
+      Prop = "prop_food_tray_03",
+      PropBone = 28422,
+      PropPlacement = {0.0100, -0.0400, -0.1390,20.0000007, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+    ["carryfood6"] = {"anim@heists@box_carry@", "idle", "Carry Food 6", AnimationOptions =
+   {
+      Prop = "prop_pizza_box_02",
+      PropBone = 28422,
+      PropPlacement = {0.0100, -0.1000, -0.1590,20.0000007, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+    ["carryfood7"] = {"anim@heists@box_carry@", "idle", "Carry Food 7", AnimationOptions =
+   {
+      Prop = "prop_food_bs_tray_02",
+      PropBone = 57005,
+      PropPlacement = {0.2500, 0.1000, 0.0700,-110.5483936, 73.3529273, -16.338362},
+	  SecondProp = 'prop_food_bs_tray_03',
+      SecondPropBone =18905,
+      SecondPropPlacement = {0.2200, 0.1300, -0.1000, -127.7725487, 110.2074758, -3.5886263},
+      EmoteLoop = true,
+      EmoteMoving = true,
+    }},
+    ["carryfood8"] = {"anim@heists@box_carry@", "idle", "Carry Food 8", AnimationOptions =
+   {
+      Prop = "prop_food_cb_tray_02",
+      PropBone = 57005,
+      PropPlacement = {0.2500, 0.1000, 0.0700,-110.5483936, 73.3529273, -16.338362},
+	  SecondProp = 'prop_food_cb_tray_02',
+      SecondPropBone =18905,
+      SecondPropPlacement = {0.2200, 0.1300, -0.1000, -127.7725487, 110.2074758, -3.5886263},
+      EmoteLoop = true,
+      EmoteMoving = true,
+    }},
+    ["carryfood9"] = {"anim@heists@box_carry@", "idle", "Carry Food 9", AnimationOptions =
+   {
+      Prop = "prop_food_tray_02",
+      PropBone = 57005,
+      PropPlacement = {0.2500, 0.1000, 0.0700,-110.5483936, 73.3529273, -16.338362},
+	  SecondProp = 'prop_food_tray_03',
+      SecondPropBone =18905,
+      SecondPropPlacement = {0.2200, 0.1300, -0.1000, -127.7725487, 110.2074758, -3.5886263},
+      EmoteLoop = true,
+      EmoteMoving = true,
+     }},
+    ["carryfoodten"] = {"anim@heists@box_carry@", "idle", "Carry Food 10", AnimationOptions =
+   {
+      Prop = "prop_food_tray_02",
+      PropBone = 57005,
+      PropPlacement = {0.2500, 0.1000, 0.0700,-110.5483936, 73.3529273, -16.338362},
+	  SecondProp = 'prop_food_tray_02',
+      SecondPropBone =18905,
+      SecondPropPlacement = {0.2200, 0.1300, -0.1000, -127.7725487, 110.2074758, -3.5886263},
+      EmoteLoop = true,
+      EmoteMoving = true,
+    }},
+
 
 
 }
