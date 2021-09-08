@@ -2035,11 +2035,19 @@ DP.PropEmotes = {
       EmoteLoop = true,
       EmoteMoving = true,
    }},
-   ["toolbox"] = {"move_weapon@jerrycan@generic", "idle", "Toolbox 1", AnimationOptions =
+   ["toolbox"] = {"move_weapon@jerrycan@generic", "idle", "Toolbox", AnimationOptions =
    {
-      Prop = "v_ind_cs_toolbox4",
-      PropBone = 57005,
-      PropPlacement = {0.27, 0.0, 0.0, 0.0, 263.0, 58.0},
+      Prop = "prop_tool_box_04",
+      PropBone = 28422,
+      PropPlacement = {0.3960,0.0410,-0.0030, -90.00, 0.0, 90.00},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["toolbox2"] = {"move_weapon@jerrycan@generic", "idle", "Toolbox 2", AnimationOptions =
+   {
+      Prop = "imp_prop_tool_box_01a",
+      PropBone = 28422,
+      PropPlacement = {0.3700,0.0200, 0.0, 90.00, 0.0, -90.00},
       EmoteLoop = true,
       EmoteMoving = true,
    }},
@@ -2581,9 +2589,9 @@ DP.PropEmotes = {
    }},
    ["conehead"] = {"move_m@drunk@verydrunk_idles@", "fidget_07", "Cone Head ", AnimationOptions =
    {
-      Prop = "prop_roadcone02a",
+      Prop = "prop_roadcone02b",
       PropBone = 31086,
-      PropPlacement = {0.0100, -0.1300, -0.200, 0.0, 0.0, 0.0},
+      PropPlacement = {0.0500, 0.0200, -0.000, 30.0000004, 90.0, 0.0},
       --
       EmoteLoop = true,
       EmoteMoving = true,
