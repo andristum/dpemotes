@@ -2711,6 +2711,54 @@ DP.PropEmotes = {
       PropPlacement = {0.3800, 0.0, -0.0300, 0.0017365, -79.9999997, 110.0651988},
       EmoteLoop = true,
       EmoteMoving = true,
+     }},
+    ["tag"] = {"anim@scripted@freemode@postertag@graffiti_spray@male@", "shake_can_male", "Tagging Shake Can Male", AnimationOptions =
+   {
+      Prop = "prop_cs_spray_can",
+      PropBone = 28422,
+      PropPlacement = {0.0, 0.0, 0.0700, 0.0017365, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+    ["tag2"] = {"anim@scripted@freemode@postertag@graffiti_spray@heeled@", "shake_can_female", "Tagging Shake Can Female", AnimationOptions =
+   {
+      Prop = "prop_cs_spray_can",
+      PropBone = 28422,
+      PropPlacement = {0.0, 0.0, 0.0700, 0.0017365, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+    }},
+    ["tag3"] = {"anim@scripted@freemode@postertag@graffiti_spray@male@", "spray_can_var_01_male", "Tagging Male 1", AnimationOptions =
+   {
+      Prop = "prop_cs_spray_can",
+      PropBone = 28422,
+      PropPlacement = {0.0, 0.0, 0.0700, 0.0017365, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+    }},
+    ["tag4"] = {"anim@scripted@freemode@postertag@graffiti_spray@male@", "spray_can_var_02_male", "Tagging Male 2", AnimationOptions =
+   {
+      Prop = "prop_cs_spray_can",
+      PropBone = 28422,
+      PropPlacement = {0.0, 0.0, 0.0700, 0.0017365, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+    }},
+    ["tag5"] = {"anim@scripted@freemode@postertag@graffiti_spray@heeled@", "spray_can_var_01_female", "Tagging Female 1", AnimationOptions =
+   {
+      Prop = "prop_cs_spray_can",
+      PropBone = 28422,
+      PropPlacement = {0.0, 0.0, 0.0700, 0.0017365, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+     }},
+    ["tag6"] = {"anim@scripted@freemode@postertag@graffiti_spray@heeled@", "spray_can_var_02_female", "Tagging Female 2", AnimationOptions =
+   {
+      Prop = "prop_cs_spray_can",
+      PropBone = 28422,
+      PropPlacement = {0.0, 0.0, 0.0700, 0.0017365, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
     }},
 
 
