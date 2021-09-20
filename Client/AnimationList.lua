@@ -586,6 +586,51 @@ DP.AnimalEmotes = {
       EmoteLoop = true,
       EmoteMoving = false,
    }},
+   ["sdogrose"] = {"creatures@pug@move", "nill", "Rose (small dog)", AnimationOptions =
+   {
+      Prop = 'prop_single_rose',
+      PropBone = 12844,
+      PropPlacement = {0.1090,-0.0140,0.0500,0.0,0.0,0.0},
+      EmoteLoop = true,
+      EmoteMoving = false,
+   }},
+   ["sdogrose2"] = {"creatures@pug@amb@world_dog_sitting@idle_a", "idle_b", "Rose Sit (small dog)", AnimationOptions =
+   {
+      Prop = 'prop_single_rose',
+      PropBone = 12844,
+      PropPlacement = {0.1090,-0.0140,0.0500,0.0,0.0,0.0},
+      EmoteLoop = true,
+      EmoteMoving = false,
+   }},
+   ["sdogggun"] = {"creatures@pug@move", "nill", "Gun Gold (small dog)", AnimationOptions =
+   {
+      Prop = 'w_pi_pistol_luxe',
+      PropBone = 12844,
+      PropPlacement = {0.2010,-0.0080,0.0,0.0,0.0,0.0},
+      EmoteLoop = true,
+      EmoteMoving = false,
+   }},
+   ["sdoggun2"] = {"creatures@pug@amb@world_dog_sitting@idle_a", "idle_b", "Gun Gold Sit (small dog)", AnimationOptions =
+   {
+      Prop = 'w_pi_pistol_luxe',
+      PropBone = 12844,
+      PropPlacement = {0.2010,-0.0080,0.0,0.0,0.0,0.0},
+      EmoteLoop = true,
+      EmoteMoving = false,
+   }},
+   ["sdogstun"] = {"creatures@pug@move", "nill", "Stun Gun (small dog)", AnimationOptions =
+   {
+      Prop = 'w_pi_stungun',
+      PropBone = 12844,
+      PropPlacement = {0.1400,-0.0100,0.0,0.0,0.0,0.0},
+      EmoteLoop = true,
+      EmoteMoving = false,
+      PtfxAsset = "core",
+      PtfxName = "blood_stungun",
+      PtfxPlacement = {0.208, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0},
+      PtfxInfo = Config.Languages[Config.MenuLanguage]['stun'],
+      PtfxWait = 200,
+   }},
 
 
 }
@@ -1074,6 +1119,11 @@ DP.Emotes = {
       EmoteLoop = true,
       EmoteMoving = true,
    }},
+   ["dock"] = {"anim@mp_player_intincardockstd@rds@", "idle_a", "Dock", AnimationOptions =
+   {
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
    ["outofbreath"] = {"re@construction", "out_of_breath", "Out of Breath", AnimationOptions =
    {
       EmoteLoop = true,
@@ -1224,7 +1274,7 @@ DP.Emotes = {
    {
       EmoteLoop = true,
    }},
-   ["sitchair3"] = {"timetable@reunited@ig_10", "base_amanda", "Sit Chair 3", AnimationOptions =
+   ["sitchair3"] = {"timetable@reunited@ig_10", "base_amanda", "Sit Chair 3 (Female)", AnimationOptions =
    {
       EmoteLoop = true,
    }},
@@ -1232,11 +1282,11 @@ DP.Emotes = {
    {
       EmoteLoop = true,
    }},
-   ["sitchair5"] = {"timetable@jimmy@mics3_ig_15@", "mics3_15_base_tracy", "Sit Chair 5", AnimationOptions =
+   ["sitchair5"] = {"timetable@jimmy@mics3_ig_15@", "mics3_15_base_tracy", "Sit Chair Legs Crossed", AnimationOptions =
    {
       EmoteLoop = true,
    }},
-   ["sitchair6"] = {"timetable@maid@couch@", "base", "Sit Chair 6", AnimationOptions =
+   ["sitchair6"] = {"timetable@maid@couch@", "base", "Sit Chair Lean Back", AnimationOptions =
    {
       EmoteLoop = true,
    }},
@@ -1781,9 +1831,9 @@ DP.Emotes = {
    ["bumsleep"] = {"Scenario", "WORLD_HUMAN_BUM_SLUMPED", "Bum Sleep"},
    ["cheer"] = {"Scenario", "WORLD_HUMAN_CHEERING", "Cheer"},
    ["chinup"] = {"Scenario", "PROP_HUMAN_MUSCLE_CHIN_UPS", "Chinup"},
-   ["clipboard2"] = {"MaleScenario", "WORLD_HUMAN_CLIPBOARD", "Clipboard 2"},
+   ["clipboard2"] = {"MaleScenario", "WORLD_HUMAN_CLIPBOARD", "Clipboard Male"},
    ["cop"] = {"Scenario", "WORLD_HUMAN_COP_IDLES", "Cop"},
-   ["copbeacon"] = {"MaleScenario", "WORLD_HUMAN_CAR_PARK_ATTENDANT", "Cop Beacon"},
+   ["copbeacon"] = {"MaleScenario", "WORLD_HUMAN_CAR_PARK_ATTENDANT", "Cop Beacon Male"},
    ["filmshocking"] = {"Scenario", "WORLD_HUMAN_MOBILE_FILM_SHOCKING", "Film Shocking"},
    ["flex"] = {"Scenario", "WORLD_HUMAN_MUSCLE_FLEX", "Flex"},
    ["guard"] = {"Scenario", "WORLD_HUMAN_GUARD_STAND", "Guard"},
@@ -1793,7 +1843,7 @@ DP.Emotes = {
    ["janitor"] = {"Scenario", "WORLD_HUMAN_JANITOR", "Janitor"},
    ["jog"] = {"Scenario", "WORLD_HUMAN_JOG_STANDING", "Jog"},
    ["kneel"] = {"Scenario", "CODE_HUMAN_MEDIC_KNEEL", "Kneel"},
-   ["leafblower"] = {"MaleScenario", "WORLD_HUMAN_GARDENER_LEAF_BLOWER", "Leafblower"},
+   ["leafblower"] = {"MaleScenario", "WORLD_HUMAN_GARDENER_LEAF_BLOWER", "Leafblower Male"},
    ["lean"] = {"Scenario", "WORLD_HUMAN_LEANING", "Lean"},
    ["leanbar"] = {"Scenario", "PROP_HUMAN_BUM_SHOPPING_CART", "Lean Bar"},
    ["lookout"] = {"Scenario", "CODE_HUMAN_CROSS_ROAD_WAIT", "Lookout"},
@@ -1812,14 +1862,15 @@ DP.Emotes = {
    -- So we set it as "ScenarioObject" and do TaskStartScenarioAtPosition() instead of "AtPlace"
    ["sitchair"] = {"ScenarioObject", "PROP_HUMAN_SEAT_CHAIR_MP_PLAYER", "Sit Chair"},
    ["smoke"] = {"Scenario", "WORLD_HUMAN_SMOKING", "Smoke"},
-   ["smokeweed"] = {"MaleScenario", "WORLD_HUMAN_DRUG_DEALER", "Smoke Weed"},
+   ["smokeweed"] = {"MaleScenario", "WORLD_HUMAN_DRUG_DEALER", "Smoke Weed (Male)"}, -- Male
+   ["smokepot"] = {"Scenario", "WORLD_HUMAN_SMOKING_POT", "Smoke Weed (Female)"}, -- Female
    ["statue"] = {"Scenario", "WORLD_HUMAN_HUMAN_STATUE", "Statue"},
    ["sunbathe3"] = {"Scenario", "WORLD_HUMAN_SUNBATHE", "Sunbathe 3"},
    ["sunbatheback"] = {"Scenario", "WORLD_HUMAN_SUNBATHE_BACK", "Sunbathe Back"},
    ["weld"] = {"Scenario", "WORLD_HUMAN_WELDING", "Weld"},
    ["windowshop"] = {"Scenario", "WORLD_HUMAN_WINDOW_SHOP_BROWSE", "Window Shop"},
    ["yoga"] = {"Scenario", "WORLD_HUMAN_YOGA", "Yoga"},
-   -- CASINO DLC EMOTES (STREAMED)
+   -- CASINO DLC EMOTES (Requires gamebuild 2060 or higher)
    ["karate"] = {"anim@mp_player_intcelebrationfemale@karate_chops", "karate_chops", "Karate"},
    ["karate2"] = {"anim@mp_player_intcelebrationmale@karate_chops", "karate_chops", "Karate 2"},
    ["cutthroat"] = {"anim@mp_player_intcelebrationmale@cut_throat", "cut_throat", "Cut Throat"},
@@ -1984,11 +2035,19 @@ DP.PropEmotes = {
       EmoteLoop = true,
       EmoteMoving = true,
    }},
-   ["toolbox"] = {"move_weapon@jerrycan@generic", "idle", "Toolbox 1", AnimationOptions =
+   ["toolbox"] = {"move_weapon@jerrycan@generic", "idle", "Toolbox", AnimationOptions =
    {
-      Prop = "v_ind_cs_toolbox4",
-      PropBone = 57005,
-      PropPlacement = {0.27, 0.0, 0.0, 0.0, 263.0, 58.0},
+      Prop = "prop_tool_box_04",
+      PropBone = 28422,
+      PropPlacement = {0.3960,0.0410,-0.0030, -90.00, 0.0, 90.00},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["toolbox2"] = {"move_weapon@jerrycan@generic", "idle", "Toolbox 2", AnimationOptions =
+   {
+      Prop = "imp_prop_tool_box_01a",
+      PropBone = 28422,
+      PropPlacement = {0.3700,0.0200, 0.0, 90.00, 0.0, -90.00},
       EmoteLoop = true,
       EmoteMoving = true,
    }},
@@ -2237,6 +2296,14 @@ DP.PropEmotes = {
       EmoteMoving = true,
       EmoteLoop = true
    }},
+   ["map2"] = {"amb@code_human_in_bus_passenger_idles@female@tablet@idle_a", "idle_a", "Map 2", AnimationOptions =
+   {
+      Prop = "prop_tourist_map_01",
+      PropBone = 28422,
+      PropPlacement = {-0.05, 0.0, 0.0, 0.0, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
    ["beg"] = {"amb@world_human_bum_freeway@male@base", "base", "Beg", AnimationOptions =
    {
       Prop = 'prop_beggers_sign_03',
@@ -2365,4 +2432,346 @@ DP.PropEmotes = {
       EmoteLoop = true,
       EmoteMoving = true,
    }},
+   ["binoculars"] = {"amb@world_human_binoculars@male@idle_b", "idle_f", "Binoculars", AnimationOptions =
+   {
+      Prop = "prop_binoc_01",
+      PropBone = 28422,
+      PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+      --
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["binoculars2"] = {"amb@world_human_binoculars@male@idle_a", "idle_c", "Binoculars 2", AnimationOptions =
+   {
+      Prop = "prop_binoc_01",
+      PropBone = 28422,
+      PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+      --
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["tennisplay"] = {"move_weapon@jerrycan@generic", "idle", "Tennis Play", AnimationOptions =
+   {
+      Prop = "prop_tennis_bag_01",
+      PropBone = 57005,
+      PropPlacement = {0.27, 0.0, 0.0, 91.0, 0.0, -82.9999951},
+      SecondProp = 'prop_tennis_rack_01',
+      SecondPropBone = 60309,
+      SecondPropPlacement = {0.0800, 0.0300, 0.0, -130.2907295, 3.8782324, 6.588224},
+      EmoteLoop = true,
+      EmoteMoving = true,
+
+
+   }},
+   ["weights"] = {"amb@world_human_muscle_free_weights@male@barbell@base", "base", "Weights", AnimationOptions =
+   {
+      Prop = "prop_curl_bar_01",
+      PropBone = 28422,
+      PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["weights2"] = {"amb@world_human_muscle_free_weights@male@barbell@idle_a", "idle_d", "Weights 2", AnimationOptions =
+   {
+      Prop = "prop_curl_bar_01",
+      PropBone = 28422,
+      PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["fuel"] = {"weapons@misc@jerrycan@", "fire", "fuel", AnimationOptions =
+   {
+      Prop = "w_am_jerrycan",
+      PropBone = 57005,
+      PropPlacement = {0.1800, 0.1300, -0.2400, -165.8693883, -11.2122753, -32.9453021},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["fuelcarry"] = {"weapons@misc@jerrycan@franklin", "idle", "Fuel Carry", AnimationOptions =
+   {
+      Prop = "w_am_jerrycan",
+      PropBone = 28422,
+      PropPlacement = {0.26, 0.050, 0.0300, 80.00, 180.000, 79.99},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["hitchhike"] = {"random@hitch_lift", "idle_f", "Hitchhike", AnimationOptions =
+   {
+      Prop = "w_am_jerrycan",
+      PropBone = 18905,
+      PropPlacement = {0.32, -0.0100, 0.0, -162.423, 74.83, 58.79},
+      SecondProp = 'prop_michael_backpack',
+      SecondPropBone = 40269,
+      SecondPropPlacement = {-0.07, -0.21, -0.11, -144.93, 117.358, -6.16},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["ssign"] = {"rcmnigel1d", "base_club_shoulder", "Steal Stop Sign ", AnimationOptions =
+   {
+      Prop = "prop_sign_road_01a",
+      PropBone = 60309,
+      PropPlacement = {-0.1390, -0.9870, 0.4300, -67.3315314, 145.0627869, -4.4318885},
+      --
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["ssign2"] = {"rcmnigel1d", "base_club_shoulder", "Steal Yield Sign ", AnimationOptions =
+   {
+      Prop = "prop_sign_road_02a",
+      PropBone = 60309,
+      PropPlacement = {-0.1390, -0.9870, 0.4300, -67.3315314, 145.0627869, -4.4318885},
+      --
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["ssign3"] = {"rcmnigel1d", "base_club_shoulder", "Steal Hospital Sign ", AnimationOptions =
+   {
+      Prop = "prop_sign_road_03d",
+      PropBone = 60309,
+      PropPlacement = {-0.1390, -0.9870, 0.4300, -67.3315314, 145.0627869, -4.4318885},
+      --
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["ssign4"] = {"rcmnigel1d", "base_club_shoulder", "Steal Parking Sign ", AnimationOptions =
+   {
+      Prop = "prop_sign_road_04a",
+      PropBone = 60309,
+      PropPlacement = {-0.1390, -0.9870, 0.4300, -67.3315314, 145.0627869, -4.4318885},
+      --
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["ssign5"] = {"rcmnigel1d", "base_club_shoulder", "Steal Parking Sign 2 ", AnimationOptions =
+   {
+      Prop = "prop_sign_road_04w",
+      PropBone = 60309,
+      PropPlacement = {-0.1390, -0.9870, 0.4300, -67.3315314, 145.0627869, -4.4318885},
+      --
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["ssign6"] = {"rcmnigel1d", "base_club_shoulder", "Steal Pedestrian Sign ", AnimationOptions =
+   {
+      Prop = "prop_sign_road_05a",
+      PropBone = 60309,
+      PropPlacement = {-0.1390, -0.9870, 0.4300, -67.3315314, 145.0627869, -4.4318885},
+      --
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["ssign7"] = {"rcmnigel1d", "base_club_shoulder", "Steal Street Sign ", AnimationOptions =
+   {
+      Prop = "prop_sign_road_05t",
+      PropBone = 60309,
+      PropPlacement = {-0.1390, -0.9870, 0.4300, -67.3315314, 145.0627869, -4.4318885},
+      --
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["ssign8"] = {"rcmnigel1d", "base_club_shoulder", "Steal Freeway Sign ", AnimationOptions =
+   {
+      Prop = "prop_sign_freewayentrance",
+      PropBone = 60309,
+      PropPlacement = {-0.1390, -0.9870, 0.4300, -67.3315314, 145.0627869, -4.4318885},
+      --
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["ssign9"] = {"rcmnigel1d", "base_club_shoulder", "Steal Stop Sign Snow ", AnimationOptions =
+   {
+      Prop = "prop_snow_sign_road_01a",
+      PropBone = 60309,
+      PropPlacement = {-0.1390, -0.9870, 0.4300, -67.3315314, 145.0627869, -4.4318885},
+      --
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["conehead"] = {"move_m@drunk@verydrunk_idles@", "fidget_07", "Cone Head ", AnimationOptions =
+   {
+      Prop = "prop_roadcone02b",
+      PropBone = 31086,
+      PropPlacement = {0.0500, 0.0200, -0.000, 30.0000004, 90.0, 0.0},
+      --
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["carryfoodtray"] = {"anim@heists@box_carry@", "idle", "Carry Food Tray", AnimationOptions =
+   {
+      Prop = "prop_food_bs_tray_03",
+      PropBone = 28422,
+      PropPlacement = {0.0100, -0.0400, -0.1390,20.0000007, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["carryfoodtray2"] = {"anim@heists@box_carry@", "idle", "Carry Food Tray 2", AnimationOptions =
+   {
+      Prop = "prop_food_bs_tray_02",
+      PropBone = 28422,
+      PropPlacement = {0.0100, -0.0400, -0.1390,20.0000007, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["carryfoodtray3"] = {"anim@heists@box_carry@", "idle", "Carry Food Tray 3", AnimationOptions =
+   {
+      Prop = "prop_food_cb_tray_02",
+      PropBone = 28422,
+      PropPlacement = {0.0100, -0.0400, -0.1390,20.0000007, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["carryfoodtray4"] = {"anim@heists@box_carry@", "idle", "Carry Food Tray 4", AnimationOptions =
+   {
+      Prop = "prop_food_tray_02",
+      PropBone = 28422,
+      PropPlacement = {0.0100, -0.0400, -0.1390,20.0000007, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["carryfoodtray5"] = {"anim@heists@box_carry@", "idle", "Carry Food Tray 5", AnimationOptions =
+   {
+      Prop = "prop_food_tray_03",
+      PropBone = 28422,
+      PropPlacement = {0.0100, -0.0400, -0.1390,20.0000007, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["carryfoodtray6"] = {"anim@heists@box_carry@", "idle", "Carry Food Tray 6", AnimationOptions =
+   {
+      Prop = "prop_food_bs_tray_02",
+      PropBone = 57005,
+      PropPlacement = {0.2500, 0.1000, 0.0700,-110.5483936, 73.3529273, -16.338362},
+      SecondProp = 'prop_food_bs_tray_03',
+      SecondPropBone =18905,
+      SecondPropPlacement = {0.2200, 0.1300, -0.1000, -127.7725487, 110.2074758, -3.5886263},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["carryfoodtray7"] = {"anim@heists@box_carry@", "idle", "Carry Food Tray 7", AnimationOptions =
+   {
+      Prop = "prop_food_cb_tray_02",
+      PropBone = 57005,
+      PropPlacement = {0.2500, 0.1000, 0.0700,-110.5483936, 73.3529273, -16.338362},
+      SecondProp = 'prop_food_cb_tray_02',
+      SecondPropBone =18905,
+      SecondPropPlacement = {0.2200, 0.1300, -0.1000, -127.7725487, 110.2074758, -3.5886263},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["carryfoodtray8"] = {"anim@heists@box_carry@", "idle", "Carry Food Tray 8", AnimationOptions =
+   {
+      Prop = "prop_food_tray_02",
+      PropBone = 57005,
+      PropPlacement = {0.2500, 0.1000, 0.0700,-110.5483936, 73.3529273, -16.338362},
+      SecondProp = 'prop_food_tray_03',
+      SecondPropBone =18905,
+      SecondPropPlacement = {0.2200, 0.1300, -0.1000, -127.7725487, 110.2074758, -3.5886263},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["carryfoodtraytray9"] = {"anim@heists@box_carry@", "idle", "Carry Food Tray 9", AnimationOptions =
+   {
+      Prop = "prop_food_tray_02",
+      PropBone = 57005,
+      PropPlacement = {0.2500, 0.1000, 0.0700,-110.5483936, 73.3529273, -16.338362},
+      SecondProp = 'prop_food_tray_02',
+      SecondPropBone =18905,
+      SecondPropPlacement = {0.2200, 0.1300, -0.1000, -127.7725487, 110.2074758, -3.5886263},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["carrypizza"] = {"anim@heists@box_carry@", "idle", "Carry Pizza Box", AnimationOptions =
+   {
+      Prop = "prop_pizza_box_02",
+      PropBone = 28422,
+      PropPlacement = {0.0100, -0.1000, -0.1590,20.0000007, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["carryfoodbag"] = {"move_weapon@jerrycan@generic", "idle", "Carry Food Bag", AnimationOptions =
+   {
+      Prop = "prop_food_bs_bag_01",
+      PropBone = 57005,
+      PropPlacement = {0.3300, 0.0, -0.0300, 0.0017365, -79.9999997, 110.0651988},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["carryfoodbag2"] = {"move_weapon@jerrycan@generic", "idle", "Carry Food Bag 2", AnimationOptions =
+   {
+      Prop = "prop_food_cb_bag_01",
+      PropBone = 57005,
+      PropPlacement = {0.3800, 0.0, -0.0300, 0.0017365, -79.9999997, 110.0651988},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["carryfoodbag3"] = {"move_weapon@jerrycan@generic", "idle", "Carry Food Bag 3", AnimationOptions =
+   {
+      Prop = "prop_food_bag1",
+      PropBone = 57005,
+      PropPlacement = {0.3800, 0.0, -0.0300, 0.0017365, -79.9999997, 110.0651988},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["tag"] = {"anim@scripted@freemode@postertag@graffiti_spray@male@", "shake_can_male", "Tagging Shake Can Male", AnimationOptions =
+   {
+      Prop = "prop_cs_spray_can",
+      PropBone = 28422,
+      PropPlacement = {0.0, 0.0, 0.0700, 0.0017365, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["tag2"] = {"anim@scripted@freemode@postertag@graffiti_spray@heeled@", "shake_can_female", "Tagging Shake Can Female", AnimationOptions =
+   {
+      Prop = "prop_cs_spray_can",
+      PropBone = 28422,
+      PropPlacement = {0.0, 0.0, 0.0700, 0.0017365, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["tag3"] = {"anim@scripted@freemode@postertag@graffiti_spray@male@", "spray_can_var_01_male", "Tagging Male 1", AnimationOptions =
+   {
+      Prop = "prop_cs_spray_can",
+      PropBone = 28422,
+      PropPlacement = {0.0, 0.0, 0.0700, 0.0017365, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["tag4"] = {"anim@scripted@freemode@postertag@graffiti_spray@male@", "spray_can_var_02_male", "Tagging Male 2", AnimationOptions =
+   {
+      Prop = "prop_cs_spray_can",
+      PropBone = 28422,
+      PropPlacement = {0.0, 0.0, 0.0700, 0.0017365, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["tag5"] = {"anim@scripted@freemode@postertag@graffiti_spray@heeled@", "spray_can_var_01_female", "Tagging Female 1", AnimationOptions =
+   {
+      Prop = "prop_cs_spray_can",
+      PropBone = 28422,
+      PropPlacement = {0.0, 0.0, 0.0700, 0.0017365, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["tag6"] = {"anim@scripted@freemode@postertag@graffiti_spray@heeled@", "spray_can_var_02_female", "Tagging Female 2", AnimationOptions =
+   {
+      Prop = "prop_cs_spray_can",
+      PropBone = 28422,
+      PropPlacement = {0.0, 0.0, 0.0700, 0.0017365, 0.0, 0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["beans"] = {"anim@scripted@island@special_peds@pavel@hs4_pavel_ig5_caviar_p1", "base_idle", "Beans", AnimationOptions =
+   {
+      Prop = "h4_prop_h4_caviar_tin_01a",
+      PropBone = 60309,
+      PropPlacement = {0.0, 0.0300, 0.0100,0.0,0.0,0.0},
+      SecondProp = 'h4_prop_h4_caviar_spoon_01a',
+      SecondPropBone = 28422,
+      SecondPropPlacement = {0.0,0.0,0.0,0.0,0.0,0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+
+
+
 }
