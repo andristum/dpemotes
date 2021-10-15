@@ -136,6 +136,18 @@ DP.Shared = {
       EmoteDuration = 5000,
       SyncOffsetFront = 1.13
    }},
+   ["hug3"] = {"misscarsteal2chad_goodbye", "chad_armsaround_chad", "Hug 3", "hug4", AnimationOptions =
+   {
+      EmoteMoving = false,
+      EmoteLoop = true,
+      SyncOffsetFront = 0.05,
+   }},
+   ["hug4"] = {"misscarsteal2chad_goodbye", "chad_armsaround_girl", "Hug 4", "hug3", AnimationOptions =
+   {
+      EmoteMoving = false,
+      EmoteLoop = true,
+      SyncOffsetFront = 0.13
+   }},
    ["bro"] = {"mp_ped_interaction", "hugs_guy_a", "Bro", "bro2", AnimationOptions =
    {
       SyncOffsetFront = 1.14
@@ -490,6 +502,17 @@ DP.AnimalEmotes = {
       EmoteLoop = true,
       EmoteMoving = false,
    }},
+   ["sdogdance2"] = {"creatures@pug@move", "idle_turn_0", "Dance 2 (small dog)", AnimationOptions =
+   {
+      Prop = 'ba_prop_battle_glowstick_01',
+      PropBone = 31086,
+      PropPlacement = {0.1500,-0.0300,0.0,0.0,0.0},
+      SecondProp = 'prop_cs_sol_glasses',
+      SecondPropBone = 31086,
+      SecondPropPlacement = {0.0500, 0.0300, 0.000, -100.0000003, 90.00, 0.00},
+      EmoteLoop = true,
+      EmoteMoving = false,
+   }},
    ["sdogbb"] = {"creatures@pug@move", "nill", "Baseball (small dog)", AnimationOptions =
    {
       Prop = 'w_am_baseball',
@@ -631,6 +654,109 @@ DP.AnimalEmotes = {
       PtfxInfo = Config.Languages[Config.MenuLanguage]['stun'],
       PtfxWait = 200,
    }},
+   ["sdoggl1"] = {"creatures@pug@move", "nill", "Aviators (small dog)", AnimationOptions =
+   {
+      Prop = 'prop_aviators_01',
+      PropBone = 31086,
+      PropPlacement = {0.0500, 0.0400, 0.000, -90.00, 90.00, 0.00},
+      EmoteLoop = true,
+      EmoteMoving = false,
+   }},
+   ["sdoggl2"] = {"creatures@pug@amb@world_dog_sitting@idle_a", "idle_b", "Aviators Sitting (small dog)", AnimationOptions =
+   {
+      Prop = 'prop_aviators_01',
+      PropBone = 31086,
+      PropPlacement = {0.0500, 0.0400, 0.000, -90.00, 90.00, 0.00},
+      EmoteLoop = true,
+      EmoteMoving = false,
+   }},
+   ["sdoggl3"] = {"creatures@pug@move", "nill", "Sunglasses (small dog)", AnimationOptions =
+   {
+      Prop = 'prop_cs_sol_glasses',
+      PropBone = 31086,
+      PropPlacement = {0.0500, 0.0300, 0.000, -100.0000003, 90.00, 0.00},
+      EmoteLoop = true,
+      EmoteMoving = false,
+   }},
+   ["sdoggl4"] = {"creatures@pug@amb@world_dog_sitting@idle_a", "idle_b", "Sunglasses Sitting (small dog)", AnimationOptions =
+   {
+      Prop = 'prop_cs_sol_glasses',
+      PropBone = 31086,
+      PropPlacement = {0.0500, 0.0300, 0.000, -100.0000003, 90.00, 0.00},
+      EmoteLoop = true,
+      EmoteMoving = false,
+   }},
+   ["sdoghd1"] = {"creatures@pug@move", "nill", "Hot Dog (small dog)", AnimationOptions =
+   {
+      Prop = 'prop_cs_hotdog_01',
+      PropBone = 31086,
+      PropPlacement = {0.1300, -0.0250, 0.000, -88.272053, -9.8465858, -0.1488562},
+      EmoteLoop = true,
+      EmoteMoving = false,
+   }},
+   ["sdoghd2"] = {"creatures@pug@amb@world_dog_sitting@idle_a", "idle_b", "Hot Dog Sitting (small dog)", AnimationOptions =
+   {
+      Prop = 'prop_cs_hotdog_01',
+      PropBone = 31086,
+      PropPlacement = {0.1300, -0.0250, 0.000, -88.272053, -9.8465858, -0.1488562},
+      EmoteLoop = true,
+      EmoteMoving = false,
+   }},
+   ["sdoghlmt1"] = {"creatures@pug@move", "nill", "Helmet 1 (small dog)", AnimationOptions =
+   {
+      Prop = 'ba_prop_battle_sports_helmet',
+      PropBone = 31086,
+      PropPlacement = {0.00, -0.0200, 0.000, -90.00, 90.00, 0.00},
+      EmoteLoop = true,
+      EmoteMoving = false,
+   }},
+   ["sdoghlmt2"] = {"creatures@pug@move", "nill", "Helmet 2 (small dog)", AnimationOptions =
+   {
+      Prop = 'prop_hard_hat_01',
+      PropBone = 31086,
+      PropPlacement = {0.00, 0.1300, 0.000, -90.00, 90.00, 0.00},
+      EmoteLoop = true,
+      EmoteMoving = false,
+   }},
+   ["sdoghat"] = {"creatures@pug@move", "nill", "Hat 1 (small dog)", AnimationOptions =
+   {
+      Prop = 'prop_proxy_hat_01',
+      PropBone = 31086,
+      PropPlacement = {0.0, 0.1200, 0.000, -99.8510766, 80.1489234, 1.7279411},
+      SecondProp = 'prop_aviators_01',
+      SecondPropBone = 31086,
+      SecondPropPlacement = {0.0500, 0.0400, 0.000, -90.00, 90.00, 0.00},
+      EmoteLoop = true,
+      EmoteMoving = false,
+   }},
+   ["sdoghat2"] = {"creatures@pug@amb@world_dog_sitting@idle_a", "idle_b", "Hat 2 Sitting (small dog)", AnimationOptions =
+   {
+      Prop = 'prop_proxy_hat_01',
+      PropBone = 31086,
+      PropPlacement = {0.0, 0.1200, 0.000, -99.8510766, 80.1489234, 1.7279411},
+      SecondProp = 'prop_aviators_01',
+      SecondPropBone = 31086,
+      SecondPropPlacement = {0.0500, 0.0400, 0.000, -90.00, 90.00, 0.00},
+      EmoteLoop = true,
+      EmoteMoving = false,
+   }},
+   ["sdogsteak"] = {"creatures@pug@move", "nill", "Steak (small dog)", AnimationOptions =
+   {
+      Prop = 'prop_cs_steak',
+      PropBone = 31086,
+      PropPlacement = {0.1800, -0.0200, 0.000, 90.00, 0.00, 0.00},
+      EmoteLoop = true,
+      EmoteMoving = false,
+   }},
+   ["sdogsteak2"] = {"creatures@pug@amb@world_dog_sitting@idle_a", "idle_c", "Steak 2 Lay Down (small dog)", AnimationOptions =
+   {
+      Prop = 'prop_cs_steak',
+      PropBone = 31086,
+      PropPlacement = {0.1800, -0.0200, 0.000, 90.00, 0.00, 0.00},
+      EmoteLoop = true,
+      EmoteMoving = false,
+   }},
+
 
 
 }
@@ -1834,9 +1960,11 @@ DP.Emotes = {
    ["clipboard2"] = {"MaleScenario", "WORLD_HUMAN_CLIPBOARD", "Clipboard Male"},
    ["cop"] = {"Scenario", "WORLD_HUMAN_COP_IDLES", "Cop"},
    ["copbeacon"] = {"MaleScenario", "WORLD_HUMAN_CAR_PARK_ATTENDANT", "Cop Beacon Male"},
+   ["drilling"] = {"Scenario", "WORLD_HUMAN_CONST_DRILL", "Construction Drilling"},
    ["filmshocking"] = {"Scenario", "WORLD_HUMAN_MOBILE_FILM_SHOCKING", "Film Shocking"},
    ["flex"] = {"Scenario", "WORLD_HUMAN_MUSCLE_FLEX", "Flex"},
    ["guard"] = {"Scenario", "WORLD_HUMAN_GUARD_STAND", "Guard"},
+   ["garden"] = {"Scenario", "WORLD_HUMAN_GARDENER_PLANT", "Gardening"},
    ["hammer"] = {"Scenario", "WORLD_HUMAN_HAMMERING", "Hammer"},
    ["hangout"] = {"Scenario", "WORLD_HUMAN_HANG_OUT_STREET", "Hangout"},
    ["impatient"] = {"Scenario", "WORLD_HUMAN_STAND_IMPATIENT", "Impatient"},
@@ -2768,6 +2896,30 @@ DP.PropEmotes = {
       SecondProp = 'h4_prop_h4_caviar_spoon_01a',
       SecondPropBone = 28422,
       SecondPropPlacement = {0.0,0.0,0.0,0.0,0.0,0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["newscam"] = {"missfinale_c2mcs_1", "fin_c2_mcs_1_camman", "News Camera", AnimationOptions =
+   {
+      Prop = "prop_v_cam_01",
+      PropBone = 28422,
+      PropPlacement = {0.0, 0.0300, 0.0100,0.0,0.0,0.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["newsmic"] = {"anim@heists@humane_labs@finale@keycards", "ped_a_enter_loop", "News Microphone", AnimationOptions =
+   {
+      Prop = "p_ing_microphonel_01",
+      PropBone = 4154,
+      PropPlacement = {-0.00, -0.0200, 0.1100, 0.00, 0.0, 60.0},
+      EmoteLoop = true,
+      EmoteMoving = true,
+   }},
+   ["newsbmic"] = {"missfra1", "mcs2_crew_idle_m_boom", "News Boom Microphone", AnimationOptions =
+   {
+      Prop = "prop_v_bmike_01",
+      PropBone = 28422,
+      PropPlacement = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
       EmoteLoop = true,
       EmoteMoving = true,
    }},
