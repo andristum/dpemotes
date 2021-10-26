@@ -377,7 +377,7 @@ DP.Emotes = {
    {
         Prop = "prop_ld_flow_bottle",
         PropBone = 18905,
-        PropPlacement = {0.12, 0.028, 0.001, 10.0, 175.0},
+        PropPlacement = {0.12, 0.008, 0.03, 240.0, -60.0},
         EmoteMoving = true,
         EmoteLoop = true,
    }},
