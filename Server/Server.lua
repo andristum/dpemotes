@@ -1,4 +1,4 @@
-
+local QBCore = exports['qb-core']:GetCoreObject()
 -----------------------------------------------------------------------------------------------------
 -- Shared Emotes Syncing  ---------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------
@@ -8,7 +8,7 @@ AddEventHandler("ServerEmoteRequest", function(target, emotename, etype)
 	TriggerClientEvent("ClientEmoteRequestReceive", target, emotename, etype)
 end)
 
-RegisterServerEvent("ServerValidEmote") 
+RegisterServerEvent("ServerValidEmote")
 AddEventHandler("ServerValidEmote", function(target, requestedemote, otheremote)
 	TriggerClientEvent("SyncPlayEmote", source, otheremote, source)
 	TriggerClientEvent("SyncPlayEmoteSource", target, requestedemote)
@@ -38,7 +38,7 @@ if Config.SqlKeybinding then
 	AddEventHandler("dp:ServerKeybindCreate", function()
 		local src = source local srcid = GetPlayerIdentifier(source)
 		exports.oxmysql:insert("INSERT INTO dpkeybinds (`id`, `keybind1`, `emote1`, `keybind2`, `emote2`, `keybind3`, `emote3`, `keybind4`, `emote4`, `keybind5`, `emote5`, `keybind6`, `emote6`) VALUES (@id, @keybind1, @emote1, @keybind2, @emote2, @keybind3, @emote3, @keybind4, @emote4, @keybind5, @emote5, @keybind6, @emote6);", { id = srcid, keybind1 = "num4", emote1 = "", keybind2 = "num5", emote2 = "", keybind3 = "num6", emote3 = "", keybind4 = "num7", emote4 = "", keybind5 = "num8", emote5 = "", keybind6 = "num9", emote6 = ""}, function(created)
-			print("[dp] ^2"..GetPlayerName(src).."^7 got created!") 
+			print("[dp] ^2"..GetPlayerName(src).."^7 got created!")
 			TriggerClientEvent("dp:ClientKeybindGet", src, "num4", "", "num5", "", "num6", "", "num7", "", "num8", "", "num8", "")
 		end)
 	end)

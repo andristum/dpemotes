@@ -1,3 +1,4 @@
+QBCore = exports['qb-core']:GetCoreObject()
 -- You probably shouldnt touch these.
 local AnimationDuration = -1
 local ChosenAnimation = ""
@@ -116,7 +117,7 @@ RegisterCommand('walks', function(source, args, raw)
     end
 end)
 
--- Added 
+-- Added
 
 CanDoEmote = true
 SmokingWeed = false
@@ -145,13 +146,13 @@ AddEventHandler('animations:client:SmokeWeed', function()
           IsInAnimation = false
           DebugPrint("Forced scenario exit")
         end
-      
+
         if IsInAnimation then
           ClearPedTasks(PlayerPedId())
           DestroyAllProps()
           IsInAnimation = false
         end
-      
+
         if SmokingWeed then
           SmokingWeed = false
           RelieveCount = 0
@@ -421,7 +422,7 @@ function OnEmotePlay(EmoteName)
     return
   end
 
-  if ChosenDict == "MaleScenario" or "Scenario" then 
+  if ChosenDict == "MaleScenario" or "Scenario" then
     CheckGender()
     if ChosenDict == "MaleScenario" then if InVehicle then return end
       if PlayerGender == "male" then
@@ -444,7 +445,7 @@ function OnEmotePlay(EmoteName)
       TaskStartScenarioInPlace(PlayerPedId(), ChosenAnimation, 0, true)
       DebugPrint("Playing scenario = ("..ChosenAnimation..")")
       IsInAnimation = true
-    return end 
+    return end
   end
 
   LoadAnim(ChosenDict)
@@ -473,7 +474,7 @@ function OnEmotePlay(EmoteName)
   end
 
   if EmoteName.AnimationOptions then
-    if EmoteName.AnimationOptions.EmoteDuration == nil then 
+    if EmoteName.AnimationOptions.EmoteDuration == nil then
       EmoteName.AnimationOptions.EmoteDuration = -1
       AttachWait = 0
     else
