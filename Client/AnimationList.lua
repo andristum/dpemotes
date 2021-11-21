@@ -667,6 +667,11 @@ DP.Emotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
+   ["id"] = {"friends@laf@ig_5", "nephew", "ID", AnimationOptions =
+   {
+       EmoteMoving = true,
+       EmoteDuration = 2500
+   }},   
    ["hug"] = {"mp_ped_interaction", "kisses_guy_a", "Hug"},
    ["hug2"] = {"mp_ped_interaction", "kisses_guy_b", "Hug 2"},
    ["hug3"] = {"mp_ped_interaction", "hugs_guy_a", "Hug 3"},
