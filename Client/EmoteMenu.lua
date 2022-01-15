@@ -3,7 +3,7 @@ TriggerServerEvent("dp:CheckVersion")
 rightPosition = {x = 1450, y = 100}
 leftPosition = {x = 0, y = 100}
 menuPosition = {x = 0, y = 200}
-PlayerData = {}
+PlayerData = QBCore.Functions.GetPlayerData()
 isLoggedIn = false
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded')
