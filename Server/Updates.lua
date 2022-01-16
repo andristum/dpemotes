@@ -18,6 +18,11 @@ end)
 function checkVersion(err,responseText, headers)
     curVersion = LoadResourceFile(GetCurrentResourceName(), "version")
 
+    if responseText == nil then
+        print("^1"..resourceName.." check for updates failed ^7")
+        return
+    end
+
     if curVersion ~= responseText and tonumber(curVersion) < tonumber(responseText) then
         updateavail = true
         print("\n^1----------------------------------------------------------------------------------^7")
