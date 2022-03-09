@@ -5,8 +5,25 @@
 
 RegisterServerEvent("ServerEmoteRequest")
 AddEventHandler("ServerEmoteRequest", function(target, emotename, etype)
-	TriggerClientEvent("ClientEmoteRequestReceive", target, emotename, etype)
+    local ped = GetPlayerPed(source)
+
+     if target == -1 then
+       return
+    end
+    local tped = GetPlayerPed(target)
+    local pedcoord = GetEntityCoords(ped)
+    local targetcoord = GetEntityCoords(tped)
+
+    local distance = #(pedcoord - targetcoord)
+
+    if distance > 2 then
+        return
+    end
+		
+		
+    TriggerClientEvent("ClientEmoteRequestReceive", target, emotename, etype)
 end)
+
 
 RegisterServerEvent("ServerValidEmote") 
 AddEventHandler("ServerValidEmote", function(target, requestedemote, otheremote)
