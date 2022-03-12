@@ -27,6 +27,22 @@ end)
 
 RegisterServerEvent("ServerValidEmote") 
 AddEventHandler("ServerValidEmote", function(target, requestedemote, otheremote)
+     local ped = GetPlayerPed(source)
+
+     if target == -1 then
+       print(GetPlayerName(source) .. " versucht die Emotes zu exploiten")
+       return
+    end
+    local tped = GetPlayerPed(target)
+    local pedcoord = GetEntityCoords(ped)
+    local targetcoord = GetEntityCoords(tped)
+
+    local distance = #(pedcoord - targetcoord)
+
+    if distance > 2 then
+        print(GetPlayerName(source) .. " versucht vermutlicht die Emotes zu exploiten.")
+        return
+    end
 	TriggerClientEvent("SyncPlayEmote", source, otheremote, source)
 	TriggerClientEvent("SyncPlayEmoteSource", target, requestedemote)
 end)
