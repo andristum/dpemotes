@@ -381,6 +381,11 @@ DP.Emotes = {
         EmoteMoving = true,
         EmoteLoop = true,
    }},
+   ["dispenser"] = {"mini@sprunk", "plyr_buy_drink_pt1", "Dispenser", AnimationOptions =
+   {
+        EmoteMoving = false,
+        EmoteLoop = false,
+   }},
    ["beast"] = {"anim@mp_fm_event@intro", "beast_transform", "Beast", AnimationOptions =
    {
        EmoteMoving = true,
