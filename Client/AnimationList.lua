@@ -46,7 +46,7 @@ DP.Walks = {
   ["Default Female"] = {"move_f@multiplayer"},
   ["Default Male"] = {"move_m@multiplayer"},
   ["Drunk"] = {"move_m@drunk@a"},
-  ["Drunk"] = {"move_m@drunk@slightlydrunk"},
+  ["Drunk1"] = {"move_m@drunk@slightlydrunk"},
   ["Drunk2"] = {"move_m@buzzed"},
   ["Drunk3"] = {"move_m@drunk@verydrunk"},
   ["Femme"] = {"move_f@femme@"},
@@ -373,10 +373,18 @@ DP.Dances = {
 }
 
 DP.Emotes = {
-   ["drink"] = {"mp_player_inteat@pnq", "loop", "Drink", AnimationOptions =
+   ["drink"] = {"mp_player_intdrink", "loop_bottle", "Drink", AnimationOptions =
    {
-       EmoteMoving = true,
-       EmoteDuration = 2500,
+        Prop = "prop_ld_flow_bottle",
+        PropBone = 18905,
+        PropPlacement = {0.12, 0.008, 0.03, 240.0, -60.0},
+        EmoteMoving = true,
+        EmoteLoop = true,
+   }},
+   ["dispenser"] = {"mini@sprunk", "plyr_buy_drink_pt1", "Dispenser", AnimationOptions =
+   {
+        EmoteMoving = false,
+        EmoteLoop = false,
    }},
    ["beast"] = {"anim@mp_fm_event@intro", "beast_transform", "Beast", AnimationOptions =
    {
@@ -664,6 +672,11 @@ DP.Emotes = {
        EmoteLoop = true,
        EmoteMoving = true,
    }},
+   ["id"] = {"friends@laf@ig_5", "nephew", "ID", AnimationOptions =
+   {
+       EmoteMoving = true,
+       EmoteDuration = 2500
+   }},   
    ["hug"] = {"mp_ped_interaction", "kisses_guy_a", "Hug"},
    ["hug2"] = {"mp_ped_interaction", "kisses_guy_b", "Hug 2"},
    ["hug3"] = {"mp_ped_interaction", "hugs_guy_a", "Hug 3"},
@@ -1300,10 +1313,14 @@ DP.Emotes = {
        EmoteDuration = 1000,
    }},
    ["golfswing"] = {"rcmnigel1d", "swing_a_mark", "Golf Swing"},
-   ["eat"] = {"mp_player_inteat@burger", "mp_player_int_eat_burger", "Eat", AnimationOptions =
+
+   ["eat"] = {"mp_player_inteat@burger", "mp_player_int_eat_burger_fp", "Eat", AnimationOptions =
    {
-       EmoteMoving = true,
-       EmoteDuration = 3000,
+        Prop = "prop_cs_burger_01",
+        PropBone = 18905,
+        PropPlacement = {0.12, 0.028, 0.001, 10.0, 175.0},
+        EmoteMoving = true,
+        EmoteLoop = true,
    }},
    ["reaching"] = {"move_m@intimidation@cop@unarmed", "idle", "Reaching", AnimationOptions =
    {
@@ -1334,7 +1351,7 @@ DP.Emotes = {
    {
        EmoteLoop = true,
    }},
-   ["lapdance3"] = {"mini@strip_club@private_dance@part2", "priv_dance_p2", "Lapdance 3", AnimationOptions =
+   ["lapdance4"] = {"mini@strip_club@private_dance@part2", "priv_dance_p2", "Lapdance 4", AnimationOptions =
    {
        EmoteLoop = true,
    }},
