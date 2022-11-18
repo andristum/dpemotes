@@ -51,6 +51,7 @@ Config.Languages = {
   ['en'] = {
         ['emotes'] = 'Emotes',
         ['danceemotes'] = "🕺 Dance Emotes",
+	['animalemotes'] = "🐩 Animal Emotes",
         ['propemotes'] = "📦 Prop Emotes",
         ['favoriteemotes'] = "🌟 Favorite",
         ['favoriteinfo'] = "Select an emote here to set it as your favorite.",
