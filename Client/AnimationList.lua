@@ -97,15 +97,19 @@ DP.Walks = {
   ["Trash2"] = {"missfbi4prepp1_garbageman"},
   ["Trevor"] = {"move_p_m_two"},
   ["Wide"] = {"move_m@bag"},
+  -- These are untested, but unlike their previously commented counterparts, they exist in the game files.
+  ["ChubbyF"] = {"move_f@chubby@a"},
+  ["ChubbyM"] = {"move_m@chubby@a"},
+  ["Power"] = {"move_m@powerwalk"},
+  ["Sad2F"] = {"move_f@depressed@a"},
+  ["Sad2M"] = {"move_m@depressed@a"},
+  ["Sad3M"] = {"move_m@depressed@b"},
+  ["Sad4F"] = {"move_f@depressed@c"},
+  ["Sad4"] = {"move_m@depression@d"},
   -- I cant get these to work for some reason, if anyone knows a fix lmk
   --["Caution"] = {"move_m@caution"},
-  --["Chubby"] = {"anim@move_m@chubby@a"},
   --["Crazy"] = {"move_m@crazy"},
   --["Joy"] = {"move_m@joy@a"},
-  --["Power"] = {"move_m@power"},
-  --["Sad2"] = {"anim@move_m@depression@a"},
-  --["Sad3"] = {"move_m@depression@b"},
-  --["Sad4"] = {"move_m@depression@d"},
   --["Wading"] = {"move_m@wading"},
 }
 
